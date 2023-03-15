@@ -10,32 +10,27 @@
                 </h2>
             </div>
             <div class="grid grid-cols-12 gap-6">
-                <div class="-intro-x col-span-12 border-t pb-10 pt-5 border-slate-300">
-                    <div class="flex items-center h-10">
-                        <h2 class="text-lg font-semibold">
-                            Replacement Ratio(RR)
-                        </h2>
-                    </div>
-                    <div class="grid grid-cols-12 gap-6 mt-5">
-                        <div class="col-span-12 sm:col-span-6 xl:col-span-3">
-                            <div class="report-box zoom-in">
-                                <div class="box p-5">
-                                    <div class="text-xl font-medium leading-8">45%</div>
-                                    <div class="text-base text-slate-500 mt-1">Target</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-span-12 sm:col-span-6 xl:col-span-3">
-                            <div class="report-box zoom-in">
-                                <div class="box p-5">
-                                    <div class="text-xl font-medium leading-8">45%</div>
-                                    <div class="text-base text-slate-500 mt-1">Nilai</div>
-                                </div>
-                            </div>
-                        </div>
+                <div class="-intro-x col-span-12 border p-5 border-slate-300">
+                    <div class="overflow-x-auto">
+                        <table class="table table-bordered">
+                            <tbody>
+                                <tr>
+                                    <th>Target Replacement Ratio</th>
+                                    <td>45%</td>
+                                </tr>
+                                <tr>
+                                    <th>Kesimpulan</th>
+                                    <td>Total Replacement Ratio tanpa PPMP masih memenuhi target.</td>
+                                </tr>
+                                <tr>
+                                    <th>Rekomendasi</th>
+                                    <td>Terus pantau pencapaian investasi.</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
-                <div class="-intro-x col-span-12 border-t pb-10 pt-5 border-slate-300">
+                <div class="-intro-x col-span-12 border p-5 border-slate-300">
                     <div class="flex items-center h-10">
                         <div>
                             <h2 class="text-lg font-semibold">
@@ -44,979 +39,253 @@
                             <p style="font-style:italic;">Jika Pembayaran PPIP & Personal Pasar Keuangan Menggunakan Anuitas</p>
                         </div>
                     </div>
-                    <div class="mt-5 grid grid-cols-12 gap-6">
-                        <div class="mb-2 col-span-12 lg:col-span-6">
-                            <div class="h-10">
-                                <h2 class="text-lg font-mediun">
-                                    Layer PPMP
-                                </h2>
-                            </div>
-                            <div class="grid grid-cols-12 gap-6">
-                                <div class="col-span-12 lg:col-span-4">
-                                    <div class="report-box zoom-in">
-                                        <div class="box p-5">
-                                            <div class="text-xl font-medium leading-8">16.80%</div>
-                                            <div class="text-base text-slate-500 mt-1">Minimal</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-span-12 lg:col-span-4">
-                                    <div class="report-box zoom-in">
-                                        <div class="box p-5">
-                                            <div class="text-xl font-medium leading-8">-</div>
-                                            <div class="text-base text-slate-500 mt-1">Median</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-span-12 lg:col-span-4">
-                                    <div class="report-box zoom-in">
-                                        <div class="box p-5">
-                                            <div class="text-xl font-medium leading-8">-</div>
-                                            <div class="text-base text-slate-500 mt-1">Maksimal</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mb-2 col-span-12 lg:col-span-6">
-                            <div class="h-10">
-                                <h2 class="text-lg font-mediun">
-                                    Layer PPIP
-                                </h2>
-                            </div>
-                            <div class="grid grid-cols-12 gap-6">
-                                <div class="col-span-12 lg:col-span-4">
-                                    <div class="report-box zoom-in">
-                                        <div class="box p-5">
-                                            <div class="text-xl font-medium leading-8">32.32%</div>
-                                            <div class="text-base text-slate-500 mt-1">Minimal</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-span-12 lg:col-span-4">
-                                    <div class="report-box zoom-in">
-                                        <div class="box p-5">
-                                            <div class="text-xl font-medium leading-8">40.55%</div>
-                                            <div class="text-base text-slate-500 mt-1">Median</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-span-12 lg:col-span-4">
-                                    <div class="report-box zoom-in">
-                                        <div class="box p-5">
-                                            <div class="text-xl font-medium leading-8">51.43%</div>
-                                            <div class="text-base text-slate-500 mt-1">Maksimal</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mb-2 col-span-12 lg:col-span-6">
-                            <div class="h-10">
-                                <h2 class="text-lg font-mediun">
-                                    Layer Personal-Pasar Keuangan
-                                </h2>
-                            </div>
-                            <div class="grid grid-cols-12 gap-6">
-                                <div class="col-span-12 lg:col-span-4">
-                                    <div class="report-box zoom-in">
-                                        <div class="box p-5">
-                                            <div class="text-xl font-medium leading-8">12.36%</div>
-                                            <div class="text-base text-slate-500 mt-1">Minimal</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-span-12 lg:col-span-4">
-                                    <div class="report-box zoom-in">
-                                        <div class="box p-5">
-                                            <div class="text-xl font-medium leading-8">16.38%</div>
-                                            <div class="text-base text-slate-500 mt-1">Median</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-span-12 lg:col-span-4">
-                                    <div class="report-box zoom-in">
-                                        <div class="box p-5">
-                                            <div class="text-xl font-medium leading-8">23.10%</div>
-                                            <div class="text-base text-slate-500 mt-1">Maksimal</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mb-2 col-span-12 lg:col-span-6">
-                            <div class="h-10">
-                                <h2 class="text-lg font-mediun">
-                                    Layer Personal-Properti
-                                </h2>
-                            </div>
-                            <div class="grid grid-cols-12 gap-6">
-                                <div class="col-span-12 lg:col-span-4">
-                                    <div class="report-box zoom-in">
-                                        <div class="box p-5">
-                                            <div class="text-xl font-medium leading-8">7.15%</div>
-                                            <div class="text-base text-slate-500 mt-1">Minimal</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-span-12 lg:col-span-4">
-                                    <div class="report-box zoom-in">
-                                        <div class="box p-5">
-                                            <div class="text-xl font-medium leading-8">-</div>
-                                            <div class="text-base text-slate-500 mt-1">Median</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-span-12 lg:col-span-4">
-                                    <div class="report-box zoom-in">
-                                        <div class="box p-5">
-                                            <div class="text-xl font-medium leading-8">-</div>
-                                            <div class="text-base text-slate-500 mt-1">Maksimal</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mb-2 col-span-12 lg:col-span-6">
-                            <div class="h-10">
-                                <h2 class="text-lg font-mediun">
-                                    Total RR
-                                </h2>
-                            </div>
-                            <div class="grid grid-cols-12 gap-6">
-                                <div class="col-span-12 lg:col-span-4">
-                                    <div class="report-box zoom-in">
-                                        <div class="box p-5">
-                                            <div class="text-xl font-medium leading-8">68.63%</div>
-                                            <div class="text-base text-slate-500 mt-1">Minimal</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-span-12 lg:col-span-4">
-                                    <div class="report-box zoom-in">
-                                        <div class="box p-5">
-                                            <div class="text-xl font-medium leading-8">80.87%</div>
-                                            <div class="text-base text-slate-500 mt-1">Median</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-span-12 lg:col-span-4">
-                                    <div class="report-box zoom-in">
-                                        <div class="box p-5">
-                                            <div class="text-xl font-medium leading-8">98.48%</div>
-                                            <div class="text-base text-slate-500 mt-1">Maksimal</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mb-2 col-span-12 lg:col-span-6">
-                            <div class="h-10">
-                                <h2 class="text-lg font-mediun">
-                                    Total RR Tanpa PPMP
-                                </h2>
-                            </div>
-                            <div class="grid grid-cols-12 gap-6">
-                                <div class="col-span-12 lg:col-span-4">
-                                    <div class="report-box zoom-in">
-                                        <div class="box p-5">
-                                            <div class="text-xl font-medium leading-8">51.83%</div>
-                                            <div class="text-base text-slate-500 mt-1">Minimal</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-span-12 lg:col-span-4">
-                                    <div class="report-box zoom-in">
-                                        <div class="box p-5">
-                                            <div class="text-xl font-medium leading-8">64.08%</div>
-                                            <div class="text-base text-slate-500 mt-1">Median</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-span-12 lg:col-span-4">
-                                    <div class="report-box zoom-in">
-                                        <div class="box p-5">
-                                            <div class="text-xl font-medium leading-8">81.69%</div>
-                                            <div class="text-base text-slate-500 mt-1">Maksimal</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="overflow-x-auto">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Nilai Estimasi</th>
+                                    <th>Minimal</th>
+                                    <th>Median</th>
+                                    <th>Maksimal</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Layer PPMP</td>
+                                    <td>16.8%</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Layer PPIP</td>
+                                    <td>32.18%</td>
+                                    <td>40.55%</td>
+                                    <td>51.43%</td>
+                                </tr>
+                                <tr>
+                                    <td>Layer Personal-Pasar Keuangan</td>
+                                    <td>12.3%</td>
+                                    <td>16.38%</td>
+                                    <td>23.10%</td>
+                                </tr>
+                                <tr>
+                                    <td>Layer Personal-Properti</td>
+                                    <td>7.15%</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Total RR</td>
+                                    <td>68.63%</td>
+                                    <td>80.87%</td>
+                                    <td>98.48%</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
-                <div class="-intro-x col-span-12 border-t pb-10 pt-5 border-slate-300">
+                <div class="-intro-x col-span-12 border p-5 border-slate-300">
                     <div class="flex items-center h-10">
                         <div>
                             <h2 class="text-lg font-semibold">
-                                Estimasi Penghasilan Bulanan Setelah Pensiun
+                            Estimasi Penghasilan Bulanan Setelah Pensiun
                             </h2>
                             <p style="font-style:italic;">Jika Pembayaran PPIP & Personal Pasar Keuangan Menggunakan Anuitas</p>
                         </div>
                     </div>
-                    <div class="mt-5 grid grid-cols-12 gap-6">
-                        <div class="mb-2 col-span-12 lg:col-span-6">
-                            <div class="h-10">
-                                <h2 class="text-lg font-mediun">
-                                    Layer PPMP
-                                </h2>
-                            </div>
-                            <div class="grid grid-cols-12 gap-6">
-                                <div class="col-span-12 lg:col-span-4">
-                                    <div class="report-box zoom-in">
-                                        <div class="box p-5">
-                                            <div class="text-xl font-medium leading-8">Rp. 10.243.724,-</div>
-                                            <div class="text-base text-slate-500 mt-1">Minimal</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-span-12 lg:col-span-4">
-                                    <div class="report-box zoom-in">
-                                        <div class="box p-5">
-                                            <div class="text-xl font-medium leading-8">-</div>
-                                            <div class="text-base text-slate-500 mt-1">Median</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-span-12 lg:col-span-4">
-                                    <div class="report-box zoom-in">
-                                        <div class="box p-5">
-                                            <div class="text-xl font-medium leading-8">-</div>
-                                            <div class="text-base text-slate-500 mt-1">Maksimal</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mb-2 col-span-12 lg:col-span-6">
-                            <div class="h-10">
-                                <h2 class="text-lg font-mediun">
-                                    Layer PPIP
-                                </h2>
-                            </div>
-                            <div class="grid grid-cols-12 gap-6">
-                                <div class="col-span-12 lg:col-span-4">
-                                    <div class="report-box zoom-in">
-                                        <div class="box p-5">
-                                            <div class="text-xl font-medium leading-8">Rp. 19.707.137,-</div>
-                                            <div class="text-base text-slate-500 mt-1">Minimal</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-span-12 lg:col-span-4">
-                                    <div class="report-box zoom-in">
-                                        <div class="box p-5">
-                                            <div class="text-xl font-medium leading-8">Rp. 24.726.377,-</div>
-                                            <div class="text-base text-slate-500 mt-1">Median</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-span-12 lg:col-span-4">
-                                    <div class="report-box zoom-in">
-                                        <div class="box p-5">
-                                            <div class="text-xl font-medium leading-8">Rp. 31.365.835,-</div>
-                                            <div class="text-base text-slate-500 mt-1">Maksimal</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mb-2 col-span-12 lg:col-span-6">
-                            <div class="h-10">
-                                <h2 class="text-lg font-mediun">
-                                    Layer Personal-Pasar Keuangan
-                                </h2>
-                            </div>
-                            <div class="grid grid-cols-12 gap-6">
-                                <div class="col-span-12 lg:col-span-4">
-                                    <div class="report-box zoom-in">
-                                        <div class="box p-5">
-                                            <div class="text-xl font-medium leading-8">Rp. 7.538.646,-</div>
-                                            <div class="text-base text-slate-500 mt-1">Minimal</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-span-12 lg:col-span-4">
-                                    <div class="report-box zoom-in">
-                                        <div class="box p-5">
-                                            <div class="text-xl font-medium leading-8">Rp. 9.987.940,-</div>
-                                            <div class="text-base text-slate-500 mt-1">Median</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-span-12 lg:col-span-4">
-                                    <div class="report-box zoom-in">
-                                        <div class="box p-5">
-                                            <div class="text-xl font-medium leading-8">Rp. 14.086.834,-</div>
-                                            <div class="text-base text-slate-500 mt-1">Maksimal</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mb-2 col-span-12 lg:col-span-6">
-                            <div class="h-10">
-                                <h2 class="text-lg font-mediun">
-                                    Layer Personal-Properti
-                                </h2>
-                            </div>
-                            <div class="grid grid-cols-12 gap-6">
-                                <div class="col-span-12 lg:col-span-4">
-                                    <div class="report-box zoom-in">
-                                        <div class="box p-5">
-                                            <div class="text-xl font-medium leading-8">Rp. 4.362.037,-</div>
-                                            <div class="text-base text-slate-500 mt-1">Minimal</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-span-12 lg:col-span-4">
-                                    <div class="report-box zoom-in">
-                                        <div class="box p-5">
-                                            <div class="text-xl font-medium leading-8">-</div>
-                                            <div class="text-base text-slate-500 mt-1">Median</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-span-12 lg:col-span-4">
-                                    <div class="report-box zoom-in">
-                                        <div class="box p-5">
-                                            <div class="text-xl font-medium leading-8">-</div>
-                                            <div class="text-base text-slate-500 mt-1">Maksimal</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mb-2 col-span-12 lg:col-span-6">
-                            <div class="h-10">
-                                <h2 class="text-lg font-mediun">
-                                    Total Penghasilan
-                                </h2>
-                            </div>
-                            <div class="grid grid-cols-12 gap-6">
-                                <div class="col-span-12 lg:col-span-4">
-                                    <div class="report-box zoom-in">
-                                        <div class="box p-5">
-                                            <div class="text-xl font-medium leading-8">Rp. 41.851.544,-</div>
-                                            <div class="text-base text-slate-500 mt-1">Minimal</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-span-12 lg:col-span-4">
-                                    <div class="report-box zoom-in">
-                                        <div class="box p-5">
-                                            <div class="text-xl font-medium leading-8">Rp. 49.320.078,-</div>
-                                            <div class="text-base text-slate-500 mt-1">Median</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-span-12 lg:col-span-4">
-                                    <div class="report-box zoom-in">
-                                        <div class="box p-5">
-                                            <div class="text-xl font-medium leading-8">Rp. 60.058.430,-</div>
-                                            <div class="text-base text-slate-500 mt-1">Maksimal</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mb-2 col-span-12 lg:col-span-6">
-                            <div class="h-10">
-                                <h2 class="text-lg font-mediun">
-                                    Total Penghasilan Tanpa PPMP
-                                </h2>
-                            </div>
-                            <div class="grid grid-cols-12 gap-6">
-                                <div class="col-span-12 lg:col-span-4">
-                                    <div class="report-box zoom-in">
-                                        <div class="box p-5">
-                                            <div class="text-xl font-medium leading-8">Rp. 31.607.821,-</div>
-                                            <div class="text-base text-slate-500 mt-1">Minimal</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-span-12 lg:col-span-4">
-                                    <div class="report-box zoom-in">
-                                        <div class="box p-5">
-                                            <div class="text-xl font-medium leading-8">Rp. 39.076.354,-</div>
-                                            <div class="text-base text-slate-500 mt-1">Median</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-span-12 lg:col-span-4">
-                                    <div class="report-box zoom-in">
-                                        <div class="box p-5">
-                                            <div class="text-xl font-medium leading-8">Rp. 49.814.706,-</div>
-                                            <div class="text-base text-slate-500 mt-1">Maksimal</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="overflow-x-auto">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Nilai Estimasi</th>
+                                    <th>Minimal</th>
+                                    <th>Median</th>
+                                    <th>Maksimal</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Layer PPMP</td>
+                                    <td>Rp. 10.243.724,-</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Layer PPIP</td>
+                                    <td>Rp. 19.707.137,-</td>
+                                    <td>Rp. 24.726.377,-</td>
+                                    <td>Rp. 31.365.835,-</td>
+                                </tr>
+                                <tr>
+                                    <td>Layer Personal-Pasar Keuangan</td>
+                                    <td>Rp. 7.538.646,-</td>
+                                    <td>Rp. 9.987.940,-</td>
+                                    <td>Rp. 14.086.834,-</td>
+                                </tr>
+                                <tr>
+                                    <td>Layer Personal-Properti</td>
+                                    <td>Rp. 4.362.037,-</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Total Penghasilan</td>
+                                    <td>Rp. 41.851.544,-</td>
+                                    <td>Rp. 49.320.078,-</td>
+                                    <td>Rp. 60.058.430,-</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
-                <div class="-intro-x col-span-12 border-t pb-10 pt-5 border-slate-300">
+                <div class="-intro-x col-span-12 border p-5 border-slate-300">
                     <div class="flex items-center h-10">
                         <div>
                             <h2 class="text-lg font-semibold">
-                                Present Value Penghasilan
+                            Present Value Penghasilan
                             </h2>
                             <p style="font-style:italic;">Jika Pembayaran PPIP & Personal Pasar Keuangan Menggunakan Anuitas</p>
                         </div>
                     </div>
-                    <div class="mt-5 grid grid-cols-12 gap-6">
-                        <div class="mb-2 col-span-12 lg:col-span-6">
-                            <div class="h-10">
-                                <h2 class="text-lg font-mediun">
-                                    Layer PPMP
-                                </h2>
-                            </div>
-                            <div class="grid grid-cols-12 gap-6">
-                                <div class="col-span-12 lg:col-span-4">
-                                    <div class="report-box zoom-in">
-                                        <div class="box p-5">
-                                            <div class="text-xl font-medium leading-8">Rp. 3.780.308,-</div>
-                                            <div class="text-base text-slate-500 mt-1">Minimal</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-span-12 lg:col-span-4">
-                                    <div class="report-box zoom-in">
-                                        <div class="box p-5">
-                                            <div class="text-xl font-medium leading-8">-</div>
-                                            <div class="text-base text-slate-500 mt-1">Median</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-span-12 lg:col-span-4">
-                                    <div class="report-box zoom-in">
-                                        <div class="box p-5">
-                                            <div class="text-xl font-medium leading-8">-</div>
-                                            <div class="text-base text-slate-500 mt-1">Maksimal</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mb-2 col-span-12 lg:col-span-6">
-                            <div class="h-10">
-                                <h2 class="text-lg font-mediun">
-                                    Layer PPIP
-                                </h2>
-                            </div>
-                            <div class="grid grid-cols-12 gap-6">
-                                <div class="col-span-12 lg:col-span-4">
-                                    <div class="report-box zoom-in">
-                                        <div class="box p-5">
-                                            <div class="text-xl font-medium leading-8">Rp. 7.272.653,-</div>
-                                            <div class="text-base text-slate-500 mt-1">Minimal</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-span-12 lg:col-span-4">
-                                    <div class="report-box zoom-in">
-                                        <div class="box p-5">
-                                            <div class="text-xl font-medium leading-8">Rp. 9.124.935,-</div>
-                                            <div class="text-base text-slate-500 mt-1">Median</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-span-12 lg:col-span-4">
-                                    <div class="report-box zoom-in">
-                                        <div class="box p-5">
-                                            <div class="text-xl font-medium leading-8">Rp. 11.575.137,-</div>
-                                            <div class="text-base text-slate-500 mt-1">Maksimal</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mb-2 col-span-12 lg:col-span-6">
-                            <div class="h-10">
-                                <h2 class="text-lg font-mediun">
-                                    Layer Personal-Pasar Keuangan
-                                </h2>
-                            </div>
-                            <div class="grid grid-cols-12 gap-6">
-                                <div class="col-span-12 lg:col-span-4">
-                                    <div class="report-box zoom-in">
-                                        <div class="box p-5">
-                                            <div class="text-xl font-medium leading-8">Rp. 2.782.035,-</div>
-                                            <div class="text-base text-slate-500 mt-1">Minimal</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-span-12 lg:col-span-4">
-                                    <div class="report-box zoom-in">
-                                        <div class="box p-5">
-                                            <div class="text-xl font-medium leading-8">Rp. 3.685.914,-</div>
-                                            <div class="text-base text-slate-500 mt-1">Median</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-span-12 lg:col-span-4">
-                                    <div class="report-box zoom-in">
-                                        <div class="box p-5">
-                                            <div class="text-xl font-medium leading-8">Rp. 5.198.555,-</div>
-                                            <div class="text-base text-slate-500 mt-1">Maksimal</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mb-2 col-span-12 lg:col-span-6">
-                            <div class="h-10">
-                                <h2 class="text-lg font-mediun">
-                                    Layer Personal-Properti
-                                </h2>
-                            </div>
-                            <div class="grid grid-cols-12 gap-6">
-                                <div class="col-span-12 lg:col-span-4">
-                                    <div class="report-box zoom-in">
-                                        <div class="box p-5">
-                                            <div class="text-xl font-medium leading-8">Rp. 1.609.751,-</div>
-                                            <div class="text-base text-slate-500 mt-1">Minimal</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-span-12 lg:col-span-4">
-                                    <div class="report-box zoom-in">
-                                        <div class="box p-5">
-                                            <div class="text-xl font-medium leading-8">-</div>
-                                            <div class="text-base text-slate-500 mt-1">Median</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-span-12 lg:col-span-4">
-                                    <div class="report-box zoom-in">
-                                        <div class="box p-5">
-                                            <div class="text-xl font-medium leading-8">-</div>
-                                            <div class="text-base text-slate-500 mt-1">Maksimal</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mb-2 col-span-12 lg:col-span-6">
-                            <div class="h-10">
-                                <h2 class="text-lg font-mediun">
-                                    Total Penghasilan
-                                </h2>
-                            </div>
-                            <div class="grid grid-cols-12 gap-6">
-                                <div class="col-span-12 lg:col-span-4">
-                                    <div class="report-box zoom-in">
-                                        <div class="box p-5">
-                                            <div class="text-xl font-medium leading-8">Rp. 15.444.746,-</div>
-                                            <div class="text-base text-slate-500 mt-1">Minimal</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-span-12 lg:col-span-4">
-                                    <div class="report-box zoom-in">
-                                        <div class="box p-5">
-                                            <div class="text-xl font-medium leading-8">Rp. 18.200.908,-</div>
-                                            <div class="text-base text-slate-500 mt-1">Median</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-span-12 lg:col-span-4">
-                                    <div class="report-box zoom-in">
-                                        <div class="box p-5">
-                                            <div class="text-xl font-medium leading-8">Rp. 22.163.751,-</div>
-                                            <div class="text-base text-slate-500 mt-1">Maksimal</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mb-2 col-span-12 lg:col-span-6">
-                            <div class="h-10">
-                                <h2 class="text-lg font-mediun">
-                                    Total Penghasilan Tanpa PPMP
-                                </h2>
-                            </div>
-                            <div class="grid grid-cols-12 gap-6">
-                                <div class="col-span-12 lg:col-span-4">
-                                    <div class="report-box zoom-in">
-                                        <div class="box p-5">
-                                            <div class="text-xl font-medium leading-8">Rp. 11.666.439,-</div>
-                                            <div class="text-base text-slate-500 mt-1">Minimal</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-span-12 lg:col-span-4">
-                                    <div class="report-box zoom-in">
-                                        <div class="box p-5">
-                                            <div class="text-xl font-medium leading-8">Rp. 14.420.600,-</div>
-                                            <div class="text-base text-slate-500 mt-1">Median</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-span-12 lg:col-span-4">
-                                    <div class="report-box zoom-in">
-                                        <div class="box p-5">
-                                            <div class="text-xl font-medium leading-8">Rp. 18.383.443,-</div>
-                                            <div class="text-base text-slate-500 mt-1">Maksimal</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="overflow-x-auto">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Nilai Estimasi</th>
+                                    <th>Minimal</th>
+                                    <th>Median</th>
+                                    <th>Maksimal</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Layer PPMP</td>
+                                    <td>Rp. 3.780.308,-</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Layer PPIP</td>
+                                    <td>Rp. 7.272.653,-</td>
+                                    <td>Rp. 9.124.935,-</td>
+                                    <td>Rp. 11.575.137,-</td>
+                                </tr>
+                                <tr>
+                                    <td>Layer Personal-Pasar Keuangan</td>
+                                    <td>Rp. 2.782.035,-</td>
+                                    <td>Rp. 3.685.914,-</td>
+                                    <td>Rp. 5.198.555,-</td>
+                                </tr>
+                                <tr>
+                                    <td>Layer Personal-Properti</td>
+                                    <td>Rp. 1.609.751,-</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Total Penghasilan</td>
+                                    <td>Rp. 15.444.746,-</td>
+                                    <td>Rp. 18.200.908,-</td>
+                                    <td>Rp. 22.163.751,-</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
-                <div class="-intro-x col-span-12 border-t pb-10 pt-5 border-slate-300">
+                <div class="-intro-x col-span-12 border p-5 border-slate-300">
                     <div class="flex items-center h-10">
                         <div>
                             <h2 class="text-lg font-semibold">
-                                Estimasi Total Kekayaan Saat Pensiun
+                            Estimasi Total Kekayaan Saat Pension
                             </h2>
                             <p style="font-style:italic;">Jika Pembayaran PPIP & Personal Pasar Keuangan Menggunakan Anuitas</p>
                         </div>
                     </div>
-                    <div class="mt-5 grid grid-cols-12 gap-6">
-                        <div class="mb-2 col-span-12 lg:col-span-6">
-                            <div class="h-10">
-                                <h2 class="text-lg font-mediun">
-                                    Layer PPMP
-                                </h2>
-                            </div>
-                            <div class="grid grid-cols-12 gap-6">
-                                <div class="col-span-12 lg:col-span-4">
-                                    <div class="report-box zoom-in">
-                                        <div class="box p-5">
-                                            <div class="text-xl font-medium leading-8">-</div>
-                                            <div class="text-base text-slate-500 mt-1">Minimal</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-span-12 lg:col-span-4">
-                                    <div class="report-box zoom-in">
-                                        <div class="box p-5">
-                                            <div class="text-xl font-medium leading-8">-</div>
-                                            <div class="text-base text-slate-500 mt-1">Median</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-span-12 lg:col-span-4">
-                                    <div class="report-box zoom-in">
-                                        <div class="box p-5">
-                                            <div class="text-xl font-medium leading-8">-</div>
-                                            <div class="text-base text-slate-500 mt-1">Maksimal</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mb-2 col-span-12 lg:col-span-6">
-                            <div class="h-10">
-                                <h2 class="text-lg font-mediun">
-                                    Layer PPIP
-                                </h2>
-                            </div>
-                            <div class="grid grid-cols-12 gap-6">
-                                <div class="col-span-12 lg:col-span-4">
-                                    <div class="report-box zoom-in">
-                                        <div class="box p-5">
-                                            <div class="text-xl font-medium leading-8">Rp. 2.680.170.687,-</div>
-                                            <div class="text-base text-slate-500 mt-1">Minimal</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-span-12 lg:col-span-4">
-                                    <div class="report-box zoom-in">
-                                        <div class="box p-5">
-                                            <div class="text-xl font-medium leading-8">Rp. 3.362.787.235,-</div>
-                                            <div class="text-base text-slate-500 mt-1">Median</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-span-12 lg:col-span-4">
-                                    <div class="report-box zoom-in">
-                                        <div class="box p-5">
-                                            <div class="text-xl font-medium leading-8">Rp. 4.265.753.553,-</div>
-                                            <div class="text-base text-slate-500 mt-1">Maksimal</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mb-2 col-span-12 lg:col-span-6">
-                            <div class="h-10">
-                                <h2 class="text-lg font-mediun">
-                                    Layer Personal-Pasar Keuangan
-                                </h2>
-                            </div>
-                            <div class="grid grid-cols-12 gap-6">
-                                <div class="col-span-12 lg:col-span-4">
-                                    <div class="report-box zoom-in">
-                                        <div class="box p-5">
-                                            <div class="text-xl font-medium leading-8">Rp. 1.025.255.859,-</div>
-                                            <div class="text-base text-slate-500 mt-1">Minimal</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-span-12 lg:col-span-4">
-                                    <div class="report-box zoom-in">
-                                        <div class="box p-5">
-                                            <div class="text-xl font-medium leading-8">Rp. 1.358.359.879,-</div>
-                                            <div class="text-base text-slate-500 mt-1">Median</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-span-12 lg:col-span-4">
-                                    <div class="report-box zoom-in">
-                                        <div class="box p-5">
-                                            <div class="text-xl font-medium leading-8">Rp. 1.915.809.379,-</div>
-                                            <div class="text-base text-slate-500 mt-1">Maksimal</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mb-2 col-span-12 lg:col-span-6">
-                            <div class="h-10">
-                                <h2 class="text-lg font-mediun">
-                                    Layer Personal-Properti
-                                </h2>
-                            </div>
-                            <div class="grid grid-cols-12 gap-6">
-                                <div class="col-span-12 lg:col-span-4">
-                                    <div class="report-box zoom-in">
-                                        <div class="box p-5">
-                                            <div class="text-xl font-medium leading-8">Rp. 2.093.777.930,-</div>
-                                            <div class="text-base text-slate-500 mt-1">Minimal</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-span-12 lg:col-span-4">
-                                    <div class="report-box zoom-in">
-                                        <div class="box p-5">
-                                            <div class="text-xl font-medium leading-8">Rp. 2.093.777.930,-</div>
-                                            <div class="text-base text-slate-500 mt-1">Median</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-span-12 lg:col-span-4">
-                                    <div class="report-box zoom-in">
-                                        <div class="box p-5">
-                                            <div class="text-xl font-medium leading-8">Rp. 2.093.777.930,-</div>
-                                            <div class="text-base text-slate-500 mt-1">Maksimal</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mb-2 col-span-12 lg:col-span-6">
-                            <div class="h-10">
-                                <h2 class="text-lg font-mediun">
-                                    Total Kekayaan Tanpa PPMP
-                                </h2>
-                            </div>
-                            <div class="grid grid-cols-12 gap-6">
-                                <div class="col-span-12 lg:col-span-4">
-                                    <div class="report-box zoom-in">
-                                        <div class="box p-5">
-                                            <div class="text-xl font-medium leading-8">Rp. 5.799.204.476,-</div>
-                                            <div class="text-base text-slate-500 mt-1">Minimal</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-span-12 lg:col-span-4">
-                                    <div class="report-box zoom-in">
-                                        <div class="box p-5">
-                                            <div class="text-xl font-medium leading-8">Rp. 6.814.925.043,-</div>
-                                            <div class="text-base text-slate-500 mt-1">Median</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-span-12 lg:col-span-4">
-                                    <div class="report-box zoom-in">
-                                        <div class="box p-5">
-                                            <div class="text-xl font-medium leading-8">Rp. 8.275.340.862,-</div>
-                                            <div class="text-base text-slate-500 mt-1">Maksimal</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="overflow-x-auto">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Nilai Estimasi</th>
+                                    <th>Minimal</th>
+                                    <th>Median</th>
+                                    <th>Maksimal</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Layer PPMP</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Layer PPIP</td>
+                                    <td>Rp. 2.669.136.629,-</td>
+                                    <td>Rp. 3.337.211.758,-</td>
+                                    <td>Rp. 4.333.132.557,-</td>
+                                </tr>
+                                <tr>
+                                    <td>Layer Personal-Pasar Keuangan</td>
+                                    <td>Rp. 1.024.720.505,-</td>
+                                    <td>Rp. 1.367.211.758,-</td>
+                                    <td>Rp. 1.882.579.800,-</td>
+                                </tr>
+                                <tr>
+                                    <td>Layer Personal-Properti</td>
+                                    <td>Rp. 2.093.777.930,-</td>
+                                    <td>Rp. 2.093.777.930,-</td>
+                                    <td>Rp. 2.093.777.930,-</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
-                <div class="-intro-x col-span-12 border-t pb-10 pt-5 border-slate-300">
+                <div class="-intro-x col-span-12 border p-5 border-slate-300">
                     <div class="flex items-center h-10">
                         <div>
                             <h2 class="text-lg font-semibold">
-                                Present Value Kekayaan
+                            Present Value Kekayaan
                             </h2>
                             <p style="font-style:italic;">Jika Pembayaran PPIP & Personal Pasar Keuangan Menggunakan Anuitas</p>
                         </div>
                     </div>
-                    <div class="mt-5 grid grid-cols-12 gap-6">
-                        <div class="mb-2 col-span-12 lg:col-span-6">
-                            <div class="h-10">
-                                <h2 class="text-lg font-mediun">
-                                    Layer PPMP
-                                </h2>
-                            </div>
-                            <div class="grid grid-cols-12 gap-6">
-                                <div class="col-span-12 lg:col-span-4">
-                                    <div class="report-box zoom-in">
-                                        <div class="box p-5">
-                                            <div class="text-xl font-medium leading-8">-</div>
-                                            <div class="text-base text-slate-500 mt-1">Minimal</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-span-12 lg:col-span-4">
-                                    <div class="report-box zoom-in">
-                                        <div class="box p-5">
-                                            <div class="text-xl font-medium leading-8">-</div>
-                                            <div class="text-base text-slate-500 mt-1">Median</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-span-12 lg:col-span-4">
-                                    <div class="report-box zoom-in">
-                                        <div class="box p-5">
-                                            <div class="text-xl font-medium leading-8">-</div>
-                                            <div class="text-base text-slate-500 mt-1">Maksimal</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mb-2 col-span-12 lg:col-span-6">
-                            <div class="h-10">
-                                <h2 class="text-lg font-mediun">
-                                    Layer PPIP
-                                </h2>
-                            </div>
-                            <div class="grid grid-cols-12 gap-6">
-                                <div class="col-span-12 lg:col-span-4">
-                                    <div class="report-box zoom-in">
-                                        <div class="box p-5">
-                                            <div class="text-xl font-medium leading-8">Rp. 989.080.742,-</div>
-                                            <div class="text-base text-slate-500 mt-1">Minimal</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-span-12 lg:col-span-4">
-                                    <div class="report-box zoom-in">
-                                        <div class="box p-5">
-                                            <div class="text-xl font-medium leading-8">Rp. 1.240.991.146,-</div>
-                                            <div class="text-base text-slate-500 mt-1">Median</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-span-12 lg:col-span-4">
-                                    <div class="report-box zoom-in">
-                                        <div class="box p-5">
-                                            <div class="text-xl font-medium leading-8">Rp. 1.574.218.653,-</div>
-                                            <div class="text-base text-slate-500 mt-1">Maksimal</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mb-2 col-span-12 lg:col-span-6">
-                            <div class="h-10">
-                                <h2 class="text-lg font-mediun">
-                                    Layer Personal-Pasar Keuangan
-                                </h2>
-                            </div>
-                            <div class="grid grid-cols-12 gap-6">
-                                <div class="col-span-12 lg:col-span-4">
-                                    <div class="report-box zoom-in">
-                                        <div class="box p-5">
-                                            <div class="text-xl font-medium leading-8">Rp. 378.356.808,-</div>
-                                            <div class="text-base text-slate-500 mt-1">Minimal</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-span-12 lg:col-span-4">
-                                    <div class="report-box zoom-in">
-                                        <div class="box p-5">
-                                            <div class="text-xl font-medium leading-8">Rp. 501.284.341,-</div>
-                                            <div class="text-base text-slate-500 mt-1">Median</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-span-12 lg:col-span-4">
-                                    <div class="report-box zoom-in">
-                                        <div class="box p-5">
-                                            <div class="text-xl font-medium leading-8">Rp. 707.001.539,-</div>
-                                            <div class="text-base text-slate-500 mt-1">Maksimal</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mb-2 col-span-12 lg:col-span-6">
-                            <div class="h-10">
-                                <h2 class="text-lg font-mediun">
-                                    Layer Personal-Properti
-                                </h2>
-                            </div>
-                            <div class="grid grid-cols-12 gap-6">
-                                <div class="col-span-12 lg:col-span-4">
-                                    <div class="report-box zoom-in">
-                                        <div class="box p-5">
-                                            <div class="text-xl font-medium leading-8">Rp. 772.680.426,-</div>
-                                            <div class="text-base text-slate-500 mt-1">Minimal</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-span-12 lg:col-span-4">
-                                    <div class="report-box zoom-in">
-                                        <div class="box p-5">
-                                            <div class="text-xl font-medium leading-8">Rp. 772.680.426,-</div>
-                                            <div class="text-base text-slate-500 mt-1">Median</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-span-12 lg:col-span-4">
-                                    <div class="report-box zoom-in">
-                                        <div class="box p-5">
-                                            <div class="text-xl font-medium leading-8">Rp. 772.680.426,-</div>
-                                            <div class="text-base text-slate-500 mt-1">Maksimal</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mb-2 col-span-12 lg:col-span-6">
-                            <div class="h-10">
-                                <h2 class="text-lg font-mediun">
-                                    Total Kekayaan Tanpa PPMP
-                                </h2>
-                            </div>
-                            <div class="grid grid-cols-12 gap-6">
-                                <div class="col-span-12 lg:col-span-4">
-                                    <div class="report-box zoom-in">
-                                        <div class="box p-5">
-                                            <div class="text-xl font-medium leading-8">Rp. 2.140.11.7.975,-</div>
-                                            <div class="text-base text-slate-500 mt-1">Minimal</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-span-12 lg:col-span-4">
-                                    <div class="report-box zoom-in">
-                                        <div class="box p-5">
-                                            <div class="text-xl font-medium leading-8">Rp. 2.514.955.913,-</div>
-                                            <div class="text-base text-slate-500 mt-1">Median</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-span-12 lg:col-span-4">
-                                    <div class="report-box zoom-in">
-                                        <div class="box p-5">
-                                            <div class="text-xl font-medium leading-8">Rp. 3.053.902.618,-</div>
-                                            <div class="text-base text-slate-500 mt-1">Maksimal</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="overflow-x-auto">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Nilai Estimasi</th>
+                                    <th>Minimal</th>
+                                    <th>Median</th>
+                                    <th>Maksimal</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Layer PPMP</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Layer PPIP</td>
+                                    <td>Rp. 985.008.772,-</td>
+                                    <td>Rp. 1.231.549.907,-</td>
+                                    <td>Rp. 1.559.082.963,-</td>
+                                </tr>
+                                <tr>
+                                    <td>Layer Personal-Pasar Keuangan</td>
+                                    <td>Rp. 378.159.243,-</td>
+                                    <td>Rp. 504.551.007,-</td>
+                                    <td>Rp. 694.740.612,-</td>
+                                </tr>
+                                <tr>
+                                    <td>Layer Personal-Properti</td>
+                                    <td>Rp. 772.680.426,-</td>
+                                    <td>Rp. 772.680.426,-</td>
+                                    <td>Rp. 772.680.426,-</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
                 <div class="-intro-x col-span-12 border-t pb-10 pt-5 border-slate-300">

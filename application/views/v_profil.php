@@ -22,18 +22,18 @@
                             </div>
                         </div>
                         <div class="p-5 border-t border-slate-200/60 dark:border-darkmode-400">
-                            <a class="flex items-center mt-5 text-primary font-medium" href=""> <i data-lucide="box" class="w-4 h-4 mr-2"></i> Biodata Pengguna </a>
-                            <a class="flex items-center mt-5" href=""> <i data-lucide="activity" class="w-4 h-4 mr-2"></i> Update Tracking Data </a>
+                            <a class="flex items-center mt-5 text-primary font-medium" href="<?= site_url() ?>profil/1"> <i data-lucide="box" class="w-4 h-4 mr-2"></i> Biodata Pengguna </a>
+                            <a class="flex items-center mt-5" href="<?= site_url() ?>profil/update-tracking-pengguna/1"> <i data-lucide="activity" class="w-4 h-4 mr-2"></i> Update Tracking Data </a>
                         </div>
                         <div class="p-5 border-t border-slate-200/60 dark:border-darkmode-400">
-                            <a class="flex items-center" href=""> <i data-lucide="settings" class="w-4 h-4 mr-2"></i> Setting Nilai Asumsi </a>
-                            <a class="flex items-center mt-5" href=""> <i data-lucide="settings" class="w-4 h-4 mr-2"></i> Setting Portofolio PPIP </a>
-                            <a class="flex items-center mt-5" href=""> <i data-lucide="settings" class="w-4 h-4 mr-2"></i> Setting Portofolio Personal Pasar Keuangan </a>
-                            <a class="flex items-center mt-5" href=""> <i data-lucide="settings" class="w-4 h-4 mr-2"></i> Setting Komposisi Investasi LifeCycle Fund </a>
-                            <a class="flex items-center mt-5" href=""> <i data-lucide="settings" class="w-4 h-4 mr-2"></i> Setting Treatment Pembayaran Setelah Pensiun </a>
+                            <a class="flex items-center" href="<?= site_url() ?>profil/setting_nilai_asumsi/1"> <i data-lucide="settings" class="w-4 h-4 mr-2"></i> Setting Nilai Asumsi </a>
+                            <a class="flex items-center mt-5" href="<?= base_url() ?>profil/setting-portofolio-ppip/1"> <i data-lucide="settings" class="w-4 h-4 mr-2"></i> Setting Portofolio PPIP </a>
+                            <a class="flex items-center mt-5" href="<?= base_url() ?>profil/setting-portofolio-personal-pasar-keuangan/1"> <i data-lucide="settings" class="w-4 h-4 mr-2"></i> Setting Portofolio Personal Pasar Keuangan </a>
+                            <a class="flex items-center mt-5" href="<?= base_url() ?>profil/setting-komposisi-investasi-lifeycle-fund/1"> <i data-lucide="settings" class="w-4 h-4 mr-2"></i> Setting Komposisi Investasi LifeCycle Fund </a>
+                            <a class="flex items-center mt-5" href="<?= base_url() ?>profil/setting-treatment-pembayaran-setelah-pensiun/1"> <i data-lucide="settings" class="w-4 h-4 mr-2"></i> Setting Treatment Pembayaran Setelah Pensiun </a>
                         </div>
                         <div class="p-5 border-t border-slate-200/60 dark:border-darkmode-400">
-                            <a class="flex items-center mt-5" href=""> <i data-lucide="lock" class="w-4 h-4 mr-2"></i> Ubah Password </a>
+                            <a class="flex items-center mt-5" href="<?= base_url() ?>profil/ubah-password/1"> <i data-lucide="lock" class="w-4 h-4 mr-2"></i> Ubah Password </a>
                         </div>
                     </div>
                     <div class="intro-y box p-5 bg-primary text-white mt-5">
@@ -144,7 +144,7 @@
                           </div>
                           <hr>
                           <div class="grid grid-cols-12 gap-6 p-5">
-                            <div class="col-span-12 lg:col-span-4">
+                            <div class="col-span-12 lg:col-span-6">
                               <label class="form-label">Layer PPMP</label>
                               <div class="flex flex-col sm:flex-row mb-2">
                                 <div class="form-check mr-2">
@@ -156,6 +156,8 @@
                                   <label class="form-check-label" for="">Tidak</label>
                                 </div>
                               </div>
+                            </div>
+                            <div class="col-span-12 lg:col-span-6">
                               <label class="form-label">Layer PPIP</label>
                               <div class="flex flex-col sm:flex-row mb-2">
                                 <div class="form-check mr-2">
@@ -167,19 +169,24 @@
                                   <label class="form-check-label" for="">Tidak</label>
                                 </div>
                               </div>
-                              <label class="form-label">Layer Personal</label>
-                              <div class="flex flex-col sm:flex-row mb-2">
-                                <div class="form-check mr-2">
-                                  <input id="" class="form-check-input" type="radio" name="" value="Ya">
-                                  <label class="form-check-label" for="">Ya</label>
-                                </div>
-                                <div class="form-check mr-2 mt-2 sm:mt-0">
-                                  <input id="" class="form-check-input" type="radio" name="" value="Ya">
-                                  <label class="form-check-label" for="">Tidak</label>
+                            </div>
+                          </div>
+                          <hr>
+                          <div class="grid grid-cols-12 gap-6 p-5">
+                            <div class="col-span-12">
+                              <div class="mb-2">
+                                <label class="form-label">Layer Personal</label>
+                                <div class="flex flex-col sm:flex-row mb-2">
+                                  <div class="form-check mr-2">
+                                    <input id="" class="form-check-input" type="radio" name="" value="Ya">
+                                    <label class="form-check-label" for="">Ya</label>
+                                  </div>
+                                  <div class="form-check mr-2 mt-2 sm:mt-0">
+                                    <input id="" class="form-check-input" type="radio" name="" value="Ya">
+                                    <label class="form-check-label" for="">Tidak</label>
+                                  </div>
                                 </div>
                               </div>
-                            </div>
-                            <div class="col-span-12 lg:col-span-8">
                               <div class="mb-2">
                                   <label for="" class="form-label">Apakah sudah terdapat investasi yang disiapkan untuk pensiun ?</label>
                                   <div class="flex flex-col sm:flex-row">
@@ -236,6 +243,10 @@
                               <div class="mb-2">
                                   <label for="" class="form-label">Penambahan Saldo Tentative - Personal Properti</label>
                                   <input id="" type="text" class="form-control" placeholder="">
+                              </div>
+                              <br>
+                              <div class="mb-2 text-right">
+                                <button type="submit" class="btn btn-success">Update & Simpan</button>
                               </div>
                             </div>
                           </div>

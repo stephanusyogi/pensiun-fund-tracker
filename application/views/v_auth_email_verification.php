@@ -5,8 +5,8 @@
         <meta charset="utf-8">
         <link href="<?= base_url() ?>assets/images/logoBI_2.png" rel="shortcut icon">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="keywords" content="Bank Indonesia, Pensiun Fund Tracker">
-        <title>Pensiun Fund Tracker</title>
+        <meta name="keywords" content="Bank Indonesia, Pension Fund Tracker">
+        <title>Pension Fund Tracker</title>
         <!-- BEGIN: CSS Assets-->
         <link rel="stylesheet" href="<?= base_url() ?>assets/template/dist/css/app.css" />
         <!-- END: CSS Assets-->
@@ -52,7 +52,7 @@
                           <img alt="" class="-intro-x w-3/4 mx-auto" src="<?= base_url() ?>assets/images/sign_ilustration.png">
                         </div>
                         <div class="-intro-x text-white text-center font-medium text-4xl leading-tight mt-5">
-                          Pensiun Fund Tracker
+                          Pension Fund Tracker
                         </div>
                     </div>
                 </div>
@@ -61,7 +61,7 @@
                 <div class="h-screen xl:h-auto flex py-5 xl:py-0 my-10 xl:my-0">
                     <div class="my-auto mx-auto xl:ml-20 bg-white dark:bg-darkmode-600 xl:bg-transparent px-5 sm:px-8 py-8 xl:p-0 rounded-md shadow-md xl:shadow-none w-full sm:w-3/4 lg:w-2/4 xl:w-auto">
                         <img alt="" class="intro-x w-56 mb-2" src="<?= base_url() ?>assets/images/logoBI.png">
-                        <div class="intro-x mt-2 text-slate-400 xl:hidden text-center">Pensiun Fund Tracker</div>
+                        <div class="intro-x mt-2 text-slate-400 xl:hidden text-center">Pension Fund Tracker</div>
                         <form action="<?= base_url() ?>" method="post">
                           <div class="intro-x mt-5 xl:mt-8 text-center xl:text-left">
                               <button type="submit" class="btn btn-primary py-3 px-4 align-top">Send Email Verification Link</button>

@@ -5,8 +5,8 @@
         <meta charset="utf-8">
         <link href="<?= base_url() ?>assets/images/logoBI_2.png" rel="shortcut icon">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="keywords" content="Bank Indonesia, Pensiun Fund Tracker">
-        <title>Pensiun Fund Tracker</title>
+        <meta name="keywords" content="Bank Indonesia, Pension Fund Tracker">
+        <title>Pension Fund Tracker</title>
         <!-- BEGIN: CSS Assets-->
         <link rel="stylesheet" href="<?= base_url() ?>assets/template/dist/css/app.css" />
         <!-- END: CSS Assets-->
@@ -76,7 +76,7 @@
                 <!-- BEGIN: Logo -->
                 <a href="<?= site_url() ?>" class="-intro-x hidden md:flex">
                     <img alt="" class="w-6" src="<?= base_url() ?>assets/images/logoBI_2.png">
-                    <span class="text-white text-lg ml-3"> Pensiun Fund Tracker </span> 
+                    <span class="text-white text-lg ml-3"> Pension Fund Tracker </span> 
                 </a>
                 <!-- END: Logo -->
                 <!-- BEGIN: Breadcrumb -->

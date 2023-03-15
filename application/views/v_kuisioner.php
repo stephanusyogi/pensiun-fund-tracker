@@ -2,104 +2,42 @@
 <div class="wrapper wrapper--top-nav">
     <div class="wrapper-box">
       <div class="content">
-        <div class="grid grid-cols-12 gap-2 mt-5">
-          <div class="-intro-x col-span-4 border-slate-300 mb-2">
-              <div class="flex items-center h-10">
-                  <h2 class="text-lg font-semibold">
-                      Gaji
-                  </h2>
-              </div>
-              <div class="grid grid-cols-12 mt-5">
-                  <div class="col-span-12">
-                      <div class="report-box zoom-in">
-                          <div class="box p-5">
-                              <div class="text-xl font-medium leading-8">100</div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-          <div class="-intro-x col-span-4 border-slate-300 mb-2">
-              <div class="flex items-center h-10">
-                  <h2 class="text-lg font-semibold">
-                      Pengasilan Setelah Pensiun
-                  </h2>
-              </div>
-              <div class="grid grid-cols-12 mt-5">
-                  <div class="col-span-12">
-                      <div class="report-box zoom-in">
-                          <div class="box p-5">
-                              <div class="text-xl font-medium leading-8">45</div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-          <div class="-intro-x col-span-4 border-slate-300 mb-2">
-              <div class="flex items-center h-10">
-                  <h2 class="text-lg font-semibold">
-                      Target Replacement Ratio
-                  </h2>
-              </div>
-              <div class="grid grid-cols-12 mt-5">
-                  <div class="col-span-12">
-                      <div class="report-box zoom-in">
-                          <div class="box p-5">
-                              <div class="text-xl font-medium leading-8">45%</div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-          <div class="-intro-x col-span-4 border-slate-300 mb-2">
-              <div class="flex items-center h-10">
-                  <h2 class="text-lg font-semibold">
-                      Total Pengeluaran
-                  </h2>
-              </div>
-              <div class="grid grid-cols-12 gap-2 mt-5">
-                  <div class="col-span-12 sm:col-span-6">
-                      <div class="report-box zoom-in">
-                          <div class="box p-5">
-                              <div class="text-xl font-medium leading-8">100</div>
-                              <div class="text-base text-slate-500 mt-1">Rencana Saat Bekerja</div>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="col-span-12 sm:col-span-6">
-                      <div class="report-box zoom-in">
-                          <div class="box p-5">
-                              <div class="text-xl font-medium leading-8">45</div>
-                              <div class="text-base text-slate-500 mt-1">Rencana Saat Pensiun</div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-          <div class="-intro-x col-span-4 border-slate-300 mb-2">
-              <div class="flex items-center h-10">
-                  <h2 class="text-lg font-semibold">
-                      Free Cashflow
-                  </h2>
-              </div>
-              <div class="grid grid-cols-12 mt-5">
-                  <div class="col-span-12">
-                      <div class="report-box zoom-in">
-                          <div class="box p-5">
-                              <div class="text-xl font-medium leading-8">0</div>
-                              <div class="text-base text-slate-500 mt-1">Rencana Saat Bekerja</div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-        </div>
-        <div class="mt-5 p-5 border">
-          <p>Keterangan:</p>
-          <p><strong>Gaji</strong> bukan merupakan Take Home Pay. Jumlah sebagaimana pada slip gaji.</p>
-          <p><strong>Total Pengeluaran</strong> dapat melebihi dari gaji dengan mempertimbangkan Take Home Pay ≥ Gaji.</p>
-          <p><strong>Penghasilan Setelah Pensiun</strong> yang akan diterima secara bulanan.</p>
-          <p><strong>Target Replacement Ratio</strong> adjusted terhadap gaji.</p>
+        <div class="-intro-x overflow-x-auto mt-5 p-5">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th class="whitespace-nowrap">#</th>
+                        <th class="whitespace-nowrap">Nilai</th>
+                    </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Gaji</td>
+                    <td>100</td>
+                  </tr>
+                  <tr>
+                    <td>Penghasilan Setelah Pensiun</td>
+                    <td>45</td>
+                  </tr>
+                  <tr>
+                    <td>Target Replacement Ratio</td>
+                    <td>45</td>
+                  </tr>
+                  <tr>
+                    <td>Total Pengeluaran</td>
+                    <td>100</td>
+                  </tr>
+                  <tr>
+                    <td colspan="2">
+                      <p>Keterangan:</p>
+                      <p><strong>Gaji</strong> bukan merupakan Take Home Pay. Jumlah sebagaimana pada slip gaji.</p>
+                      <p><strong>Total Pengeluaran</strong> dapat melebihi dari gaji dengan mempertimbangkan Take Home Pay ≥ Gaji.</p>
+                      <p><strong>Penghasilan Setelah Pensiun</strong> yang akan diterima secara bulanan.</p>
+                      <p><strong>Target Replacement Ratio</strong> adjusted terhadap gaji.</p>
+                    </td>
+                  </tr>
+                </tbody>
+            </table>
         </div>
         <div class="intro-y mt-10 py-5 flex items-center justify-between h-10">
             <h2 class="text-xl font-semibold">
@@ -298,6 +236,35 @@
               </div>
             </div>
           </div>
+          <div class="-intro-x p-5 col-span-12 lg:col-span-4 border">
+            <p class="text-lg font-medium mb-2 text-center">Total Pengeluaran</p>
+            <div class="grid grid-cols-4 mb-2">
+              <div class="col-span-2 flex items-center">
+                <label for="" >Rencana Saat Bekerja:</label>
+              </div>
+              <div class="col-span-2">
+                <input id="" type="number" class="form-control "  value="100" readonly>
+              </div>
+            </div>
+            <div class="grid grid-cols-4 mb-2">
+              <div class="col-span-2 flex items-center">
+                <label for="" >Rencana Saat Pensiun:</label>
+              </div>
+              <div class="col-span-2">
+                <input id="" type="number" class="form-control "  value="45" readonly>
+              </div>
+            </div>
+          </div>
+          <div class="-intro-x p-5 col-span-12 lg:col-span-4 border">
+            <p class="text-lg font-medium mb-2 text-center">Free Cashflow</p>
+            <div class="grid grid-cols-4 mb-2">
+              <div class="col-span-2 flex items-center">
+                <label for="" >Rencana Saat Bekerja:</label>
+              </div>
+              <div class="col-span-2">
+                <input id="" type="number" class="form-control "  value="0" readonly>
+              </div>
+            </div>
         </div>
       </div>
     </div>
