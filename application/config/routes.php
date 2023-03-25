@@ -58,6 +58,7 @@ $route['login-verification'] = 'auth/login_verication';
 $route['register'] = 'auth/register';
 $route['register-verification'] = 'auth/register_verification';
 $route['email-verification'] = 'auth/email_verification';
+$route['send-email-verification'] = 'auth/send_email_verification';
 $route['forgot-password'] = 'auth/forgot_password';
 $route['change-password'] = 'auth/change_password';
 $route['logout'] = 'auth/logout';
@@ -72,3 +73,4 @@ $route['profil/setting-treatment-pembayaran-setelah-pensiun/(:num)'] = 'profil/s
 $route['profil/ubah-password/(:num)'] = 'profil/ubah_password/$1';
 
 $route['kuisioner'] = 'kuisioner';
+$route['input-kuisioner'] = 'kuisioner/add';

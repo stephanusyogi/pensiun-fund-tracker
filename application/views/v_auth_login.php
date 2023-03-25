@@ -62,10 +62,10 @@
                     <div class="my-auto mx-auto xl:ml-20 bg-white dark:bg-darkmode-600 xl:bg-transparent px-5 sm:px-8 py-8 xl:p-0 rounded-md shadow-md xl:shadow-none w-full sm:w-3/4 lg:w-2/4 xl:w-auto">
                         <img alt="" class="intro-x w-56 mb-2" src="<?= base_url() ?>assets/images/logoBI.png">
                         <div class="intro-x mt-2 text-slate-400 xl:hidden text-center">Pension Fund Tracker</div>
-                        <form action="<?= base_url() ?>" method="post">
+                        <form action="<?= base_url() ?>login-verification" method="post">
                           <div class="intro-x mt-8">
-                              <input type="text" class="intro-x login__input form-control py-3 px-4 block" placeholder="Email">
-                              <input type="password" class="intro-x login__input form-control py-3 px-4 block mt-4" placeholder="Password">
+                              <input type="text" name="email" class="intro-x login__input form-control py-3 px-4 block" placeholder="Email">
+                              <input type="password" name="password" class="intro-x login__input form-control py-3 px-4 block mt-4" placeholder="Password">
                           </div>
                           <div class="intro-x flex text-slate-600 dark:text-slate-500 text-xs sm:text-sm mt-4">
                               <a href="<?= base_url() ?>forgot-password">Forgot Password?</a> 
@@ -85,5 +85,10 @@
         <!-- BEGIN: JS Assets-->
         <script src="<?= base_url() ?>assets/template/dist/js/app.js"></script>
         <!-- END: JS Assets-->
+
+        <!-- Toast -->
+        <script src="<?= base_url('assets/plugins'); ?>/toastr/toastr.min.js"></script>  
+        <!-- SweetAlert2 -->
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     </body>
 </html>

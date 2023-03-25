@@ -18,6 +18,12 @@
         <!-- jQuery -->
         <script src="<?= base_url("assets/plugins/") ?>/jquery/jquery.min.js"></script>
     </head>
+    <style>
+      a.disabled {
+          pointer-events: none;
+          color: #ccc;
+      }
+    </style>
     <!-- Alert Error -->
     <?php
       $error = $this->session->flashdata('error');
@@ -36,6 +42,28 @@
               Toast.fire({
                 icon: 'error',
                 title: '&nbsp;<?php echo $error ?>'
+              })
+            });
+        </script>
+      <?php }
+    ?>
+    <?php
+      $success = $this->session->flashdata('success');
+      if ($success) {
+      ?>
+        <script type="text/javascript">
+            $(function() {
+              const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                showCloseButton: true,
+                timer: 5000
+              });
+
+              Toast.fire({
+                icon: 'success',
+                title: '&nbsp;<?php echo $success ?>'
               })
             });
         </script>
@@ -62,19 +90,69 @@
                     <div class="my-auto mx-auto xl:ml-20 bg-white dark:bg-darkmode-600 xl:bg-transparent px-5 sm:px-8 py-8 xl:p-0 rounded-md shadow-md xl:shadow-none w-full sm:w-3/4 lg:w-2/4 xl:w-auto">
                         <img alt="" class="intro-x w-56 mb-2" src="<?= base_url() ?>assets/images/logoBI.png">
                         <div class="intro-x mt-2 text-slate-400 xl:hidden text-center">Pension Fund Tracker</div>
-                        <form action="<?= base_url() ?>" method="post">
-                          <div class="intro-x mt-5 xl:mt-8 text-center xl:text-left">
-                              <button type="submit" class="btn btn-primary py-3 px-4 align-top">Send Email Verification Link</button>
+                          <p class="-intro-x text-md font-base">Kami telah mengirim pesan verifikasi melalui email anda. Silahkan periksa kotak masuk/spam.</p>
+                          <div class="-intro-x mt-4 text-center xl:text-left">
+                              <a href="<?= base_url() ?>send-email-verification" id="btn-email" class="disabled btn btn-primary py-3 px-4 align-top">Send Email Verification Link</a>
+                              <p class="mt-2 text-md font-base">Kirim kembali pesan verifikasi dalam <span id="countdown"></span></p>
                           </div>
-                        </form>
+                          <script>
+                            let countDownTime = 120;
+
+                            if (localStorage.getItem("countDownTime")) {
+                              countDownTime = parseInt(localStorage.getItem("countDownTime"));
+
+                              startCountdown();
+                            } else {
+                              countDownTime = 120;
+                              startCountdown();
+                            }
+                            function startCountdown() {
+                              let countdown = setInterval(function() {
+                                countDownTime--;
+
+                                document.getElementById("countdown").innerHTML = countDownTime + " detik";
+                                localStorage.setItem("countDownTime", countDownTime);
+
+                                if (countDownTime <= 0) {
+                                  clearInterval(countdown);
+                                  document.getElementById("btn-email").classList.remove('disabled');
+                                  localStorage.removeItem("countDownTime");
+                                }
+                              }, 1000);
+                            }
+                          </script>
                     </div>
                 </div>
                 <!-- END: Login Form -->
             </div>
         </div>
-        
+        <script>
+          $("#btn-email").on("click", function (e) {
+            e.preventDefault();
+            const href = $(this).attr("href");
+
+            Swal.fire({
+              title: "Kirim Ulang Pesan Verifikasi",
+              text: "Setelah menekan tombol kirim, periksa pada kotak masuk atau/spam anda.",
+              icon: "warning",
+              showCancelButton: true,
+              confirmButtonColor: "#3085d6",
+              cancelButtonColor: "#d33",
+              confirmButtonText: "Kirim",
+              cancelButtonText: "Batalkan",
+            }).then((result) => {
+              if (result.isConfirmed) {  
+                document.location.href = href;
+              }
+            });
+          });
+        </script>
         <!-- BEGIN: JS Assets-->
         <script src="<?= base_url() ?>assets/template/dist/js/app.js"></script>
         <!-- END: JS Assets-->
+        <!-- Toast -->
+        <script src="<?= base_url('assets/plugins'); ?>/toastr/toastr.min.js"></script>  
+        <!-- SweetAlert2 -->
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     </body>
 </html>
