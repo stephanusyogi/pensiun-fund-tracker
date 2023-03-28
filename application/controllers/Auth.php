@@ -60,9 +60,11 @@ class Auth extends MY_controller {
 		);
 
 		$response = $this->send_request_with_data_untoken("register", "POST", $data);
+		
+
 
 		// Send Email Verification
-		$this->send_request("email/verify", $response["access_token"], "GET");
+		$res = $this->send_request("email/verify", $response["access_token"], "POST");
 
 		$nama = explode(" ", $response['data']['nama'])[0];
 		$this->session->set_userdata('pension_fund_tracker_data', $response["data"]);
@@ -90,9 +92,11 @@ class Auth extends MY_controller {
 			
 			// Check Email Verification
 			$check = $this->send_request("email/checkverified", $token, "GET");
+			
+
 			if (!$check["status"]) {
 				if ($email_verify_url) {
-					$res= $this->send_request_email_verify($email_verify_url, $token, "GET");
+					$res = $this->send_request_email_verify($email_verify_url, $token, "GET");
 					$this->session->set_flashdata('success', "Email berhasil diverifikasi!");
 					redirect(base_url());
 				} else {
@@ -106,7 +110,7 @@ class Auth extends MY_controller {
 
 	public function send_email_verification(){
 		$token = $this->session->userdata('pension_fund_tracker_token');
-		$res = $this->send_request("email/verify", $token, "GET");
+		$res = $this->send_request("email/verify", $token, "POST");
 
 		$this->session->set_flashdata('success', "Pesan verifikasi berhasil dikirim!");
 		redirect(base_url()."email-verification");

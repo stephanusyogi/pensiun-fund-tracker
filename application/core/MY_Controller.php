@@ -86,9 +86,10 @@ class MY_controller extends  CI_controller
   }
   
   function send_request_email_verify($url, $token, $method){
+    
     $curl = curl_init();
     curl_setopt_array($curl, array(
-      CURLOPT_URL => $this->api_base_url . $url,
+      CURLOPT_URL => $url,
       CURLOPT_RETURNTRANSFER => true,
       CURLOPT_ENCODING => '',
       CURLOPT_MAXREDIRS => 10,
@@ -99,8 +100,14 @@ class MY_controller extends  CI_controller
       CURLOPT_HTTPHEADER => array(
         'Accept: application/json',
         'Authorization: Bearer '.$token,
-        'Cookie: pension_fund_tracker_session=BdkVSdHCqZgXgu3uwseFaKyL6c5odtuj1QQRz2ZB'
+        'Cookie: pension_fund_tracker_session=zJdpwibs9SQnore95MiCmHxnwmF74I1MQgtXQy5t'
       ),
     ));
+
+    $response = curl_exec($curl);
+    curl_close($curl);
+
+		$res = json_decode($response, true);
+		return $res;
   }
 }
