@@ -147,6 +147,7 @@
               cancelButtonText: "Batalkan",
             }).then((result) => {
               if (result.isConfirmed) {  
+                localStorage.removeItem("countDownTime");
                 document.location.href = href;
               }
             });
