@@ -96,21 +96,26 @@
                               <p class="mt-2 text-md font-base">Kirim kembali pesan verifikasi dalam <span id="countdown"></span></p>
                           </div>
                           <script>
-                            let countDownTime = 120;
+                            let countDownTime = 600;
 
                             if (localStorage.getItem("countDownTime")) {
                               countDownTime = parseInt(localStorage.getItem("countDownTime"));
 
                               startCountdown();
                             } else {
-                              countDownTime = 120;
+                              countDownTime = 600;
                               startCountdown();
                             }
                             function startCountdown() {
                               let countdown = setInterval(function() {
                                 countDownTime--;
 
-                                document.getElementById("countdown").innerHTML = countDownTime + " detik";
+                                let minutes = Math.floor(countDownTime / 60);
+                                let seconds = countDownTime % 60;
+
+                                let timeString = `${minutes} menit ${seconds} detik`;
+
+                                document.getElementById("countdown").innerHTML = timeString;
                                 localStorage.setItem("countDownTime", countDownTime);
 
                                 if (countDownTime <= 0) {
