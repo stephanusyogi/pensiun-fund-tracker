@@ -75,8 +75,7 @@
             <div class="h-full flex items-center">
                 <!-- BEGIN: Logo -->
                 <a href="<?= site_url() ?>" class="-intro-x hidden md:flex">
-                    <img alt="" class="w-6" src="<?= base_url() ?>assets/images/logoBI_2.png">
-                    <span class="text-white text-lg ml-3"> Pension Fund Tracker </span> 
+                    <img alt="" class="w-32" src="<?= base_url() ?>assets/images/logoBI_2.png">
                 </a>
                 <!-- END: Logo -->
                 <!-- BEGIN: Breadcrumb -->
