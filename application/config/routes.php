@@ -68,7 +68,6 @@ $route['profil/update-tracking-pengguna/(:num)'] = 'profil/update_tracking_pengg
 $route['profil/setting-portofolio-ppip/(:num)'] = 'profil/setting_portofolio_ppip/$1';
 $route['profil/setting-nilai-asumsi/(:num)'] = 'profil/setting_nilai_asumsi/$1';
 $route['profil/setting-portofolio-personal-pasar-keuangan/(:num)'] = 'profil/setting_portofolio_personal_pasar_keuangan/$1';
-$route['profil/setting-komposisi-investasi-lifeycle-fund/(:num)'] = 'profil/setting_komposisi_investasi_lifecycle_fund/$1';
 $route['profil/setting-treatment-pembayaran-setelah-pensiun/(:num)'] = 'profil/setting_treatment_pembayaran_setelah_pensiun/$1';
 $route['profil/ubah-password/(:num)'] = 'profil/ubah_password/$1';
 

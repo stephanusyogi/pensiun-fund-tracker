@@ -91,9 +91,14 @@
                         <img alt="" class="intro-x w-56 mb-2" src="<?= base_url() ?>assets/images/logoBI.png">
                         <div class="intro-x mt-2 text-slate-400 xl:hidden text-center">Pension Fund Tracker</div>
                           <p class="-intro-x text-md font-base">Kami telah mengirim pesan verifikasi melalui email anda. Silahkan periksa kotak masuk/spam.</p>
-                          <div class="-intro-x mt-4 text-center xl:text-left">
+                          <div class="-intro-x mt-4 flex items-center justify-between">
+                            <div>
                               <a href="<?= base_url() ?>send-email-verification" id="btn-email" class="disabled btn btn-primary py-3 px-4 align-top">Send Email Verification Link</a>
                               <p class="mt-2 text-md font-base">Kirim kembali pesan verifikasi dalam <span id="countdown"></span></p>
+                            </div>
+                            <div>
+                              <a href="<?= base_url() ?>logout" class="btn btn-danger py-3 px-4 align-top">Log Out</a>
+                            </div>
                           </div>
                           <script>
                             let countDownTime = 600;

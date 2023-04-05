@@ -18,6 +18,7 @@ class Kuisioner extends MY_controller {
 
 		$answer = $this->send_request("user-answer-question/{$id_user}", $token, "GET");
 		$pertanyaan = $this->send_request("kuisioner", $token, "GET");
+		
 		$data['title'] = "Kuisioner";
     $data['menuLink'] = "kuisioner";
 		$data['pertanyaan'] = $pertanyaan;

@@ -17,7 +17,7 @@
                                 <img alt="" class="rounded-full" src="<?= base_url() ?>assets/images/user.png">
                             </div>
                             <div class="ml-4 mr-auto">
-                                <div class="font-medium text-base">Stephanus Yogi</div>
+                                <div class="font-medium text-base"><?= implode(' ', array_slice(explode(' ', $this->session->userdata('pension_fund_tracker_data')['nama']), 0, 2)) ?></div>
                                 <div class="text-slate-500">Pengguna</div>
                             </div>
                         </div>
@@ -29,7 +29,6 @@
                             <a class="flex items-center text-primary font-medium" href="<?= site_url() ?>profil/setting_nilai_asumsi/1"> <i data-lucide="settings" class="w-4 h-4 mr-2"></i> Setting Nilai Asumsi </a>
                             <a class="flex items-center mt-5" href="<?= base_url() ?>profil/setting-portofolio-ppip/1"> <i data-lucide="settings" class="w-4 h-4 mr-2"></i> Setting Portofolio PPIP </a>
                             <a class="flex items-center mt-5" href="<?= base_url() ?>profil/setting-portofolio-personal-pasar-keuangan/1"> <i data-lucide="settings" class="w-4 h-4 mr-2"></i> Setting Portofolio Personal Pasar Keuangan </a>
-                            <a class="flex items-center mt-5" href="<?= base_url() ?>profil/setting-komposisi-investasi-lifeycle-fund/1"> <i data-lucide="settings" class="w-4 h-4 mr-2"></i> Setting Komposisi Investasi LifeCycle Fund </a>
                             <a class="flex items-center mt-5" href="<?= base_url() ?>profil/setting-treatment-pembayaran-setelah-pensiun/1"> <i data-lucide="settings" class="w-4 h-4 mr-2"></i> Setting Treatment Pembayaran Setelah Pensiun </a>
                         </div>
                         <div class="p-5 border-t border-slate-200/60 dark:border-darkmode-400">
@@ -49,59 +48,41 @@
                 <!-- END: Profile Menu -->
                 <div class="col-span-12 lg:col-span-8 2xl:col-span-9">
                     <div class="grid grid-cols-12 gap-6">
-                      <div class="col-span-12 border-b">
-                        <label for="" class="form-label">Pilih Setting Nilai Asumsi</label>
-                        <select class="form-select form-select-lg mt-2" aria-label=".form-select-lg example">
-                            <option>Konvensional Reguler</option>
-                            <option>Konvensional Plus</option>
-                            <option>Syariah Reguler</option>
-                            <option>Syariah Plus</option>
-                        </select>
-                        <br>
-                        <div class="mt-2 mb-2 text-right">
-                          <button type="submit" class="btn btn-success">Update & Simpan</button>
-                        </div>
-                      </div>
                       <div class="col-span-12">
                         <div class="overflow-x-auto">
                             <table class="table table-bordered">
                                 <thead>
                                     <tr>
-                                        <th class="whitespace-nowrap">Informasi Asumsi Terpilih</th>
+                                        <th class="whitespace-nowrap">Informasi Nilai Asumsi</th>
                                         <th class="whitespace-nowrap">Nilai</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>Kenaikan Gaji per Tahun</td>
-                                        <td>7.5%</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Iuran PPIP</td>
-                                        <td>20%</td>
-                                    </tr>
-                                    <tr>
                                         <td>Tambahan Iuran Mandiri PPIP</td>
-                                        <td>0%</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Dasar Pembayaran Iuran Personal</td>
-                                        <td>Persentase Gaji</td>
+                                        <td>
+                                            <input id="" type="text" class="form-control" placeholder="">
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td>Jumlah Pembayaran Iuran Personal</td>
-                                        <td>8%</td>
+                                        <td>
+                                            <input id="" type="text" class="form-control" placeholder="">  
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td>Kenaikan Iuran Personal</td>
-                                        <td>0%</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Inflasi Jangka Panjang</td>
-                                        <td>4%</td>
+                                        <td>
+                                            <input id="" type="text" class="form-control" placeholder="">
+                                        </td>
                                     </tr>
                                 </tbody>
                             </table>
+                        </div>
+                      </div>
+                      <div class="col-span-12">
+                        <div class="mt-2 mb-2 text-right">
+                          <button type="submit" class="btn btn-success">Update & Simpan</button>
                         </div>
                       </div>
                     </div>

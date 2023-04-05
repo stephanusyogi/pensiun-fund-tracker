@@ -2,6 +2,15 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Profil extends MY_controller {
+	function __construct(){
+		parent::__construct();		
+    $this->session_status = $this->session->userdata('pension_fund_tracker_isLoggedIn');
+		
+		if (!$this->session_status) {
+			$this->session->set_flashdata('error', 'Your Session Has Expired!');
+			return redirect(base_url() . 'login');
+		}	
+	}
 	public function index($id_user)
 	{
 		$data['title'] = "Profil";
@@ -45,15 +54,6 @@ class Profil extends MY_controller {
 
 		$this->load->view('includes/header', $data);
 		$this->load->view('v_profil_setting_portofolio_personal_pasar_keuangan', $data);
-		$this->load->view('includes/footer', $data);
-	}
-
-	public function setting_komposisi_investasi_lifecycle_fund($id_user){
-		$data['title'] = "Profil - Setting Komposisi Investasi Lifecycle Fund";
-    $data['menuLink'] = "profil/".$id_user;
-
-		$this->load->view('includes/header', $data);
-		$this->load->view('v_profil_setting_komposisi_investasi_lifecycle_fund', $data);
 		$this->load->view('includes/footer', $data);
 	}
 

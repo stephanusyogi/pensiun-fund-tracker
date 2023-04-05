@@ -17,7 +17,7 @@
                                 <img alt="" class="rounded-full" src="<?= base_url() ?>assets/images/user.png">
                             </div>
                             <div class="ml-4 mr-auto">
-                                <div class="font-medium text-base">Stephanus Yogi</div>
+                                <div class="font-medium text-base"><?= implode(' ', array_slice(explode(' ', $this->session->userdata('pension_fund_tracker_data')['nama']), 0, 2)) ?></div>
                                 <div class="text-slate-500">Pengguna</div>
                             </div>
                         </div>
@@ -29,7 +29,6 @@
                             <a class="flex items-center" href="<?= site_url() ?>profil/setting_nilai_asumsi/1"> <i data-lucide="settings" class="w-4 h-4 mr-2"></i> Setting Nilai Asumsi </a>
                             <a class="flex items-center mt-5" href="<?= base_url() ?>profil/setting-portofolio-ppip/1"> <i data-lucide="settings" class="w-4 h-4 mr-2"></i> Setting Portofolio PPIP </a>
                             <a class="flex items-center mt-5" href="<?= base_url() ?>profil/setting-portofolio-personal-pasar-keuangan/1"> <i data-lucide="settings" class="w-4 h-4 mr-2"></i> Setting Portofolio Personal Pasar Keuangan </a>
-                            <a class="flex items-center mt-5" href="<?= base_url() ?>profil/setting-komposisi-investasi-lifeycle-fund/1"> <i data-lucide="settings" class="w-4 h-4 mr-2"></i> Setting Komposisi Investasi LifeCycle Fund </a>
                             <a class="flex items-center mt-5 text-primary font-medium" href="<?= base_url() ?>profil/setting-treatment-pembayaran-setelah-pensiun/1"> <i data-lucide="settings" class="w-4 h-4 mr-2"></i> Setting Treatment Pembayaran Setelah Pensiun </a>
                         </div>
                         <div class="p-5 border-t border-slate-200/60 dark:border-darkmode-400">
@@ -58,14 +57,14 @@
                           <label for="" class="form-label">PPIP</label>
                           <select class="form-select  " aria-label=".form-select-lg example">
                               <option>Beli Anuitas</option>
-                              <option>Bunga Deposito</option>
+                              <option>Kupon SBN/SBSN</option>
                           </select>
                       </div>
                       <div class="col-span-12 lg:col-span-6 border p-5">
                           <label for="" class="form-label">Personal - Pasar Keuangan</label>
                           <select class="form-select  mb-2" aria-label=".form-select-lg example">
                               <option>Beli Anuitas</option>
-                              <option>Bunga Deposito</option>
+                              <option>Kupon SBN/SBSN</option>
                           </select>
                           <br>
                           <label for="" class="form-label">Harga Anuitas</label>
@@ -76,11 +75,11 @@
                           <input id="" type="text" class="form-control" placeholder="" value="Sewa" readonly>
                       </div>
                       <div class="col-span-12 lg:col-span-6 border p-5">
-                          <p>Jika Pembayaran Menggunakan Bunga Deposito</p>
-                          <label for="" class="form-label">Bunga Deposito</label>
+                          <p class="mb-2">Jika Pembayaran Menggunakan Kupon SBN/SBSN</p>
+                          <label for="" class="form-label">Bunga</label>
                           <input id="" type="text" class="form-control" placeholder="" value="40%">
                           <br>
-                          <label for="" class="form-label">Pajak Deposito</label>
+                          <label for="" class="form-label">Pajak</label>
                           <input id="" type="text" class="form-control" placeholder="" value="20%">
                       </div>
                     </div>

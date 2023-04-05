@@ -11,6 +11,7 @@ class MY_controller extends  CI_controller
 	}
 
   function send_request($url, $token, $method){
+    
     $curl = curl_init();
     curl_setopt_array($curl, array(
       CURLOPT_URL => $this->api_base_url . $url,
@@ -31,6 +32,7 @@ class MY_controller extends  CI_controller
     curl_close($curl);
 
 		$res = json_decode($response, true);
+    
 		return $res;
   }
 

@@ -60,17 +60,15 @@ class Auth extends MY_controller {
 		);
 
 		$response = $this->send_request_with_data_untoken("register", "POST", $data);
-		
-
-
-		// Send Email Verification
-		$res = $this->send_request("email/verify", $response["access_token"], "POST");
 
 		$nama = explode(" ", $response['data']['nama'])[0];
 		$this->session->set_userdata('pension_fund_tracker_data', $response["data"]);
 		$this->session->set_userdata('pension_fund_tracker_token', $response["access_token"]);
 		$this->session->set_userdata('pension_fund_tracker_isLoggedIn', true);
 
+		// Send Email Verification
+		$res = $this->send_request("email/verify", $response["access_token"], "POST");
+		
 		$this->session->set_flashdata('success', "Registrasi Berhasil. Selamat Datang, {$nama}!");
 		redirect(base_url()."email-verification");
 	}
@@ -87,12 +85,17 @@ class Auth extends MY_controller {
 	
 	public function email_verification()
 	{
+			$session_status = $this->session->userdata('pension_fund_tracker_isLoggedIn');
+			if (!$session_status) {
+				$this->session->set_flashdata('error', 'Your Session Has Expired!');
+				return redirect(base_url() . 'login');
+			}	
+
 			$token = $this->session->userdata('pension_fund_tracker_token');
 			$email_verify_url = $this->input->get("email_verify_url");
 			
 			// Check Email Verification
 			$check = $this->send_request("email/checkverified", $token, "GET");
-			
 
 			if (!$check["status"]) {
 				if ($email_verify_url) {
@@ -109,6 +112,12 @@ class Auth extends MY_controller {
 	}
 
 	public function send_email_verification(){
+		$session_status = $this->session->userdata('pension_fund_tracker_isLoggedIn');
+		if (!$session_status) {
+			$this->session->set_flashdata('error', 'Your Session Has Expired!');
+			return redirect(base_url() . 'login');
+		}	
+		
 		$token = $this->session->userdata('pension_fund_tracker_token');
 		$res = $this->send_request("email/verify", $token, "POST");
 
@@ -119,7 +128,7 @@ class Auth extends MY_controller {
 	public function logout()
 	{
 		$token = $this->session->userdata('pension_fund_tracker_token');
-		$this->send_request("logout", $token, "GET");
+		$res = $this->send_request("logout", $token, "GET");
 		session_destroy();
 		redirect(base_url() . 'login');
 	}

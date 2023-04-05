@@ -17,7 +17,7 @@
                                 <img alt="" class="rounded-full" src="<?= base_url() ?>assets/images/user.png">
                             </div>
                             <div class="ml-4 mr-auto">
-                                <div class="font-medium text-base">Stephanus Yogi</div>
+                                <div class="font-medium text-base"><?= implode(' ', array_slice(explode(' ', $this->session->userdata('pension_fund_tracker_data')['nama']), 0, 2)) ?></div>
                                 <div class="text-slate-500">Pengguna</div>
                             </div>
                         </div>
@@ -29,7 +29,6 @@
                             <a class="flex items-center" href="<?= site_url() ?>profil/setting_nilai_asumsi/1"> <i data-lucide="settings" class="w-4 h-4 mr-2"></i> Setting Nilai Asumsi </a>
                             <a class="flex items-center mt-5 text-primary font-medium" href="<?= base_url() ?>profil/setting-portofolio-ppip/1"> <i data-lucide="settings" class="w-4 h-4 mr-2"></i> Setting Portofolio PPIP </a>
                             <a class="flex items-center mt-5" href="<?= base_url() ?>profil/setting-portofolio-personal-pasar-keuangan/1"> <i data-lucide="settings" class="w-4 h-4 mr-2"></i> Setting Portofolio Personal Pasar Keuangan </a>
-                            <a class="flex items-center mt-5" href="<?= base_url() ?>profil/setting-komposisi-investasi-lifeycle-fund/1"> <i data-lucide="settings" class="w-4 h-4 mr-2"></i> Setting Komposisi Investasi LifeCycle Fund </a>
                             <a class="flex items-center mt-5" href="<?= base_url() ?>profil/setting-treatment-pembayaran-setelah-pensiun/1"> <i data-lucide="settings" class="w-4 h-4 mr-2"></i> Setting Treatment Pembayaran Setelah Pensiun </a>
                         </div>
                         <div class="p-5 border-t border-slate-200/60 dark:border-darkmode-400">
@@ -79,7 +78,7 @@
                                         <td>4%</td>
                                     </tr>
                                     <tr>
-                                        <td>Resiko Pasar Portofolio PPIP</td>
+                                        <td>Risiko Pasar Portofolio PPIP</td>
                                         <td>8.82%</td>
                                         <td>0.13%</td>
                                     </tr>
@@ -120,7 +119,7 @@
                                         <td>100%</td>
                                     </tr>
                                     <tr>
-                                        <td colspan="3">Asumsi Return Investasi</td>
+                                        <td colspan="3">Asumsi Risiko Investasi</td>
                                     </tr>
                                     <tr>
                                         <td style="padding-left:2rem!important;">Saham</td>

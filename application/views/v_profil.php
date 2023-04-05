@@ -17,7 +17,7 @@
                                 <img alt="" class="rounded-full" src="<?= base_url() ?>assets/images/user.png">
                             </div>
                             <div class="ml-4 mr-auto">
-                                <div class="font-medium text-base">Stephanus Yogi</div>
+                                <div class="font-medium text-base"><?= implode(' ', array_slice(explode(' ', $this->session->userdata('pension_fund_tracker_data')['nama']), 0, 2)) ?></div>
                                 <div class="text-slate-500">Pengguna</div>
                             </div>
                         </div>
@@ -29,7 +29,6 @@
                             <a class="flex items-center" href="<?= site_url() ?>profil/setting_nilai_asumsi/1"> <i data-lucide="settings" class="w-4 h-4 mr-2"></i> Setting Nilai Asumsi </a>
                             <a class="flex items-center mt-5" href="<?= base_url() ?>profil/setting-portofolio-ppip/1"> <i data-lucide="settings" class="w-4 h-4 mr-2"></i> Setting Portofolio PPIP </a>
                             <a class="flex items-center mt-5" href="<?= base_url() ?>profil/setting-portofolio-personal-pasar-keuangan/1"> <i data-lucide="settings" class="w-4 h-4 mr-2"></i> Setting Portofolio Personal Pasar Keuangan </a>
-                            <a class="flex items-center mt-5" href="<?= base_url() ?>profil/setting-komposisi-investasi-lifeycle-fund/1"> <i data-lucide="settings" class="w-4 h-4 mr-2"></i> Setting Komposisi Investasi LifeCycle Fund </a>
                             <a class="flex items-center mt-5" href="<?= base_url() ?>profil/setting-treatment-pembayaran-setelah-pensiun/1"> <i data-lucide="settings" class="w-4 h-4 mr-2"></i> Setting Treatment Pembayaran Setelah Pensiun </a>
                         </div>
                         <div class="p-5 border-t border-slate-200/60 dark:border-darkmode-400">
@@ -64,26 +63,17 @@
                                     <div class="text-slate-600 dark:text-slate-500 mt-2">
                                         Untuk menunjang keamanan pengguna dalam mengakses aplikasi ini, dimohon untuk pengguna melakukan update password secara berkala pada menu <a href="<?= base_url() ?>update-password">Ubah Password</a>.
                                     </div>
-                                    <div class="flex items-center mt-5">
-                                        <div class="px-3 py-2 text-primary bg-primary/10 dark:bg-darkmode-400 dark:text-slate-300 rounded font-medium">1 Maret 2023</div>
-                                    </div>
                                 </div>
                                 <div class="px-5">
                                     <div class="font-medium text-lg">Pelayanan Pengguna</div>
                                     <div class="text-slate-600 dark:text-slate-500 mt-2">
                                         Bagi pengguna yang memiliki pertanyaan dan gangguan dapat menghubungi nomor berikut melalui WhatsApp kami +62918239131132 untuk pelayanan selanjutnya.
                                     </div>
-                                    <div class="flex items-center mt-5">
-                                        <div class="px-3 py-2 text-primary bg-primary/10 dark:bg-darkmode-400 dark:text-slate-300 rounded font-medium">4 Maret 2023</div>
-                                    </div>
                                 </div>
                                 <div class="px-5">
                                     <div class="font-medium text-lg">Pengguna Baru</div>
                                     <div class="text-slate-600 dark:text-slate-500 mt-2">
                                         Harap mengisi semua input yang tersedia pada menu halaman <a href="<?= base_url() ?>kuisioner">Kuisioner</a> dan sub-menu pada halaman profil.
-                                    </div>
-                                    <div class="flex items-center mt-5">
-                                        <div class="px-3 py-2 text-primary bg-primary/10 dark:bg-darkmode-400 dark:text-slate-300 rounded font-medium">6 Maret 2023</div>
                                     </div>
                                 </div>
                             </div>
@@ -97,7 +87,17 @@
                             </div>
                             <div class="col-span-12 lg:col-span-4">
                                 <label for="" class="form-label">Email</label>
+                                <input id="" type="text" class="form-control" placeholder="" disabled>
+                            </div>
+                            <div class="col-span-12 lg:col-span-4">
+                                <label for="" class="form-label">NIP</label>
                                 <input id="" type="text" class="form-control" placeholder="">
+                            </div>
+                            <div class="col-span-12 lg:col-span-4">
+                                <label for="" class="form-label">Satuan Kerja</label>
+                                <select class="form-select  " aria-label=".form-select-lg example">
+                                    <option>Departemen Sumber Daya Manusia</option>
+                                </select>
                             </div>
                             <div class="col-span-12 lg:col-span-4">
                                 <label for="" class="form-label">Nomor Handphone</label>
@@ -127,6 +127,9 @@
                                 <label for="" class="form-label">Tanggal Registrasi</label>
                                 <input id="" type="text" class="form-control" placeholder="">
                             </div>
+                          </div>
+                          <hr>
+                          <div class="grid grid-cols-12 gap-6 p-5">
                             <div class="col-span-12 lg:col-span-4">
                               <label for="" class="form-label">Gaji</label>
                               <input id="" type="text" class="form-control" placeholder="">
@@ -144,110 +147,120 @@
                           </div>
                           <hr>
                           <div class="grid grid-cols-12 gap-6 p-5">
-                            <div class="col-span-12 lg:col-span-6">
-                              <label class="form-label">Layer PPMP</label>
-                              <div class="flex flex-col sm:flex-row mb-2">
-                                <div class="form-check mr-2">
-                                  <input id="" class="form-check-input" type="radio" name="" value="Ya">
-                                  <label class="form-check-label" for="">Ya</label>
-                                </div>
-                                <div class="form-check mr-2 mt-2 sm:mt-0">
-                                  <input id="" class="form-check-input" type="radio" name="" value="Ya">
-                                  <label class="form-check-label" for="">Tidak</label>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="col-span-12 lg:col-span-6">
-                              <label class="form-label">Layer PPIP</label>
-                              <div class="flex flex-col sm:flex-row mb-2">
-                                <div class="form-check mr-2">
-                                  <input id="" class="form-check-input" type="radio" name="" value="Ya">
-                                  <label class="form-check-label" for="">Ya</label>
-                                </div>
-                                <div class="form-check mr-2 mt-2 sm:mt-0">
-                                  <input id="" class="form-check-input" type="radio" name="" value="Ya">
-                                  <label class="form-check-label" for="">Tidak</label>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <hr>
-                          <div class="grid grid-cols-12 gap-6 p-5">
                             <div class="col-span-12">
                               <div class="mb-2">
                                 <label class="form-label">Layer Personal</label>
                                 <div class="flex flex-col sm:flex-row mb-2">
                                   <div class="form-check mr-2">
-                                    <input id="" class="form-check-input" type="radio" name="" value="Ya">
-                                    <label class="form-check-label" for="">Ya</label>
+                                    <label class="form-check-label" for="layer_personal_ya">
+                                    <input id="layer_personal_ya" class="form-check-input" type="radio" name="layer_personal" value="Ya" onclick="showLayerPersonalQuestions()">
+                                    Ya</label>
                                   </div>
                                   <div class="form-check mr-2 mt-2 sm:mt-0">
-                                    <input id="" class="form-check-input" type="radio" name="" value="Ya">
-                                    <label class="form-check-label" for="">Tidak</label>
+                                    <label class="form-check-label" for="layer_personal_tidak" >
+                                    <input id="layer_personal_tidak" class="form-check-input" type="radio" name="layer_personal" value="Ya" checked onclick="hideLayerPersonalQuestions()">
+                                    Tidak</label>
                                   </div>
                                 </div>
                               </div>
-                              <div class="mb-2">
-                                  <label for="" class="form-label">Apakah sudah terdapat investasi yang disiapkan untuk pensiun ?</label>
-                                  <div class="flex flex-col sm:flex-row">
-                                  <div class="form-check mr-2">
-                                    <input id="" class="form-check-input" type="radio" name="" value="Ya">
-                                    <label class="form-check-label" for="">Ya</label>
-                                  </div>
-                                  <div class="form-check mr-2 mt-2 sm:mt-0">
-                                    <input id="" class="form-check-input" type="radio" name="" value="Ya">
-                                    <label class="form-check-label" for="">Tidak</label>
+                            </div>
+                            <div id="layer_personal_questions" class="col-span-12" style="display:none">
+                              <div class="grid grid-cols-3 gap-6">
+                                <div class="mb-2">
+                                    <label for="" class="form-label">Apakah sudah terdapat investasi yang disiapkan untuk pensiun ?</label>
+                                    <div class="flex flex-col sm:flex-row">
+                                    <div class="form-check mr-2">
+                                      <input id="" class="form-check-input" type="radio" name="" value="Ya">
+                                      <label class="form-check-label" for="">Ya</label>
+                                    </div>
+                                    <div class="form-check mr-2 mt-2 sm:mt-0">
+                                      <input id="" class="form-check-input" type="radio" name="" value="Ya">
+                                      <label class="form-check-label" for="">Tidak</label>
+                                    </div>
                                   </div>
                                 </div>
-                              </div>
-                              <div class="mb-2">
-                                  <label for="" class="form-label">Jumlah Investasi Pasar Keuangan</label>
-                                  <input id="" type="text" class="form-control" placeholder="">
-                              </div>
-                              <div class="mb-2">
-                                  <label for="" class="form-label">Jumlah Investasi Properti (properti yang mendapatkan cashflow secara rutin)</label>
-                                  <input id="" type="text" class="form-control" placeholder="">
-                              </div>
-                              <div class="mb-2">
-                                  <label for="" class="form-label">Hasil neto sewa per tahun (telah dipotong biaya pengelolaan, biaya perawatan)</label>
-                                  <input id="" type="text" class="form-control" placeholder="">
-                              </div>
-                              <div class="mb-2">
-                                  <label for="" class="form-label">Rata-rata kenaikan harga properti per tahun</label>
-                                  <input id="" type="text" class="form-control" placeholder="">
-                              </div>
-                              <div class="mb-2">
-                                  <label for="" class="form-label">Rata-rata kenaikan sewa properti per tahun</label>
-                                  <input id="" type="text" class="form-control" placeholder="">
+                                <div class="mb-2">
+                                    <label for="" class="form-label">Jumlah Investasi Pasar Keuangan</label>
+                                    <input id="" type="text" class="form-control" placeholder="">
+                                </div>
+                                <div class="mb-2">
+                                    <label for="" class="form-label">Jumlah Investasi Properti (properti yang mendapatkan cashflow secara rutin)</label>
+                                    <input id="" type="text" class="form-control" placeholder="">
+                                </div>
+                                <div class="mb-2">
+                                    <label for="" class="form-label">Hasil neto sewa per tahun (telah dipotong biaya pengelolaan, biaya perawatan)</label>
+                                    <input id="" type="text" class="form-control" placeholder="">
+                                </div>
+                                <div class="mb-2">
+                                    <label for="" class="form-label">Rata-rata kenaikan harga properti per tahun</label>
+                                    <input id="" type="text" class="form-control" placeholder="">
+                                </div>
+                                <div class="mb-2">
+                                    <label for="" class="form-label">Rata-rata kenaikan sewa properti per tahun</label>
+                                    <input id="" type="text" class="form-control" placeholder="">
+                                </div>
                               </div>
                             </div>
                           </div>
+                          <script>
+                            function showLayerPersonalQuestions() {
+                              var layer_personal_questions = document.getElementById("layer_personal_questions");
+                              if (document.querySelector('input[name="layer_personal"]:checked').value === "Ya") {
+                                layer_personal_questions.style.display = "block";
+                              } else {
+                                layer_personal_questions.style.display = "none";
+                              }
+                            }
+                            function hideLayerPersonalQuestions() {
+                              var tampilan = document.getElementById("layer_personal_questions");
+                              tampilan.style.display = "none";
+                            }
+                          </script>
                           <hr>
                           <div class="grid grid-cols-12 gap-6 p-5">
                             <div class="col-span-12">
                               <label class="form-label">Rencana penambahan Saldo pada bulan ini ?</label>
                               <div class="flex flex-col sm:flex-row mb-5">
                                 <div class="form-check mr-2">
-                                  <input id="" class="form-check-input" type="radio" name="" value="Ya">
-                                  <label class="form-check-label" for="">Ya</label>
+                                  <label class="form-check-label" for="rencana_penambahan_saldo_ya">
+                                  <input id="rencana_penambahan_saldo_ya" class="form-check-input" type="radio" name="rencana_penambahan_saldo" value="Ya" onclick="showRencanaPenambahanSaldoQuestions()">
+                                  Ya</label>
                                 </div>
                                 <div class="form-check mr-2 mt-2 sm:mt-0">
-                                  <input id="" class="form-check-input" type="radio" name="" value="Ya">
-                                  <label class="form-check-label" for="">Tidak</label>
+                                  <label class="form-check-label" for="rencana_penambahan_saldo_tidak">
+                                  <input id="rencana_penambahan_saldo_tidak" class="form-check-input" type="radio" name="rencana_penambahan_saldo" value="Tidak" checked onclick="hideRencanaPenambahanSaldoQuestions()">
+                                  Tidak</label>
                                 </div>
                               </div>
-                              <div class="mb-2">
-                                  <label for="" class="form-label">Penambahan Saldo Tentative - Personal Keuangan</label>
-                                  <input id="" type="text" class="form-control" placeholder="">
+                            </div>
+                            <div id="rencana_penambahan_saldo" class="col-span-12" style="display:none">
+                              <div class="grid grid-cols-2 gap-6">
+                                <div class="mb-2">
+                                    <label for="" class="form-label">Penambahan Saldo Tentative - Personal Keuangan</label>
+                                    <input id="" type="text" class="form-control" placeholder="">
+                                </div>
+                                <div class="mb-2">
+                                    <label for="" class="form-label">Penambahan Saldo Tentative - Personal Properti</label>
+                                    <input id="" type="text" class="form-control" placeholder="">
+                                </div>
                               </div>
-                              <div class="mb-2">
-                                  <label for="" class="form-label">Penambahan Saldo Tentative - Personal Properti</label>
-                                  <input id="" type="text" class="form-control" placeholder="">
-                              </div>
-                              <br>
-                              <div class="mb-2 text-right">
-                                <button type="submit" class="btn btn-success">Update & Simpan</button>
-                              </div>
+                            </div>
+                            <script>
+                              function showRencanaPenambahanSaldoQuestions() {
+                                var layer_personal_questions = document.getElementById("rencana_penambahan_saldo");
+                                if (document.querySelector('input[name="rencana_penambahan_saldo"]:checked').value === "Ya") {
+                                  layer_personal_questions.style.display = "block";
+                                } else {
+                                  layer_personal_questions.style.display = "none";
+                                }
+                              }
+                              function hideRencanaPenambahanSaldoQuestions() {
+                                var tampilan = document.getElementById("rencana_penambahan_saldo");
+                                tampilan.style.display = "none";
+                              }
+                            </script>
+                            <div class="col-span-12 mb-2 text-right">
+                              <button type="submit" class="btn btn-success">Update & Simpan</button>
                             </div>
                           </div>
                         </div>

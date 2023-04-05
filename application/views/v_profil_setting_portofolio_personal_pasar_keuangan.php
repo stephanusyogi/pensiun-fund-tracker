@@ -17,7 +17,7 @@
                                 <img alt="" class="rounded-full" src="<?= base_url() ?>assets/images/user.png">
                             </div>
                             <div class="ml-4 mr-auto">
-                                <div class="font-medium text-base">Stephanus Yogi</div>
+                                <div class="font-medium text-base"><?= implode(' ', array_slice(explode(' ', $this->session->userdata('pension_fund_tracker_data')['nama']), 0, 2)) ?></div>
                                 <div class="text-slate-500">Pengguna</div>
                             </div>
                         </div>
@@ -29,7 +29,6 @@
                             <a class="flex items-center" href="<?= site_url() ?>profil/setting_nilai_asumsi/1"> <i data-lucide="settings" class="w-4 h-4 mr-2"></i> Setting Nilai Asumsi </a>
                             <a class="flex items-center mt-5" href="<?= base_url() ?>profil/setting-portofolio-ppip/1"> <i data-lucide="settings" class="w-4 h-4 mr-2"></i> Setting Portofolio PPIP </a>
                             <a class="flex items-center mt-5 text-primary font-medium" href="<?= base_url() ?>profil/setting-portofolio-personal-pasar-keuangan/1"> <i data-lucide="settings" class="w-4 h-4 mr-2"></i> Setting Portofolio Personal Pasar Keuangan </a>
-                            <a class="flex items-center mt-5" href="<?= base_url() ?>profil/setting-komposisi-investasi-lifeycle-fund/1"> <i data-lucide="settings" class="w-4 h-4 mr-2"></i> Setting Komposisi Investasi LifeCycle Fund </a>
                             <a class="flex items-center mt-5" href="<?= base_url() ?>profil/setting-treatment-pembayaran-setelah-pensiun/1"> <i data-lucide="settings" class="w-4 h-4 mr-2"></i> Setting Treatment Pembayaran Setelah Pensiun </a>
                         </div>
                         <div class="p-5 border-t border-slate-200/60 dark:border-darkmode-400">
@@ -68,12 +67,63 @@
                                 <thead>
                                     <tr>
                                         <th class="whitespace-nowrap">Capital Market Ecpectation</th>
-                                        <th class="whitespace-nowrap">Tranche Investasi 1 (Setelah Perhitungan)</th>
-                                        <th class="whitespace-nowrap">Tranche Investasi 2 (Setelah Perhitungan)</th>
-                                        <th class="whitespace-nowrap">Tranche Likuiditas (Setelah Perhitungan)</th>
+                                        <th class="whitespace-nowrap">Tranche 1</th>
+                                        <th class="whitespace-nowrap">Tranche 2</th>
+                                        <th class="whitespace-nowrap">Tranche 3</th>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    <tr>
+                                        <td>Return Portofolio Personal</td>
+                                        <td>8.02%</td>
+                                        <td>7.82%</td>
+                                        <td>4%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Risiko Pasar Portofolio Personal</td>
+                                        <td>13.21%</td>
+                                        <td>12.05%</td>
+                                        <td>0.13%</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="4">Komposisi Investasi</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Saham</td>
+                                        <td>50%</td>
+                                        <td>30%</td>
+                                        <td>0%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Pendapatan Tetap</td>
+                                        <td>20%</td>
+                                        <td>30%</td>
+                                        <td>0%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Deposito</td>
+                                        <td>5%</td>
+                                        <td>5%</td>
+                                        <td>50%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Rekda Dana Saham</td>
+                                        <td>20%</td>
+                                        <td>30%</td>
+                                        <td>0%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Rekda Dana Pendapatan Tetap</td>
+                                        <td>5%</td>
+                                        <td>5%</td>
+                                        <td>0%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Rekda Dana Campuran</td>
+                                        <td>0%</td>
+                                        <td>0%</td>
+                                        <td>0%</td>
+                                    </tr>
                                     <tr>
                                         <td colspan="4">Asumsi Return Investasi  - Personal pada Pasar Keuangan</td>
                                     </tr>
