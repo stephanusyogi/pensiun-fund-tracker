@@ -49,7 +49,7 @@ class Profil extends MY_controller {
 	}
 
 	public function setting_portofolio_personal_pasar_keuangan($id_user){
-		$data['title'] = "Profil - Setting Personal Pasar Kuangan";
+		$data['title'] = "Profil - Setting Personal Pasar Keuangan";
     $data['menuLink'] = "profil/".$id_user;
 
 		$this->load->view('includes/header', $data);
@@ -58,7 +58,7 @@ class Profil extends MY_controller {
 	}
 
 	public function setting_treatment_pembayaran_setelah_pensiun($id_user){
-		$data['title'] = "Profil - Setting Treatment Pembayaran Setelah";
+		$data['title'] = "Profil - Setting Treatment Pembayaran Setelah Pensiun";
     $data['menuLink'] = "profil/".$id_user;
 
 		$this->load->view('includes/header', $data);

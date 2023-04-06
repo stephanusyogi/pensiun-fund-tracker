@@ -54,34 +54,81 @@
                           <input id="" type="text" class="form-control" placeholder="" value="Dibayarkan oleh DAPENBI Secara Bulanan" readonly>
                       </div>
                       <div class="col-span-12 lg:col-span-6 border p-5">
-                          <label for="" class="form-label">PPIP</label>
-                          <select class="form-select  " aria-label=".form-select-lg example">
-                              <option>Beli Anuitas</option>
-                              <option>Kupon SBN/SBSN</option>
-                          </select>
-                      </div>
-                      <div class="col-span-12 lg:col-span-6 border p-5">
-                          <label for="" class="form-label">Personal - Pasar Keuangan</label>
-                          <select class="form-select  mb-2" aria-label=".form-select-lg example">
-                              <option>Beli Anuitas</option>
-                              <option>Kupon SBN/SBSN</option>
-                          </select>
-                          <br>
-                          <label for="" class="form-label">Harga Anuitas</label>
-                          <input id="" type="text" class="form-control" placeholder="">
-                      </div>
-                      <div class="col-span-12 lg:col-span-6 border p-5">
                           <label for="" class="form-label">Personal - Properti</label>
                           <input id="" type="text" class="form-control" placeholder="" value="Sewa" readonly>
                       </div>
                       <div class="col-span-12 lg:col-span-6 border p-5">
-                          <p class="mb-2">Jika Pembayaran Menggunakan Kupon SBN/SBSN</p>
-                          <label for="" class="form-label">Bunga</label>
-                          <input id="" type="text" class="form-control" placeholder="" value="40%">
+                          <label for="" class="form-label">PPIP</label>
+                          <select id="ppip" class="form-select mb-2" aria-label=".form-select-lg example" onchange="inputChangePPIP()">
+                                <option selected disabled>Pilih</option>
+                                <option value="Beli Anuitas">Beli Anuitas</option>
+                                <option value="Kupon SBN/SBSN">Kupon SBN/SBSN</option>
+                          </select>
                           <br>
-                          <label for="" class="form-label">Pajak</label>
-                          <input id="" type="text" class="form-control" placeholder="" value="20%">
+                          <label for="harga-anuitas-ppip" class="form-label">Harga Anuitas PPIP</label>
+                          <input id="harga-anuitas-ppip" type="text" class="form-control" placeholder="">
+                          <p class="my-5">Jika Pembayaran PPIP Menggunakan Kupon SBN/SBSN</p>
+                          <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label for="bunga-ppip" class="form-label">Bunga PPIP (%)</label>
+                                <input id="bunga-ppip" type="number" class="form-control" placeholder="" value="">
+                            </div>
+                            <div>
+                                <label for="pajak-ppip" class="form-label">Pajak PPIP (%)</label>
+                                <input id="pajak-ppip" type="number" class="form-control" placeholder="" value="">
+                            </div>
+                          </div>
                       </div>
+                        <script>
+                            function inputChangePPIP() {
+			                    let selectedOption = document.getElementById("ppip").value;
+                                if(selectedOption === "Beli Anuitas") {
+                                    document.getElementById("harga-anuitas-ppip").readOnly = false;
+                                    document.getElementById("bunga-ppip").readOnly = true;
+                                    document.getElementById("pajak-ppip").readOnly = true;
+                                } else if(selectedOption === "Kupon SBN/SBSN") {
+                                    document.getElementById("bunga-ppip").readOnly = false;
+                                    document.getElementById("pajak-ppip").readOnly = false;
+                                    document.getElementById("harga-anuitas-ppip").readOnly = true;
+                                }
+                            }
+                        </script>
+                      <div class="col-span-12 lg:col-span-6 border p-5">
+                          <label for="" class="form-label">Personal - Pasar Keuangan</label>
+                          <select id="personal" class="form-select  mb-2" aria-label=".form-select-lg example" onchange="inputChangePersonal()">
+                                <option selected disabled>Pilih</option>
+                                <option value="Beli Anuitas">Beli Anuitas</option>
+                                <option value="Kupon SBN/SBSN">Kupon SBN/SBSN</option>
+                          </select>
+                          <br>
+                          <label for="harga-anuitas-personal" class="form-label">Harga Anuitas Personal Pasar Keuangan</label>
+                          <input id="harga-anuitas-personal" type="text" class="form-control" placeholder="">
+                          <p class="my-5">Jika Pembayaran Menggunakan Kupon SBN/SBSN</p>
+                          <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label for="bunga-personal" class="form-label">Bunga Personal Pasar Keuangan (%)</label>
+                                <input id="bunga-personal" type="number" class="form-control" placeholder="" value="">
+                            </div>
+                            <div>
+                                <label for="pajak-personal" class="form-label">Pajak Personal Pasar Keuangan (%)</label>
+                                <input id="pajak-personal" type="number" class="form-control" placeholder="" value="">
+                            </div>
+                          </div>
+                      </div>
+                        <script>
+                            function inputChangePersonal() {
+			                    let selectedOption = document.getElementById("personal").value;
+                                if(selectedOption === "Beli Anuitas") {
+                                    document.getElementById("harga-anuitas-personal").readOnly = false;
+                                    document.getElementById("bunga-personal").readOnly = true;
+                                    document.getElementById("pajak-personal").readOnly = true;
+                                } else if(selectedOption === "Kupon SBN/SBSN") {
+                                    document.getElementById("bunga-personal").readOnly = false;
+                                    document.getElementById("pajak-personal").readOnly = false;
+                                    document.getElementById("harga-anuitas-personal").readOnly = true;
+                                }
+                            }
+                        </script>
                     </div>
                     <br>
                     <div class="mt-2 mb-2 text-right">

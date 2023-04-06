@@ -51,6 +51,7 @@
                       <div class="col-span-12 border-b">
                         <label for="" class="form-label">Pilih Setting Portofolio PPIP</label>
                         <select class="form-select form-select-lg mt-2" aria-label=".form-select-lg example">
+                            <option selected disabled>Pilih</option>
                             <option>Konvensional Reguler</option>
                             <option>Konvensional Plus</option>
                             <option>Syariah Reguler</option>
