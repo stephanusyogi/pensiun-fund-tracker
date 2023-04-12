@@ -2,8 +2,28 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Auth extends MY_controller {
+	
+	function __construct(){
+		parent::__construct();		
+		$this->load->library('user_agent');
+	}
+
 	public function login()
 	{
+		if ($this->agent->is_browser()){
+			$agent = $this->agent->browser().' '.$this->agent->version();
+		}elseif ($this->agent->is_mobile()){
+			$agent = $this->agent->mobile();
+		}else{
+			$agent = 'Data user gagal di dapatkan';
+		}
+ 
+		echo "Di akses dari :<br/>";
+		echo "Browser = ". $agent . "<br/>";
+		echo "Sistem Operasi = " . $this->agent->platform() ."<br/>"; // Platform info (Windows, Linux, Mac, etc.)
+		//ip hanya muncul pada hosting
+		echo "IP = " . $this->input->ip_address();
+		die();
 		$this->load->view('v_auth_login');
 	}
 
