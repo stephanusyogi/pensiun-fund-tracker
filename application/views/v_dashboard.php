@@ -1,13 +1,13 @@
-
 <!-- BEGIN: Content -->
 <div class="wrapper wrapper--top-nav">
     <div class="wrapper-box">
     <!-- BEGIN: Content -->
         <div class="content">
-            <div class="intro-y mt-5 py-10 flex items-center justify-center h-10">
+            <div class="intro-y mt-5 py-10 flex items-center justify-center h-10" style="justify-content:space-between;">
                 <h2 class="text-2xl font-bold">
                     Tracker Analysis Report
                 </h2>
+                <a href="<?= base_url() ?>" class="btn btn-primary"><span class="mr-2"><i data-lucide="refresh-ccw"></i></span> Generate Data</a>
             </div>
             <div class="grid grid-cols-12 gap-6">
                 <div class="-intro-x col-span-12 border p-5 border-slate-300">
@@ -289,20 +289,35 @@
                     </div>
                 </div>
                 <div class="-intro-x col-span-12 border-t pb-10 pt-5 border-slate-300">
-                    <div class="flex items-center h-10">
+                    <div class="flex items-center h-10" style="justify-content:space-between;">
                         <div>
                             <h2 class="text-lg font-semibold">
                                 Pemantauan Layer Perkembangan Saldo PPIP
                             </h2>
+                            <div class="flex items-center gap-2">
+                                <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                                    <option>01/01/2023</option>
+                                    <option>01/01/2024</option>
+                                    <option>01/01/2025</option>
+                                </select>
+                                -
+                                <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                                    <option>01/01/2023</option>
+                                    <option>01/01/2024</option>
+                                    <option>01/01/2025</option>
+                                </select>
+                                <a href="<?= base_url() ?>" class="btn btn-primary btn-sm"><i data-lucide="search" class="h-4"></i></a>
+                            </div>
                         </div>
+                        <button id="reset-zoom" class="btn btn-primary">Reset Zoom</button>
                     </div>
                     <div style="height:50rem;">
                         <canvas id="perkembangan-saldo-ppip"></canvas>
                     </div>
                     
                     <script>
-                        var perkembanganSaldoPpip = document.getElementById('perkembangan-saldo-ppip').getContext('2d');
-                        var chartData = {
+                        const perkembanganSaldoPpip = document.getElementById('perkembangan-saldo-ppip').getContext('2d');
+                        const chartData = {
                             labels: [
                                 " 1/1/2023 ",
                                 " 2/1/2023 ",
@@ -1552,13 +1567,30 @@
                                 ],},
                             ]
                         };
-                        var chart = new Chart(perkembanganSaldoPpip, {
+                        const chart = new Chart(perkembanganSaldoPpip, {
                             type: 'line',
                             data: chartData,
                             options: {
                                 responsive: true,
                                 maintainAspectRatio: false,
-                            }
+                                plugins: {
+                                    zoom: {
+                                        zoom: {
+                                        wheel: {
+                                            enabled: true
+                                        },
+                                        pinch: {
+                                            enabled: true
+                                        },
+                                        mode: 'xy'
+                                        }
+                                    }
+                                },
+                            },
+                        });
+                        const resetZoomButton = document.getElementById('reset-zoom');
+                        resetZoomButton.addEventListener('click', function() {
+                            chart.resetZoom();
                         });
                     </script>
                 </div>

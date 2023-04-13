@@ -12,7 +12,6 @@
         <!-- END: CSS Assets-->
         <!-- Toast -->
         <link rel="stylesheet" href="<?= base_url('/assets/plugins'); ?>/toastr/toastr.min.css">
-        <link rel="stylesheet" href="<?= base_url('/assets/plugins'); ?>/chart.js/chart.min.css">
         <!-- Datatables -->
         <link rel="stylesheet" href="<?= base_url('assets/plugins'); ?>/datatables-bs4/css/dataTables.bootstrap4.css">
         <!-- jQuery -->
@@ -21,6 +20,11 @@
         <!-- DataTables -->
         <script src="<?= base_url(); ?>assets/plugins/datatables/jquery.dataTables.js"></script>
         <script src="<?= base_url(); ?>assets/plugins/datatables-bs4/js/dataTables.bootstrap4.js"></script>
+        
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-zoom/1.1.1/chartjs-plugin-zoom.min.js"></script>
+        <!-- <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-draggable@0.1.6/dist/chartjs-plugin-draggable.min.js"></script> -->
+        
     </head>
     <!-- END: Head -->
     <!-- Alert Error -->
