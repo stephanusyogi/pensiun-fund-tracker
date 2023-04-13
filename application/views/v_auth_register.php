@@ -18,6 +18,20 @@
         <!-- jQuery -->
         <script src="<?= base_url("assets/plugins/") ?>/jquery/jquery.min.js"></script>
     </head>
+    <style>
+      .password-container {
+        position: relative;
+      }
+
+      #toggle-password {
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        z-index: 100;
+        transform: translateY(-50%);
+        cursor: pointer;
+      }
+    </style>
     <!-- END: Head -->
     <body class="login">
         <div class="px-2">
@@ -44,7 +58,12 @@
                                 <input type="text" name="nama" class="intro-x login__input form-control py-3 px-4 block" placeholder="Name" required>
                                 <input type="text" name="email" class="intro-x login__input form-control py-3 px-4 block mt-4" placeholder="Email" required>
                                 <p class="intro-x text-slate-500 block mt-2 text-xs sm:text-sm">Pastikan email anda aktif untuk aktivasi.</p> 
-                                <input type="password" id="password1" name="password" class="intro-x login__input form-control py-3 px-4 block mt-4" placeholder="Password" required>
+                                <div class="password-container">
+                                    <input type="password" name="password" id="password1" class="intro-x login__input form-control py-3 px-4 block mt-4" placeholder="Password" required>
+                                    <span id="toggle-password">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" icon-name="eye" data-lucide="eye" class="lucide lucide-eye"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                                    </span>
+                                </div>
                                 <input type="password" id="password2" class="intro-x login__input form-control py-3 px-4 block mt-4" placeholder="Password Confirmation" required>
                                 <div class="text-danger mt-2" id="password-mismatch-msg" style="display:none;">Password tidak cocok!</div>
                                 <input type="text" name="no_hp" class="intro-x login__input form-control py-3 px-4 block mt-4" placeholder="Nomor Handphone Aktif (WhatsApp Available)"  required>
@@ -68,15 +87,22 @@
             const password1 = document.querySelector('#password1');
             const password2 = document.querySelector('#password2');
             const passwordMismatchMsg = document.querySelector('#password-mismatch-msg');
+            const togglePassword = document.querySelector('#toggle-password');
 
-            password2.addEventListener('input', checkPassword);
+            password2.addEventListener('input', checkPassword);            
+
+            togglePassword.addEventListener('click', function () {
+                const type = password1.getAttribute('type') === 'password' ? 'text' : 'password';
+                password1.setAttribute('type', type);
+                this.innerHTML = type === 'password' ? '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" icon-name="eye" data-lucide="eye" class="lucide lucide-eye"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>' : '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" icon-name="eye-off" data-lucide="eye-off" class="lucide lucide-eye-off"><path d="M17.94 17.94A10.07 10.07 0 0112 20c-7 0-11-8-11-8a18.45 18.45 0 015.06-5.94M9.9 4.24A9.12 9.12 0 0112 4c7 0 11 8 11 8a18.5 18.5 0 01-2.16 3.19m-6.72-1.07a3 3 0 11-4.24-4.24"></path><line x1="1" y1="1" x2="23" y2="23"></line></svg>';
+            });
 
             function checkPassword() {
-            if (password1.value !== password2.value) {
-                passwordMismatchMsg.style.display = 'block';
-            } else {
-                passwordMismatchMsg.style.display = 'none';
-            }
+                if (password1.value !== password2.value) {
+                    passwordMismatchMsg.style.display = 'block';
+                } else {
+                    passwordMismatchMsg.style.display = 'none';
+                }
             }
         </script>
         <!-- BEGIN: JS Assets-->
