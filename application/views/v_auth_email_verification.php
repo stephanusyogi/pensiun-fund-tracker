@@ -88,16 +88,16 @@
                 <!-- BEGIN: Login Form -->
                 <div class="h-screen xl:h-auto flex py-5 xl:py-0 my-10 xl:my-0">
                     <div class="my-auto mx-auto xl:ml-20 bg-white dark:bg-darkmode-600 xl:bg-transparent px-5 sm:px-8 py-8 xl:p-0 rounded-md shadow-md xl:shadow-none w-full sm:w-3/4 lg:w-2/4 xl:w-auto">
-                        <img alt="" class="intro-x w-56 mb-2" src="<?= base_url() ?>assets/images/logoBI.png">
+                        <div class="-intro-x mt-4 flex items-center" style="justify-content:space-between;">
+                          <img alt="" class="intro-x w-56 mb-2" src="<?= base_url() ?>assets/images/logoBI.png">
+                          <a href="<?= base_url() ?>logout" class="btn btn-danger py-3 px-4 align-top">Log Out</a>
+                        </div>
                         <div class="intro-x mt-2 text-slate-400 xl:hidden text-center">Pension Fund Tracker</div>
                           <p class="-intro-x text-md font-base">Kami telah mengirim pesan verifikasi melalui email anda. Silahkan periksa kotak masuk/spam.</p>
                           <div class="-intro-x mt-4 flex items-center justify-between">
                             <div>
                               <a href="<?= base_url() ?>send-email-verification" id="btn-email" class="disabled btn btn-primary py-3 px-4 align-top">Send Email Verification Link</a>
                               <p class="mt-2 text-md font-base">Kirim kembali pesan verifikasi dalam <span id="countdown"></span></p>
-                            </div>
-                            <div>
-                              <a href="<?= base_url() ?>logout" class="btn btn-danger py-3 px-4 align-top">Log Out</a>
                             </div>
                           </div>
                           <script>
