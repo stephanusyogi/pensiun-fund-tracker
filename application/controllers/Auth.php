@@ -10,30 +10,27 @@ class Auth extends MY_controller {
 
 	public function login()
 	{
-		// if ($this->agent->is_browser()){
-		// 	$agent = $this->agent->browser().' '.$this->agent->version();
-		// }elseif ($this->agent->is_mobile()){
-		// 	$agent = $this->agent->mobile();
-		// }else{
-		// 	$agent = 'Data user gagal di dapatkan';
-		// }
- 
-		// echo "Di akses dari :<br/>";
-		// echo "Browser = ". $agent . "<br/>";
-		// echo "Sistem Operasi = " . $this->agent->platform() ."<br/>"; // Platform info (Windows, Linux, Mac, etc.)
-		// //ip hanya muncul pada hosting
-		// echo "IP = " . $this->input->ip_address();
-		// die();
 		$this->load->view('v_auth_login');
 	}
 
 	public function login_verication(){
 		$email = $this->input->post('email');
 		$password = $this->input->post('password');
+		
+		if ($this->agent->is_browser()){
+			$agent = $this->agent->browser().' '.$this->agent->version();
+		}elseif ($this->agent->is_mobile()){
+			$agent = $this->agent->mobile();
+		}else{
+			$agent = 'Data user gagal di dapatkan';
+		}
 
 		$data = array(
 			"email" => $email,
 			"password" => $password,
+			'browser' => $agent,
+			'sistem_operasi' => $this->agent->platform(),
+			'ip_address' => $this->input->ip_address()
 		);
 
 		$response = $this->send_request_with_data_untoken("login", "POST", $data);
@@ -91,11 +88,6 @@ class Auth extends MY_controller {
 		
 		$this->session->set_flashdata('success', "Registrasi Berhasil. Selamat Datang, {$nama}!");
 		redirect(base_url()."email-verification");
-	}
-
-	public function forgot_password()
-	{
-		$this->load->view('v_auth_forgot_password');
 	}
 	
 	public function change_password()

@@ -41,16 +41,17 @@
                         <div class="intro-x mt-2 text-slate-400 xl:hidden text-center">Pension Fund Tracker</div>
                         <form action="<?= base_url() ?>register-verification" method="post">
                             <div class="intro-x mt-8">
-                                <input type="text" name="nama" class="intro-x login__input form-control py-3 px-4 block" placeholder="Name">
-                                <input type="text" name="email" class="intro-x login__input form-control py-3 px-4 block mt-4" placeholder="Email">
+                                <input type="text" name="nama" class="intro-x login__input form-control py-3 px-4 block" placeholder="Name" required>
+                                <input type="text" name="email" class="intro-x login__input form-control py-3 px-4 block mt-4" placeholder="Email" required>
                                 <p class="intro-x text-slate-500 block mt-2 text-xs sm:text-sm">Pastikan email anda aktif untuk aktivasi.</p> 
-                                <input type="password" name="password" class="intro-x login__input form-control py-3 px-4 block mt-4" placeholder="Password">
-                                <input type="password" class="intro-x login__input form-control py-3 px-4 block mt-4" placeholder="Password Confirmation">
-                                <input type="text" name="no_hp" class="intro-x login__input form-control py-3 px-4 block mt-4" placeholder="Nomor Handphone Aktif (WhatsApp Available)">
+                                <input type="password" id="password1" name="password" class="intro-x login__input form-control py-3 px-4 block mt-4" placeholder="Password" required>
+                                <input type="password" id="password2" class="intro-x login__input form-control py-3 px-4 block mt-4" placeholder="Password Confirmation" required>
+                                <div class="text-danger mt-2" id="password-mismatch-msg" style="display:none;">Password tidak cocok!</div>
+                                <input type="text" name="no_hp" class="intro-x login__input form-control py-3 px-4 block mt-4" placeholder="Nomor Handphone Aktif (WhatsApp Available)"  required>
                             </div>
                             <div class="intro-x flex items-center text-slate-600 dark:text-slate-500 mt-4 text-xs sm:text-sm">
-                                <input id="remember-me" type="checkbox" class="form-check-input border mr-2">
-                                <label class="cursor-pointer select-none" for="remember-me">I agree to the </label>
+                                <input id="agree-policy" type="checkbox" class="form-check-input border mr-2" required>
+                                <label class="cursor-pointer select-none" for="agree-policy">I agree to the </label>
                                 <a class="text-primary dark:text-slate-200 ml-1" href="">Privacy Policy</a>. 
                             </div>
                             <div class="intro-x mt-5 xl:mt-8 text-center xl:text-left">
@@ -63,7 +64,21 @@
                 <!-- END: Register Form -->
             </div>
         </div>
-        
+        <script>
+            const password1 = document.querySelector('#password1');
+            const password2 = document.querySelector('#password2');
+            const passwordMismatchMsg = document.querySelector('#password-mismatch-msg');
+
+            password2.addEventListener('input', checkPassword);
+
+            function checkPassword() {
+            if (password1.value !== password2.value) {
+                passwordMismatchMsg.style.display = 'block';
+            } else {
+                passwordMismatchMsg.style.display = 'none';
+            }
+            }
+        </script>
         <!-- BEGIN: JS Assets-->
         <script src="<?= base_url() ?>assets/template/dist/js/app.js"></script>
         <!-- END: JS Assets-->
