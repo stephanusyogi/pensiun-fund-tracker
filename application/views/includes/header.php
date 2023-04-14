@@ -124,7 +124,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="<?= site_url() ?>profil/1" class="top-menu">
+                    <a href="<?= site_url() ?>profil/<?= $this->session->userdata('pension_fund_tracker_data')['id'] ?>" class="top-menu">
                         <div class="top-menu__icon"> <i data-lucide="user"></i> </div>
                         <div class="top-menu__title"> Profil Peserta </div>
                     </a>

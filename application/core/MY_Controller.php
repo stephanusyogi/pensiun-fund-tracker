@@ -37,6 +37,7 @@ class MY_controller extends  CI_controller
   }
 
   function send_request_with_data($url, $token, $method, $data){
+    
     $curl = curl_init();
 
     curl_setopt_array($curl, array(

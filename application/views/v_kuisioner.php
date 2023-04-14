@@ -2,7 +2,7 @@
 <div class="wrapper wrapper--top-nav">
     <div class="wrapper-box">
       <div class="content">
-        <form action="<?= base_url("input-kuisioner") ?>" method="post">
+        <form id="myForm" action="<?= base_url("input-kuisioner") ?>" method="post">
           <div class="intro-y mt-10 py-5 flex items-center justify-between h-10">
               <h2 class="text-xl font-semibold">
                   Silahkan mengisi beberapa kuisioner dibawah ini.
@@ -114,16 +114,16 @@
                       <tr>
                         <td>Total Pengeluaran</td>
                         <td>
-                          <input id="bekerja_total_pengeluaran" type="number" class="form-control" value="<?= $answer["BEKERJA_TOTAL_PENGELUARAN"] ? $answer["BEKERJA_TOTAL_PENGELUARAN"] : 0 ?>" readonly>
+                          <input id="bekerja_total_pengeluaran" name="bekerja_total_pengeluaran" type="number" class="form-control" value="<?= $answer["BEKERJA_TOTAL_PENGELUARAN"] ? $answer["BEKERJA_TOTAL_PENGELUARAN"] : 0 ?>" readonly>
                         </td>
                         <td>
-                          <input id="pensiun_total_pengeluaran" type="number" class="form-control" value="<?= $answer["PENSIUN_TOTAL_PENGELUARAN"] ? $answer["PENSIUN_TOTAL_PENGELUARAN"] : 0 ?>" readonly>
+                          <input id="pensiun_total_pengeluaran" name="pensiun_total_pengeluaran" type="number" class="form-control" value="<?= $answer["PENSIUN_TOTAL_PENGELUARAN"] ? $answer["PENSIUN_TOTAL_PENGELUARAN"] : 0 ?>" readonly>
                         </td>
                       </tr>
                       <tr>
                         <td>Free Cashflow</td>
                         <td>
-                          <input id="free_cashflow" type="number" class="form-control" value="<?= $answer["FREE_CASHFLOW"] ? $answer["FREE_CASHFLOW"] : 0 ?>" readonly>
+                          <input id="free_cashflow" name="free_cashflow" type="number" class="form-control" value="<?= $answer["FREE_CASHFLOW"] ? $answer["FREE_CASHFLOW"] : 0 ?>" readonly>
                         </td>
                       </tr>
                     </tbody>
@@ -140,18 +140,18 @@
                     <tbody>
                       <tr>
                         <td>Target Replacement Ratio</td>
-                        <td class="font-semibold"><?= $answer["TARGET_RR"] ? $answer["TARGET_RR"]." %" : "- %" ?></td>
+                        <td class="font-semibold" id="targetrr"><?= $answer["TARGET_RR"] ? $answer["TARGET_RR"]." %" : "- %" ?></td>
                       </tr>
                       <tr>
                         <td>Penghasilan Setelah Pensiun</td>
                         <td>
-                          <input id="penghasilan_setelah_pensiun" type="number" class="form-control" value="<?= $answer["PENSIUN_TOTAL_PENGELUARAN"] ? $answer["PENSIUN_TOTAL_PENGELUARAN"] : 0 ?>" readonly>
+                          <input id="penghasilan_setelah_pensiun" type="number" name="penghasilan_setelah_pensiun" class="form-control" value="<?= $answer["PENSIUN_TOTAL_PENGELUARAN"] ? $answer["PENSIUN_TOTAL_PENGELUARAN"] : 0 ?>" readonly>
                         </td>
                       </tr>
                       <tr>
                         <td>Total Pengeluaran</td>
                         <td>
-                          <input id="total_pengeluaran" type="number" class="form-control" value="<?= $answer["BEKERJA_TOTAL_PENGELUARAN"] ? $answer["BEKERJA_TOTAL_PENGELUARAN"] : 0 ?>" readonly>
+                          <input id="total_pengeluaran" type="number" name="total_pengeluaran" class="form-control" value="<?= $answer["BEKERJA_TOTAL_PENGELUARAN"] ? $answer["BEKERJA_TOTAL_PENGELUARAN"] : 0 ?>" readonly>
                         </td>
                       </tr>
                       <tr>
@@ -179,6 +179,27 @@
     </div>
 </div>
 
+<script>     
+  const form = document.getElementById('myForm'); 
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    Swal.fire({
+          title: "Konfirmasi Pilihan Anda",
+          text: "Apakah anda yakin dengan pilihan anda?",
+          icon: "warning",
+          showCancelButton: true,
+          confirmButtonColor: "#3085d6",
+          cancelButtonColor: "#d33",
+          confirmButtonText: "Submit & Update Kuisioner",
+          cancelButtonText: "Kembali",
+      }).then((result) => {
+          if (result.isConfirmed) {  
+            form.submit();
+          }
+      });
+  });
+</script>
 <script>
   function totalPengeluaranBekerja() {
     let bekerja_konsumsi = parseInt(document.getElementById("bekerja_konsumsi").value);
@@ -217,9 +238,14 @@
   function totalFreeCashflow() {
     let gaji = parseInt(document.getElementById("gaji").value);
     let bekerja_total_pengeluaran = parseInt(document.getElementById("bekerja_total_pengeluaran").value);
+    let pensiun_total_pengeluaran = parseInt(document.getElementById("pensiun_total_pengeluaran").value);
 
     let hasil = gaji - bekerja_total_pengeluaran; 
+
+    let hasil_target_rr = pensiun_total_pengeluaran / gaji
     
     document.getElementById("free_cashflow").value = hasil;
+
+    document.getElementById("targetrr").innerText = hasil_target_rr + " %";
   }
 </script>
