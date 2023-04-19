@@ -279,11 +279,11 @@
                                 </div>
                                 <div class="mb-2">
                                     <label for="kenaikan_properti" class="form-label">Rata-rata kenaikan harga properti per tahun (%)</label>
-                                    <input id="kenaikan_properti" name="kenaikan_properti" value="<?= $data_user['kenaikan_properti'] ? $data_user['kenaikan_properti'] : '' ?>" type="number" class="form-control" <?= $data_user['layer_personal'] ? 'required' : '' ?>>
+                                    <input id="kenaikan_properti" name="kenaikan_properti" value="<?= $data_user['kenaikan_properti'] ? round($data_user['kenaikan_properti'], 2) : '' ?>" type="number" step="any" class="form-control" <?= $data_user['layer_personal'] ? 'required' : '' ?>>
                                 </div>
                                 <div class="mb-2">
                                     <label for="kenaikan_sewa" class="form-label">Rata-rata kenaikan sewa properti per tahun (%)</label>
-                                    <input id="kenaikan_sewa" name="kenaikan_sewa" value="<?= $data_user['kenaikan_sewa'] ? $data_user['kenaikan_sewa'] : '' ?>" type="number" class="form-control" <?= $data_user['layer_personal'] ? 'required' : '' ?>>
+                                    <input id="kenaikan_sewa" name="kenaikan_sewa" value="<?= $data_user['kenaikan_sewa'] ? round($data_user['kenaikan_sewa'],2) : '' ?>" type="number" step="any" class="form-control" <?= $data_user['layer_personal'] ? 'required' : '' ?>>
                                 </div>
                               </div>
                             </div>
