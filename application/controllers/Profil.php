@@ -23,8 +23,10 @@ class Profil extends MY_controller {
 	public function index($id_user)
 	{
 		$data_user = $this->send_request("user/{$this->id_user}", $this->token, "GET");
+		$data_pengumuman = $this->send_request("pengumuman", $this->token, "GET")['data'];
 
 		$data['data_user'] = $data_user["data"];
+		$data['data_pengumuman'] = $data_pengumuman;
 		$data['title'] = "Profil";
     $data['menuLink'] = "profil/".$id_user;
 

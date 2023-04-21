@@ -49,35 +49,27 @@
                 <div class="col-span-12 lg:col-span-8 2xl:col-span-9">
                     <div class="grid grid-cols-12 gap-6">
                         <!-- BEGIN: Announcement -->
-                        <div class="intro-y box col-span-12 2xl:col-span-6">
-                            <div class="flex items-center px-5 py-3 border-b border-slate-200/60 dark:border-darkmode-400">
-                                <h2 class="font-medium text-base mr-auto">
-                                    Pengumuman
-                                </h2>
-                                <button data-carousel="announcement" data-target="prev" class="tiny-slider-navigator btn btn-outline-secondary px-2 mr-2"> <i data-lucide="chevron-left" class="w-4 h-4"></i> </button>
-                                <button data-carousel="announcement" data-target="next" class="tiny-slider-navigator btn btn-outline-secondary px-2"> <i data-lucide="chevron-right" class="w-4 h-4"></i> </button>
-                            </div>
-                            <div class="tiny-slider py-5" id="announcement">
-                                <div class="px-5">
-                                    <div class="font-medium text-lg">Ubah Password</div>
-                                    <div class="text-slate-600 dark:text-slate-500 mt-2">
-                                        Untuk menunjang keamanan pengguna dalam mengakses aplikasi ini, dimohon untuk pengguna melakukan update password secara berkala pada menu <a href="<?= base_url() ?>update-password">Ubah Password</a>.
-                                    </div>
-                                </div>
-                                <div class="px-5">
-                                    <div class="font-medium text-lg">Pelayanan Pengguna</div>
-                                    <div class="text-slate-600 dark:text-slate-500 mt-2">
-                                        Bagi pengguna yang memiliki pertanyaan dan gangguan dapat menghubungi nomor berikut melalui WhatsApp kami +62918239131132 untuk pelayanan selanjutnya.
-                                    </div>
-                                </div>
-                                <div class="px-5">
-                                    <div class="font-medium text-lg">Pengguna Baru</div>
-                                    <div class="text-slate-600 dark:text-slate-500 mt-2">
-                                        Harap mengisi semua input yang tersedia pada menu halaman <a href="<?= base_url() ?>kuisioner">Kuisioner</a> dan sub-menu pada halaman profil.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <?php if($data_pengumuman){ ?>
+                          <div class="intro-y box col-span-12 2xl:col-span-6">
+                              <div class="flex items-center px-5 py-3 border-b border-slate-200/60 dark:border-darkmode-400">
+                                  <h2 class="font-medium text-base mr-auto">
+                                      Pengumuman
+                                  </h2>
+                                  <button data-carousel="announcement" data-target="prev" class="tiny-slider-navigator btn btn-outline-secondary px-2 mr-2"> <i data-lucide="chevron-left" class="w-4 h-4"></i> </button>
+                                  <button data-carousel="announcement" data-target="next" class="tiny-slider-navigator btn btn-outline-secondary px-2"> <i data-lucide="chevron-right" class="w-4 h-4"></i> </button>
+                              </div>
+                              <div class="tiny-slider py-5" id="announcement">
+                                <?php foreach ($data_pengumuman as $key) { ?>
+                                  <div class="px-5">
+                                      <div class="font-medium text-lg"><?= $key['judul'] ?></div>
+                                      <div class="text-slate-600 dark:text-slate-500 mt-2">
+                                      <?= $key['deskripsi'] ?>
+                                      </div>
+                                  </div>
+                                <?php } ?>
+                              </div>
+                          </div>
+                        <?php } ?>
                         <!-- END: Announcement -->
                         <form id="myForm" class="intro-y box col-span-12 2xl:col-span-6" action="<?= base_url() ?>profil-update/<?= $this->session->userdata('pension_fund_tracker_data')['id'] ?>" method="post">
                           <div class="grid grid-cols-12 gap-6 p-5">
