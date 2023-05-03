@@ -22,17 +22,17 @@
                             </div>
                         </div>
                         <div class="p-5 border-t border-slate-200/60 dark:border-darkmode-400">
-                            <a class="flex items-center mt-5" href="<?= site_url() ?>profil/1"> <i data-lucide="box" class="w-4 h-4 mr-2"></i> Biodata Pengguna </a>
-                            <a class="flex items-center mt-5" href="<?= site_url() ?>profil/update-tracking-pengguna/1"> <i data-lucide="activity" class="w-4 h-4 mr-2"></i> Update Tracking Data </a>
+                            <a class="flex items-center mt-5" href="<?= site_url() ?>profil/<?= $this->session->userdata('pension_fund_tracker_data')['id'] ?>"> <i data-lucide="box" class="w-4 h-4 mr-2"></i> Biodata Pengguna </a>
+                            <a class="flex items-center mt-5" href="<?= site_url() ?>profil/update-tracking-pengguna/<?= $this->session->userdata('pension_fund_tracker_data')['id'] ?>"> <i data-lucide="activity" class="w-4 h-4 mr-2"></i> Update Tracking Data </a>
                         </div>
                         <div class="p-5 border-t border-slate-200/60 dark:border-darkmode-400">
-                            <a class="flex items-center" href="<?= site_url() ?>profil/setting_nilai_asumsi/1"> <i data-lucide="settings" class="w-4 h-4 mr-2"></i> Setting Nilai Asumsi </a>
-                            <a class="flex items-center mt-5 text-primary font-medium" href="<?= base_url() ?>profil/setting-portofolio-ppip/1"> <i data-lucide="settings" class="w-4 h-4 mr-2"></i> Setting Portofolio PPIP </a>
-                            <a class="flex items-center mt-5" href="<?= base_url() ?>profil/setting-portofolio-personal-pasar-keuangan/1"> <i data-lucide="settings" class="w-4 h-4 mr-2"></i> Setting Portofolio Personal Pasar Keuangan </a>
-                            <a class="flex items-center mt-5" href="<?= base_url() ?>profil/setting-treatment-pembayaran-setelah-pensiun/1"> <i data-lucide="settings" class="w-4 h-4 mr-2"></i> Setting Treatment Pembayaran Setelah Pensiun </a>
+                            <a class="flex items-center" href="<?= site_url() ?>profil/setting_nilai_asumsi/<?= $this->session->userdata('pension_fund_tracker_data')['id'] ?>"> <i data-lucide="settings" class="w-4 h-4 mr-2"></i> Setting Nilai Asumsi </a>
+                            <a class="flex items-center mt-5 text-primary font-medium" href="<?= base_url() ?>profil/setting-portofolio-ppip/<?= $this->session->userdata('pension_fund_tracker_data')['id'] ?>"> <i data-lucide="settings" class="w-4 h-4 mr-2"></i> Setting Portofolio PPIP </a>
+                            <a class="flex items-center mt-5" href="<?= base_url() ?>profil/setting-portofolio-personal/<?= $this->session->userdata('pension_fund_tracker_data')['id'] ?>"> <i data-lucide="settings" class="w-4 h-4 mr-2"></i> Setting Portofolio Personal Pasar Keuangan </a>
+                            <a class="flex items-center mt-5" href="<?= base_url() ?>profil/setting-treatment-pembayaran-setelah-pensiun/<?= $this->session->userdata('pension_fund_tracker_data')['id'] ?>"> <i data-lucide="settings" class="w-4 h-4 mr-2"></i> Setting Treatment Pembayaran Setelah Pensiun </a>
                         </div>
                         <div class="p-5 border-t border-slate-200/60 dark:border-darkmode-400">
-                            <a class="flex items-center mt-5" href="<?= base_url() ?>profil/ubah-password/1"> <i data-lucide="lock" class="w-4 h-4 mr-2"></i> Ubah Password </a>
+                            <a class="flex items-center mt-5" href="<?= base_url() ?>profil/ubah-password/<?= $this->session->userdata('pension_fund_tracker_data')['id'] ?>"> <i data-lucide="lock" class="w-4 h-4 mr-2"></i> Ubah Password </a>
                         </div>
                     </div>
                     <div class="intro-y box p-5 bg-primary text-white mt-5">
@@ -48,94 +48,213 @@
                 <!-- END: Profile Menu -->
                 <div class="col-span-12 lg:col-span-8 2xl:col-span-9">
                     <div class="grid grid-cols-12 gap-6">
-                      <div class="col-span-12 border-b">
-                        <label for="" class="form-label">Pilih Setting Portofolio PPIP</label>
-                        <select class="form-select form-select-lg mt-2" aria-label=".form-select-lg example">
-                            <option selected disabled>Pilih</option>
-                            <option>Konvensional Reguler</option>
-                            <option>Konvensional Plus</option>
-                            <option>Syariah Reguler</option>
-                            <option>Syariah Plus</option>
-                        </select>
-                        <br>
-                        <div class="mt-2 mb-2 text-right">
-                          <button type="submit" class="btn btn-success">Update & Simpan</button>
-                        </div>
-                      </div>
+                        <form id="myForm" class="col-span-12 border-b" action="<?= base_url() ?>setting-portofolio-ppip" method="post">
+                            <label for="" class="form-label">Pilih Setting Portofolio PPIP</label>
+                            <select id="jenis_investasi" class="form-select form-select-lg mt-2" name="id_portofolio_ppip" aria-label=".form-select-lg example" required>
+                                <option value="">Pilih</option>
+                                <?php foreach ($opsi_setting_ppip as $key) { ?>
+                                    <option value="<?= $key['id'] ?>"><?= $key['nama_portofolio'] ?></option>
+                                <?php } ?>
+                            </select>
+                            <br>
+                            <div class="mt-2 mb-2 flex gap-4" style="justify-content: end;">
+                                <p id="clearSearch" class="btn btn-danger" style="display:none;">Clear Result</p>
+                                <button type="submit" class="btn btn-success">Update & Simpan</button>
+                            </div>
+                        </form>
                       <div class="col-span-12">
-                        <div class="overflow-x-auto">
+                        <div class="overflow-x-auto" id="containerUser">
                             <table class="table table-bordered">
                                 <thead>
                                     <tr>
                                         <th class="whitespace-nowrap">Informasi Portofolio PPIP Terpilih</th>
-                                        <th class="whitespace-nowrap">Investasi</th>
-                                        <th class="whitespace-nowrap">Likuiditas</th>
+                                        <th class="whitespace-nowrap" rowspan="2">Investasi</th>
+                                        <th class="whitespace-nowrap" rowspan="2">Likuiditas</th>
+                                    </tr>
+                                    <tr>
+                                        <th><?= $data_setting_ppip ? $data_setting_ppip[0]['nama_pilihan'] : '' ?></th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
                                         <td>Return Portofolio PPIP</td>
-                                        <td>6.40%</td>
-                                        <td>4%</td>
+                                        <td><?= $data_setting_ppip ? $data_setting_ppip[0]['return_portofolio_tranche_investasi']."%" : '' ?></td>
+                                        <td><?= $data_setting_ppip ? $data_setting_ppip[0]['return_portofolio_tranche_likuiditas']."%" : '' ?></td>
                                     </tr>
                                     <tr>
                                         <td>Risiko Pasar Portofolio PPIP</td>
-                                        <td>8.82%</td>
-                                        <td>0.13%</td>
+                                        <td><?= $data_setting_ppip ? $data_setting_ppip[0]['resiko_portofolio_tranche_investasi']."%" : '' ?></td>
+                                        <td><?= $data_setting_ppip ? $data_setting_ppip[0]['resiko_portofolio_tranche_likuiditas']."%" : '' ?></td>
                                     </tr>
                                     <tr>
                                         <td colspan="3">Komposisi Investasi</td>
                                     </tr>
                                     <tr>
                                         <td style="padding-left:2rem!important;">Saham</td>
-                                        <td>10%</td>
-                                        <td>0%</td>
+                                        <td><?= $data_setting_ppip ? $data_setting_ppip[0]['tranche_investasi_saham']."%" : '' ?></td>
+                                        <td><?= $data_setting_ppip ? $data_setting_ppip[0]['tranche_likuiditas_saham']."%" : '' ?></td>
                                     </tr>
                                     <tr>
                                         <td style="padding-left:2rem!important;">Pendapatan Tetap</td>
-                                        <td>70%</td>
-                                        <td>0%</td>
+                                        <td><?= $data_setting_ppip ? $data_setting_ppip[0]['tranche_investasi_pendapatan_tetap']."%" : '' ?></td>
+                                        <td><?= $data_setting_ppip ? $data_setting_ppip[0]['tranche_likuiditas_pendapatan_tetap']."%" : '' ?></td>
                                     </tr>
                                     <tr>
                                         <td style="padding-left:2rem!important;">Deposito</td>
-                                        <td>20%</td>
-                                        <td>100%</td>
+                                        <td><?= $data_setting_ppip ? $data_setting_ppip[0]['tranche_investasi_deposito']."%" : '' ?></td>
+                                        <td><?= $data_setting_ppip ? $data_setting_ppip[0]['tranche_likuiditas_deposito']."%" : '' ?></td>
                                     </tr>
                                     <tr>
                                         <td colspan="3">Asumsi Return Investasi</td>
                                     </tr>
                                     <tr>
                                         <td style="padding-left:2rem!important;">Saham</td>
-                                        <td>8.76%</td>
+                                        <td><?= $data_setting_ppip ? $data_setting_ppip[0]['return_saham']."%" : '' ?></td>
                                         <td></td>
                                     </tr>
                                     <tr>
                                         <td style="padding-left:2rem!important;">Pendapatan Tetap</td>
-                                        <td>6.75%</td>
+                                        <td><?= $data_setting_ppip ? $data_setting_ppip[0]['return_pendapatan_tetap']."%" : '' ?></td>
                                         <td></td>
                                     </tr>
                                     <tr>
                                         <td style="padding-left:2rem!important;">Deposito</td>
-                                        <td>4%</td>
-                                        <td>100%</td>
+                                        <td><?= $data_setting_ppip ? $data_setting_ppip[0]['return_deposito']."%" : '' ?></td>
+                                        <td></td>
                                     </tr>
                                     <tr>
                                         <td colspan="3">Asumsi Risiko Investasi</td>
                                     </tr>
                                     <tr>
                                         <td style="padding-left:2rem!important;">Saham</td>
-                                        <td>17.57%</td>
+                                        <td><?= $data_setting_ppip ? $data_setting_ppip[0]['resiko_saham']."%" : '' ?></td>
                                         <td></td>
                                     </tr>
                                     <tr>
                                         <td style="padding-left:2rem!important;">Pendapatan Tetap</td>
-                                        <td>11.54%</td>
+                                        <td><?= $data_setting_ppip ? $data_setting_ppip[0]['resiko_pendapatan_tetap']."%" : '' ?></td>
                                         <td></td>
                                     </tr>
                                     <tr>
                                         <td style="padding-left:2rem!important;">Deposito</td>
-                                        <td>0.13%</td>
-                                        <td>100%</td>
+                                        <td><?= $data_setting_ppip ? $data_setting_ppip[0]['resiko_deposito']."%" : '' ?></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3">Korelasi Antar Aset Investasi</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding-left:2rem!important;">Saham - Pendapatan Tetap</td>
+                                        <td><?= $data_setting_ppip ? $data_setting_ppip[0]['korelasi_saham_pendapatan_tetap']."%" : '' ?></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding-left:2rem!important;">Saham - Deposito</td>
+                                        <td><?= $data_setting_ppip ? $data_setting_ppip[0]['korelasi_saham_deposito']."%" : '' ?></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding-left:2rem!important;">Pendapatan Tetap - Deposito</td>
+                                        <td><?= $data_setting_ppip ? $data_setting_ppip[0]['korelasi_pendapatan_tetap_deposito'] : '' ?></td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="overflow-x-auto" id="containerSelected" style="display:none;">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th class="whitespace-nowrap">Informasi Portofolio PPIP Terpilih</th>
+                                        <th class="whitespace-nowrap" rowspan="2">Investasi</th>
+                                        <th class="whitespace-nowrap" rowspan="2">Likuiditas</th>
+                                    </tr>
+                                    <tr>
+                                        <th id="namaPortofolio"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Return Portofolio PPIP</td>
+                                        <td id="return_portofolio_tranche_investasi"></td>
+                                        <td id="return_portofolio_tranche_likuiditas"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Risiko Pasar Portofolio PPIP</td>
+                                        <td id="resiko_portofolio_tranche_investasi"></td>
+                                        <td id="resiko_portofolio_tranche_likuiditas"></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3">Komposisi Investasi</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding-left:2rem!important;">Saham</td>
+                                        <td id="tranche_investasi_saham"></td>
+                                        <td id="tranche_likuiditas_saham"></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding-left:2rem!important;">Pendapatan Tetap</td>
+                                        <td id="tranche_investasi_pendapatan_tetap"></td>
+                                        <td id="tranche_likuiditas_pendapatan_tetap"></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding-left:2rem!important;">Deposito</td>
+                                        <td id="tranche_investasi_deposito"></td>
+                                        <td id="tranche_likuiditas_deposito"></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3">Asumsi Return Investasi</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding-left:2rem!important;">Saham</td>
+                                        <td id="return_saham"></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding-left:2rem!important;">Pendapatan Tetap</td>
+                                        <td id="return_pendapatan_tetap"></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding-left:2rem!important;">Deposito</td>
+                                        <td id="return_deposito"></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3">Asumsi Risiko Investasi</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding-left:2rem!important;">Saham</td>
+                                        <td id="resiko_saham"></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding-left:2rem!important;">Pendapatan Tetap</td>
+                                        <td id="resiko_pendapatan_tetap"></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding-left:2rem!important;">Deposito</td>
+                                        <td id="resiko_deposito"></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3">Korelasi Antar Aset Investasi</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding-left:2rem!important;">Saham - Pendapatan Tetap</td>
+                                        <td id="korelasi_saham_pendapatan_tetap"></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding-left:2rem!important;">Saham - Deposito</td>
+                                        <td id="korelasi_saham_deposito"></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding-left:2rem!important;">Pendapatan Tetap - Deposito</td>
+                                        <td id="korelasi_pendapatan_tetap_deposito"></td>
+                                        <td></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -148,3 +267,76 @@
         <!-- END: Content -->
     </div>
 </div>
+
+<script>     
+    const form = document.getElementById('myForm'); 
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        Swal.fire({
+            title: "Konfirmasi Pilihan Anda",
+            text: "Apakah anda yakin dengan pilihan anda?",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Submit & Update Setting Saya",
+            cancelButtonText: "Kembali",
+        }).then((result) => {
+            if (result.isConfirmed) {  
+                form.submit();
+            }
+        });
+    });
+
+    
+    function setDataToPage(data){
+      const namaPortofolio = document.getElementById("namaPortofolio");
+      namaPortofolio.textContent = data.nama_portofolio;
+
+      // Nilai Variabel
+      const nilai = data;
+      delete data.id;
+      delete data.nama_portofolio;
+      delete data.created_at;
+      delete data.flag;
+
+      for (var key in nilai) {
+        var value = nilai[key];
+        eval("var " + key + " = " + value + ";");
+        document.getElementById(key).textContent = value+"%";
+      }
+
+    }
+
+    const select = document.getElementById('jenis_investasi');
+    const containerSelected = document.getElementById("containerSelected");
+    const containerUser = document.getElementById("containerUser");
+    const btnClearSearch = document.getElementById("clearSearch");
+
+    select.addEventListener('change', function() {
+        containerUser.style.display = "none";
+        containerSelected.style.display = "block";
+        btnClearSearch.style.display = "block";
+
+        btnClearSearch.onclick = () => {
+            containerSelected.style.display = "none";
+            btnClearSearch.style.display = "none";
+            containerUser.style.display = "block";
+            select.selectedIndex = -1;
+        }
+
+
+        var xhr = new XMLHttpRequest();
+        xhr.withCredentials = true;
+        xhr.addEventListener("readystatechange", function() {
+            if(this.readyState === 4) {
+                let data = xhr.response;
+                let response = JSON.parse(data);
+                setDataToPage(response);
+            }
+        });
+        xhr.open("GET", "<?= base_url() ?>profil/ppip-by-id/"+select.value);
+        xhr.send();
+    });
+</script>

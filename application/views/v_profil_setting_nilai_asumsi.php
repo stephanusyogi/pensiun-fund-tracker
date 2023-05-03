@@ -22,17 +22,17 @@
                             </div>
                         </div>
                         <div class="p-5 border-t border-slate-200/60 dark:border-darkmode-400">
-                            <a class="flex items-center mt-5" href="<?= site_url() ?>profil/1"> <i data-lucide="box" class="w-4 h-4 mr-2"></i> Biodata Pengguna </a>
-                            <a class="flex items-center mt-5" href="<?= site_url() ?>profil/update-tracking-pengguna/1"> <i data-lucide="activity" class="w-4 h-4 mr-2"></i> Update Tracking Data </a>
+                            <a class="flex items-center mt-5" href="<?= site_url() ?>profil/<?= $this->session->userdata('pension_fund_tracker_data')['id'] ?>"> <i data-lucide="box" class="w-4 h-4 mr-2"></i> Biodata Pengguna </a>
+                            <a class="flex items-center mt-5" href="<?= site_url() ?>profil/update-tracking-pengguna/<?= $this->session->userdata('pension_fund_tracker_data')['id'] ?>"> <i data-lucide="activity" class="w-4 h-4 mr-2"></i> Update Tracking Data </a>
                         </div>
                         <div class="p-5 border-t border-slate-200/60 dark:border-darkmode-400">
-                            <a class="flex items-center text-primary font-medium" href="<?= site_url() ?>profil/setting_nilai_asumsi/1"> <i data-lucide="settings" class="w-4 h-4 mr-2"></i> Setting Nilai Asumsi </a>
-                            <a class="flex items-center mt-5" href="<?= base_url() ?>profil/setting-portofolio-ppip/1"> <i data-lucide="settings" class="w-4 h-4 mr-2"></i> Setting Portofolio PPIP </a>
-                            <a class="flex items-center mt-5" href="<?= base_url() ?>profil/setting-portofolio-personal-pasar-keuangan/1"> <i data-lucide="settings" class="w-4 h-4 mr-2"></i> Setting Portofolio Personal Pasar Keuangan </a>
-                            <a class="flex items-center mt-5" href="<?= base_url() ?>profil/setting-treatment-pembayaran-setelah-pensiun/1"> <i data-lucide="settings" class="w-4 h-4 mr-2"></i> Setting Treatment Pembayaran Setelah Pensiun </a>
+                            <a class="flex items-center text-primary font-medium" href="<?= site_url() ?>profil/setting_nilai_asumsi/<?= $this->session->userdata('pension_fund_tracker_data')['id'] ?>"> <i data-lucide="settings" class="w-4 h-4 mr-2"></i> Setting Nilai Asumsi </a>
+                            <a class="flex items-center mt-5" href="<?= base_url() ?>profil/setting-portofolio-ppip/<?= $this->session->userdata('pension_fund_tracker_data')['id'] ?>"> <i data-lucide="settings" class="w-4 h-4 mr-2"></i> Setting Portofolio PPIP </a>
+                            <a class="flex items-center mt-5" href="<?= base_url() ?>profil/setting-portofolio-personal/<?= $this->session->userdata('pension_fund_tracker_data')['id'] ?>"> <i data-lucide="settings" class="w-4 h-4 mr-2"></i> Setting Portofolio Personal Pasar Keuangan </a>
+                            <a class="flex items-center mt-5" href="<?= base_url() ?>profil/setting-treatment-pembayaran-setelah-pensiun/<?= $this->session->userdata('pension_fund_tracker_data')['id'] ?>"> <i data-lucide="settings" class="w-4 h-4 mr-2"></i> Setting Treatment Pembayaran Setelah Pensiun </a>
                         </div>
                         <div class="p-5 border-t border-slate-200/60 dark:border-darkmode-400">
-                            <a class="flex items-center mt-5" href="<?= base_url() ?>profil/ubah-password/1"> <i data-lucide="lock" class="w-4 h-4 mr-2"></i> Ubah Password </a>
+                            <a class="flex items-center mt-5" href="<?= base_url() ?>profil/ubah-password/<?= $this->session->userdata('pension_fund_tracker_data')['id'] ?>"> <i data-lucide="lock" class="w-4 h-4 mr-2"></i> Ubah Password </a>
                         </div>
                     </div>
                     <div class="intro-y box p-5 bg-primary text-white mt-5">
@@ -46,7 +46,7 @@
                     </div>
                 </div>
                 <!-- END: Profile Menu -->
-                <div class="col-span-12 lg:col-span-8 2xl:col-span-9">
+                <form id="myForm" class="intro-y col-span-12 lg:col-span-8 2xl:col-span-9" action="<?= base_url() ?>setting-nilai-asumsi" method="post">
                     <div class="grid grid-cols-12 gap-6">
                       <div class="col-span-12">
                         <div class="overflow-x-auto">
@@ -61,19 +61,28 @@
                                     <tr>
                                         <td>Tambahan Iuran Mandiri PPIP</td>
                                         <td>
-                                            <input id="" type="text" class="form-control" placeholder="">
+                                            <div class="input-group">
+                                                <input id="tambahan_iuran" name="tambahan_iuran" value="<?= $data_setting_nilai_asumsi ? $data_setting_nilai_asumsi[0]['tambahan_iuran'] : '' ?>" type="number" class="form-control" placeholder="" required step="any">
+                                                <div class="input-group-text">%</div>
+                                            </div>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>Jumlah Pembayaran Iuran Personal</td>
                                         <td>
-                                            <input id="" type="text" class="form-control" placeholder="">  
+                                            <div class="input-group">
+                                                <input id="jumlah_pembayaran_iuran_personal" name="jumlah_pembayaran_iuran_personal" value="<?= $data_setting_nilai_asumsi ? $data_setting_nilai_asumsi[0]['jumlah_pembayaran_iuran_personal'] : '' ?>"  type="number" class="form-control" placeholder="" required step="any">  
+                                                <div class="input-group-text">%</div>
+                                            </div>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>Kenaikan Iuran Personal</td>
                                         <td>
-                                            <input id="" type="text" class="form-control" placeholder="">
+                                            <div class="input-group">
+                                                <input id="kenaikan_iuran_personal" name="kenaikan_iuran_personal" type="number" class="form-control" value="<?= $data_setting_nilai_asumsi ? $data_setting_nilai_asumsi[0]['kenaikan_iuran_personal'] : '' ?>" placeholder="" required step="any">
+                                                <div class="input-group-text">%</div>
+                                            </div>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -86,9 +95,31 @@
                         </div>
                       </div>
                     </div>
-                </div>
+                </form>
             </div>
         </div>
         <!-- END: Content -->
     </div>
 </div>
+
+<script>     
+  const form = document.getElementById('myForm'); 
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    Swal.fire({
+          title: "Konfirmasi Pilihan Anda",
+          text: "Apakah anda yakin dengan pilihan anda?",
+          icon: "warning",
+          showCancelButton: true,
+          confirmButtonColor: "#3085d6",
+          cancelButtonColor: "#d33",
+          confirmButtonText: "Submit & Update Setting Nilai Asumsi Saya",
+          cancelButtonText: "Kembali",
+      }).then((result) => {
+          if (result.isConfirmed) {  
+            form.submit();
+          }
+      });
+  });
+</script>

@@ -29,7 +29,7 @@ class Dashboard extends MY_controller {
 			
 			if (!$this->temp_data) {
 				$this->session->set_flashdata('error', 'Mohon Isi Kembali Gaji & PhDP Anda!');
-				redirect(base_url()."profil/".$this->id_user);
+				redirect(base_url()."profil/update-tracking-pengguna/".$this->id_user);
 			}
 
 		}

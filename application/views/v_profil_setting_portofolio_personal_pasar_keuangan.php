@@ -22,17 +22,17 @@
                             </div>
                         </div>
                         <div class="p-5 border-t border-slate-200/60 dark:border-darkmode-400">
-                            <a class="flex items-center mt-5" href="<?= site_url() ?>profil/1"> <i data-lucide="box" class="w-4 h-4 mr-2"></i> Biodata Pengguna </a>
-                            <a class="flex items-center mt-5" href="<?= site_url() ?>profil/update-tracking-pengguna/1"> <i data-lucide="activity" class="w-4 h-4 mr-2"></i> Update Tracking Data </a>
+                            <a class="flex items-center mt-5" href="<?= site_url() ?>profil/<?= $this->session->userdata('pension_fund_tracker_data')['id'] ?>"> <i data-lucide="box" class="w-4 h-4 mr-2"></i> Biodata Pengguna </a>
+                            <a class="flex items-center mt-5" href="<?= site_url() ?>profil/update-tracking-pengguna/<?= $this->session->userdata('pension_fund_tracker_data')['id'] ?>"> <i data-lucide="activity" class="w-4 h-4 mr-2"></i> Update Tracking Data </a>
                         </div>
                         <div class="p-5 border-t border-slate-200/60 dark:border-darkmode-400">
-                            <a class="flex items-center" href="<?= site_url() ?>profil/setting_nilai_asumsi/1"> <i data-lucide="settings" class="w-4 h-4 mr-2"></i> Setting Nilai Asumsi </a>
-                            <a class="flex items-center mt-5" href="<?= base_url() ?>profil/setting-portofolio-ppip/1"> <i data-lucide="settings" class="w-4 h-4 mr-2"></i> Setting Portofolio PPIP </a>
-                            <a class="flex items-center mt-5 text-primary font-medium" href="<?= base_url() ?>profil/setting-portofolio-personal-pasar-keuangan/1"> <i data-lucide="settings" class="w-4 h-4 mr-2"></i> Setting Portofolio Personal Pasar Keuangan </a>
-                            <a class="flex items-center mt-5" href="<?= base_url() ?>profil/setting-treatment-pembayaran-setelah-pensiun/1"> <i data-lucide="settings" class="w-4 h-4 mr-2"></i> Setting Treatment Pembayaran Setelah Pensiun </a>
+                            <a class="flex items-center" href="<?= site_url() ?>profil/setting_nilai_asumsi/<?= $this->session->userdata('pension_fund_tracker_data')['id'] ?>"> <i data-lucide="settings" class="w-4 h-4 mr-2"></i> Setting Nilai Asumsi </a>
+                            <a class="flex items-center mt-5" href="<?= base_url() ?>profil/setting-portofolio-ppip/<?= $this->session->userdata('pension_fund_tracker_data')['id'] ?>"> <i data-lucide="settings" class="w-4 h-4 mr-2"></i> Setting Portofolio PPIP </a>
+                            <a class="flex items-center mt-5 text-primary font-medium" href="<?= base_url() ?>profil/setting-portofolio-personal/<?= $this->session->userdata('pension_fund_tracker_data')['id'] ?>"> <i data-lucide="settings" class="w-4 h-4 mr-2"></i> Setting Portofolio Personal Pasar Keuangan </a>
+                            <a class="flex items-center mt-5" href="<?= base_url() ?>profil/setting-treatment-pembayaran-setelah-pensiun/<?= $this->session->userdata('pension_fund_tracker_data')['id'] ?>"> <i data-lucide="settings" class="w-4 h-4 mr-2"></i> Setting Treatment Pembayaran Setelah Pensiun </a>
                         </div>
                         <div class="p-5 border-t border-slate-200/60 dark:border-darkmode-400">
-                            <a class="flex items-center mt-5" href="<?= base_url() ?>profil/ubah-password/1"> <i data-lucide="lock" class="w-4 h-4 mr-2"></i> Ubah Password </a>
+                            <a class="flex items-center mt-5" href="<?= base_url() ?>profil/ubah-password/<?= $this->session->userdata('pension_fund_tracker_data')['id'] ?>"> <i data-lucide="lock" class="w-4 h-4 mr-2"></i> Ubah Password </a>
                         </div>
                     </div>
                     <div class="intro-y box p-5 bg-primary text-white mt-5">
@@ -48,24 +48,28 @@
                 <!-- END: Profile Menu -->
                 <div class="col-span-12 lg:col-span-8 2xl:col-span-9">
                     <div class="grid grid-cols-12 gap-6">
-                      <div class="col-span-12 border-b">
-                        <label for="" class="form-label">Pilih Setting Portofolio Personal Pasar Keuangan</label>
-                        <select class="form-select form-select-lg mt-2" aria-label=".form-select-lg example">
-                            <option selected disabled>Pilih</option>
-                            <option>Konvensional Reguler</option>
-                            <option>Konvensional Plus</option>
-                            <option>Syariah Reguler</option>
-                            <option>Syariah Plus</option>
-                        </select>
-                        <br>
-                        <div class="mt-2 mb-2 text-right">
-                          <button type="submit" class="btn btn-success">Update & Simpan</button>
-                        </div>
-                      </div>
+                        <form id="myForm" class="col-span-12 border-b" action="<?= base_url() ?>setting-portofolio-ppip" method="post">
+                            <label for="" class="form-label">Pilih Setting Portofolio Personal Keuangan</label>
+                            <select id="jenis_investasi" class="form-select form-select-lg mt-2" name="id_portofolio_personal" aria-label=".form-select-lg example" required>
+                                <option value="">Pilih</option>
+                                <?php foreach ($opsi_setting_personal as $key) { ?>
+                                    <option value="<?= $key['id'] ?>"><?= $key['nama'] ?></option>
+                                <?php } ?>
+                            </select>
+                            <br>
+                            <div class="mt-2 mb-2 flex gap-4" style="justify-content: end;">
+                                <p id="clearSearch" class="btn btn-danger" style="display:none;">Clear Result</p>
+                                <button type="submit" class="btn btn-success">Update & Simpan</button>
+                            </div>
+                        </form>
                       <div class="col-span-12">
-                        <div class="overflow-x-auto">
+                        <div class="overflow-x-auto" id="containerUser">
                             <table class="table table-bordered">
                                 <thead>
+                                    <tr>
+                                        <th class="whitespace-nowrap">Informasi Portofolio Personal Terpilih</th>
+                                        <th class="whitespace-nowrap" colspan="3"><?= $data_setting_personal ? $data_setting_personal[0]['nama'] : '' ?></th>
+                                    </tr>
                                     <tr>
                                         <th class="whitespace-nowrap">Capital Market Ecpectation</th>
                                         <th class="whitespace-nowrap">Tranche 1</th>
@@ -76,147 +80,149 @@
                                 <tbody>
                                     <tr>
                                         <td>Return Portofolio Personal</td>
-                                        <td>8.02%</td>
-                                        <td>7.82%</td>
-                                        <td>4%</td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['return_s_tranche1']."%" : '' ?></td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['return_s_tranche2']."%" : '' ?></td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['return_s_tranche3']."%" : '' ?></td>
                                     </tr>
                                     <tr>
                                         <td>Risiko Pasar Portofolio Personal</td>
-                                        <td>13.21%</td>
-                                        <td>12.05%</td>
-                                        <td>0.13%</td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
                                     </tr>
                                     <tr>
                                         <td colspan="4">Komposisi Investasi</td>
                                     </tr>
                                     <tr>
                                         <td>Saham</td>
-                                        <td>50%</td>
-                                        <td>30%</td>
-                                        <td>0%</td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
                                     </tr>
                                     <tr>
                                         <td>Pendapatan Tetap</td>
-                                        <td>20%</td>
-                                        <td>30%</td>
-                                        <td>0%</td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
                                     </tr>
                                     <tr>
                                         <td>Deposito</td>
-                                        <td>5%</td>
-                                        <td>5%</td>
-                                        <td>50%</td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
                                     </tr>
                                     <tr>
                                         <td>Rekda Dana Saham</td>
-                                        <td>20%</td>
-                                        <td>30%</td>
-                                        <td>0%</td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
                                     </tr>
                                     <tr>
                                         <td>Rekda Dana Pendapatan Tetap</td>
-                                        <td>5%</td>
-                                        <td>5%</td>
-                                        <td>0%</td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
                                     </tr>
                                     <tr>
                                         <td>Rekda Dana Campuran</td>
-                                        <td>0%</td>
-                                        <td>0%</td>
-                                        <td>0%</td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
                                     </tr>
                                     <tr>
                                         <td colspan="4">Asumsi Return Investasi  - Personal pada Pasar Keuangan</td>
                                     </tr>
                                     <tr>
                                         <td>Saham</td>
-                                        <td>8.76%</td>
-                                        <td>8.76%</td>
-                                        <td>8.76%</td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
                                     </tr>
                                     <tr>
                                         <td>Pendapatan Tetap</td>
-                                        <td>6.75%</td>
-                                        <td>6.75%</td>
-                                        <td>6.75%</td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
                                     </tr>
                                     <tr>
                                         <td>Deposito</td>
-                                        <td>4%</td>
-                                        <td>4%</td>
-                                        <td>4%</td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
                                     </tr>
                                     <tr>
                                         <td>Reksa Dana Saham</td>
-                                        <td>8.76%</td>
-                                        <td>8.76%</td>
-                                        <td>8.76%</td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
                                     </tr>
                                     <tr>
                                         <td>Reksa Dana Pendapatan Tetap</td>
-                                        <td>6.75%</td>
-                                        <td>6.75%</td>
-                                        <td>6.75%</td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
                                     </tr>
                                     <tr>
                                         <td>Reksa Dana Pasar Uang</td>
-                                        <td>4%</td>
-                                        <td>4%</td>
-                                        <td>4%</td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
                                     </tr>
                                     <tr>
                                         <td>Reksa Dana Campuran</td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
                                     </tr>
                                     <tr>
                                         <td colspan="4">Asumsi Risiko Pasar Investasi  - Personal pada Pasar Keuangan</td>
                                     </tr>
                                     <tr>
                                         <td>Saham</td>
-                                        <td>17.57%</td>
-                                        <td>17.57%</td>
-                                        <td>17.57%</td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
                                     </tr>
                                     <tr>
                                         <td>Pendapatan Tetap</td>
-                                        <td>11.54%</td>
-                                        <td>11.54%</td>
-                                        <td>11.54%</td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
                                     </tr>
                                     <tr>
                                         <td>Deposito</td>
-                                        <td>0.13%</td>
-                                        <td>0.13%</td>
-                                        <td>0.13%</td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
                                     </tr>
                                     <tr>
                                         <td>Reksa Dana Saham</td>
-                                        <td>0.13%</td>
-                                        <td>0.13%</td>
-                                        <td>0.13%</td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
                                     </tr>
                                     <tr>
                                         <td>Reksa Dana Pendapatan Tetap</td>
-                                        <td>17.57%</td>
-                                        <td>17.57%</td>
-                                        <td>17.57%</td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
                                     </tr>
                                     <tr>
                                         <td>Reksa Dana Pasar Uang</td>
-                                        <td>0.13%</td>
-                                        <td>0.13%</td>
-                                        <td>0.13%</td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
                                     </tr>
                                     <tr>
                                         <td>Reksa Dana Campuran</td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
                                     </tr>
                                 </tbody>
                             </table>
+                        </div>
+                        <div class="overflow-x-auto" id="containerSelected" style="display:none;">
                         </div>
                       </div>
                     </div>
@@ -226,3 +232,76 @@
         <!-- END: Content -->
     </div>
 </div>
+
+<script> 
+    const form = document.getElementById('myForm'); 
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        Swal.fire({
+            title: "Konfirmasi Pilihan Anda",
+            text: "Apakah anda yakin dengan pilihan anda?",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Submit & Update Setting Saya",
+            cancelButtonText: "Kembali",
+        }).then((result) => {
+            if (result.isConfirmed) {  
+                form.submit();
+            }
+        });
+    });
+    
+    function setDataToPage(data){
+      const namaPortofolio = document.getElementById("namaPortofolio");
+      namaPortofolio.textContent = data.nama_portofolio;
+
+      // Nilai Variabel
+      const nilai = data;
+      delete data.id;
+      delete data.nama_portofolio;
+      delete data.created_at;
+      delete data.flag;
+
+      for (var key in nilai) {
+        var value = nilai[key];
+        eval("var " + key + " = " + value + ";");
+        document.getElementById(key).textContent = value+"%";
+      }
+
+    }
+
+    const select = document.getElementById('jenis_investasi');
+    const containerSelected = document.getElementById("containerSelected");
+    const containerUser = document.getElementById("containerUser");
+    const btnClearSearch = document.getElementById("clearSearch");
+
+    select.addEventListener('change', function() {
+        containerUser.style.display = "none";
+        containerSelected.style.display = "block";
+        btnClearSearch.style.display = "block";
+
+        btnClearSearch.onclick = () => {
+            containerSelected.style.display = "none";
+            btnClearSearch.style.display = "none";
+            containerUser.style.display = "block";
+            select.selectedIndex = -1;
+        }
+
+
+        var xhr = new XMLHttpRequest();
+        xhr.withCredentials = true;
+        xhr.addEventListener("readystatechange", function() {
+            if(this.readyState === 4) {
+                let data = xhr.response;
+                let response = JSON.parse(data);
+                console.log(response)
+                // setDataToPage(response);
+            }
+        });
+        xhr.open("GET", "<?= base_url() ?>profil/personal-by-id/"+select.value);
+        xhr.send();
+    });
+</script>

@@ -28,7 +28,7 @@
                         <div class="p-5 border-t border-slate-200/60 dark:border-darkmode-400">
                             <a class="flex items-center" href="<?= site_url() ?>profil/setting_nilai_asumsi/<?= $this->session->userdata('pension_fund_tracker_data')['id'] ?>"> <i data-lucide="settings" class="w-4 h-4 mr-2"></i> Setting Nilai Asumsi </a>
                             <a class="flex items-center mt-5" href="<?= base_url() ?>profil/setting-portofolio-ppip/<?= $this->session->userdata('pension_fund_tracker_data')['id'] ?>"> <i data-lucide="settings" class="w-4 h-4 mr-2"></i> Setting Portofolio PPIP </a>
-                            <a class="flex items-center mt-5" href="<?= base_url() ?>profil/setting-portofolio-personal-pasar-keuangan/<?= $this->session->userdata('pension_fund_tracker_data')['id'] ?>"> <i data-lucide="settings" class="w-4 h-4 mr-2"></i> Setting Portofolio Personal Pasar Keuangan </a>
+                            <a class="flex items-center mt-5" href="<?= base_url() ?>profil/setting-portofolio-personal/<?= $this->session->userdata('pension_fund_tracker_data')['id'] ?>"> <i data-lucide="settings" class="w-4 h-4 mr-2"></i> Setting Portofolio Personal Pasar Keuangan </a>
                             <a class="flex items-center mt-5" href="<?= base_url() ?>profil/setting-treatment-pembayaran-setelah-pensiun/<?= $this->session->userdata('pension_fund_tracker_data')['id'] ?>"> <i data-lucide="settings" class="w-4 h-4 mr-2"></i> Setting Treatment Pembayaran Setelah Pensiun </a>
                         </div>
                         <div class="p-5 border-t border-slate-200/60 dark:border-darkmode-400">
@@ -270,12 +270,18 @@
                                     <input id="sewa_properti" type="number" name="sewa_properti" value="<?= $data_user['sewa_properti'] ? $data_user['sewa_properti'] : '' ?>" class="form-control" <?= $data_user['layer_personal'] ? 'required' : '' ?>>
                                 </div>
                                 <div class="mb-2">
-                                    <label for="kenaikan_properti" class="form-label">Rata-rata kenaikan harga properti per tahun (%)</label>
-                                    <input id="kenaikan_properti" name="kenaikan_properti" value="<?= $data_user['kenaikan_properti'] ? round($data_user['kenaikan_properti'], 2) : '' ?>" type="number" step="any" class="form-control" <?= $data_user['layer_personal'] ? 'required' : '' ?>>
+                                    <label for="kenaikan_properti" class="form-label">Rata-rata kenaikan harga properti per tahun</label>
+                                    <div class="input-group">
+                                      <input id="kenaikan_properti" name="kenaikan_properti" value="<?= $data_user['kenaikan_properti'] ? round($data_user['kenaikan_properti'], 2) : '' ?>" type="number" step="any" class="form-control" <?= $data_user['layer_personal'] ? 'required' : '' ?>>
+                                      <div class="input-group-text">%</div>
+                                    </div>
                                 </div>
                                 <div class="mb-2">
-                                    <label for="kenaikan_sewa" class="form-label">Rata-rata kenaikan sewa properti per tahun (%)</label>
-                                    <input id="kenaikan_sewa" name="kenaikan_sewa" value="<?= $data_user['kenaikan_sewa'] ? round($data_user['kenaikan_sewa'],2) : '' ?>" type="number" step="any" class="form-control" <?= $data_user['layer_personal'] ? 'required' : '' ?>>
+                                    <label for="kenaikan_sewa" class="form-label">Rata-rata kenaikan sewa properti per tahun</label>
+                                    <div class="input-group">
+                                      <input id="kenaikan_sewa" name="kenaikan_sewa" value="<?= $data_user['kenaikan_sewa'] ? round($data_user['kenaikan_sewa'],2) : '' ?>" type="number" step="any" class="form-control" <?= $data_user['layer_personal'] ? 'required' : '' ?>>
+                                      <div class="input-group-text">%</div>
+                                    </div>
                                 </div>
                               </div>
                             </div>

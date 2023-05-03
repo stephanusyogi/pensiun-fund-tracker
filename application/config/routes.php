@@ -66,10 +66,21 @@ $route['profil/(:any)'] = 'profil/index/$1';
 $route['profil-update/(:any)'] = 'profil/update_biodata/$1';
 
 $route['profil/update-tracking-pengguna/(:any)'] = 'profil/update_tracking_pengguna/$1';
+$route['update-tracking-pengguna'] = 'profil/update_tracking_pengguna_execute';
+
 $route['profil/setting-portofolio-ppip/(:any)'] = 'profil/setting_portofolio_ppip/$1';
+$route['profil/ppip-by-id/(:any)'] = 'profil/setting_portofolio_ppip_by_id/$1';
+$route['setting-portofolio-ppip'] = 'profil/setting_portofolio_ppip_execute';
+
 $route['profil/setting-nilai-asumsi/(:any)'] = 'profil/setting_nilai_asumsi/$1';
-$route['profil/setting-portofolio-personal-pasar-keuangan/(:any)'] = 'profil/setting_portofolio_personal_pasar_keuangan/$1';
+$route['setting-nilai-asumsi'] = 'profil/setting_nilai_asumsi_execute';
+
+$route['profil/setting-portofolio-personal/(:any)'] = 'profil/setting_portofolio_personal_pasar_keuangan/$1';
+$route['profil/personal-by-id/(:any)'] = 'profil/setting_portofolio_personal_pasar_keuangan_by_id/$1';
+$route['setting-portofolio-personal'] = 'profil/setting_portofolio_personal_pasar_keuangan_execute';
+
 $route['profil/setting-treatment-pembayaran-setelah-pensiun/(:any)'] = 'profil/setting_treatment_pembayaran_setelah_pensiun/$1';
+$route['setting-treatment-pembayaran-setelah-pensiun'] = 'profil/setting_treatment_pembayaran_setelah_pensiun_execute';
 
 $route['profil/ubah-password/(:any)'] = 'profil/ubah_password/$1';
 $route['ubah-password/(:any)'] = 'profil/ubah_password_execute/$1';

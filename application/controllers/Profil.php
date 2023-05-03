@@ -7,6 +7,7 @@ class Profil extends MY_controller {
     $this->session_status = $this->session->userdata('pension_fund_tracker_isLoggedIn');
 		$this->id_user = $this->session->userdata('pension_fund_tracker_data')['id'];
 		$this->token = $this->session->userdata('pension_fund_tracker_token');
+		$this->temp_data = $this->session->userdata('pension_fund_tracker_data_temp');
 		
 		if (!$this->session_status) {
 			$this->session->set_flashdata('error', 'Your Session Has Expired!');
@@ -21,7 +22,12 @@ class Profil extends MY_controller {
 		}
 	}
 	public function index($id_user)
-	{
+	{		
+		if (!$this->temp_data) {
+			$this->session->set_flashdata('error', 'Mohon Isi Kembali Gaji & PhDP Anda!');
+			redirect(base_url()."profil/update-tracking-pengguna/".$this->id_user);
+		}
+
 		$data_user = $this->send_request("user/{$this->id_user}", $this->token, "GET");
 		$data_pengumuman = $this->send_request("pengumuman", $this->token, "GET")['data'];
 
@@ -91,7 +97,11 @@ class Profil extends MY_controller {
 		redirect(base_url()."profil/".$id_user);
 	}
 
+	// Update Tracking Pengguna
 	public function update_tracking_pengguna($id_user){
+		$data_tracking = $this->send_request("update-tracking-data?id_user=".$this->id_user, $this->token, "GET");
+
+		$data['data_tracking'] = $data_tracking["data"];
 		$data['title'] = "Profil - Update Tracking Pengguna";
     $data['menuLink'] = "profil/".$id_user;
 
@@ -100,7 +110,45 @@ class Profil extends MY_controller {
 		$this->load->view('includes/footer', $data);
 	}
 
-	public function setting_portofolio_ppip($id_user){
+	public function update_tracking_pengguna_execute(){
+		$postData = $this->input->post();
+
+		if ($this->agent->is_browser()){
+			$agent = $this->agent->browser().' '.$this->agent->version();
+		}elseif ($this->agent->is_mobile()){
+			$agent = $this->agent->mobile();
+		}else{
+			$agent = 'Data user gagal di dapatkan';
+		}
+
+		$postData['id_user'] = $this->id_user;
+		$postData['browser'] = $agent;
+		$postData['sistem_operasi'] = $this->agent->platform();
+		$postData['ip_address'] = $this->input->ip_address();
+		
+		$response = $this->send_request_with_data('update-tracking-data', $this->token, 'POST', $postData);
+		
+		$data_temp = array(
+			'gaji' => $postData['gaji'],
+			'phdp' => $postData['phdp'],
+		);
+		$this->session->set_userdata('pension_fund_tracker_data_temp', $data_temp);
+		
+		$this->session->set_flashdata('success', "Update Tracking Data Berhasil!");
+		redirect(base_url()."profil/update-tracking-pengguna/".$this->id_user);
+	}
+
+	// Setting PPIP
+	public function setting_portofolio_ppip($id_user){		
+		if (!$this->temp_data) {
+			$this->session->set_flashdata('error', 'Mohon Isi Kembali Gaji & PhDP Anda!');
+			redirect(base_url()."profil/update-tracking-pengguna/".$this->id_user);
+		}
+
+		$data_setting_ppip = $this->send_request("setting-ppip/user?id_user=".$this->id_user, $this->token, "GET");
+
+		$data['opsi_setting_ppip'] = $data_setting_ppip["opsi"];
+		$data['data_setting_ppip'] = $data_setting_ppip["data"];
 		$data['title'] = "Profil - Setting Portofolio PPIP";
     $data['menuLink'] = "profil/".$id_user;
 
@@ -109,16 +157,56 @@ class Profil extends MY_controller {
 		$this->load->view('includes/footer', $data);
 	}
 
-	public function setting_nilai_asumsi($id_user){
-		$data['title'] = "Profil - Setting Nilai Asumsi";
-    $data['menuLink'] = "profil/".$id_user;
+	public function setting_portofolio_ppip_execute(){
+		$id_investasi = $this->input->post()['id_portofolio_ppip'];
+		
+		$postData = $this->send_request("setting-ppip/user?id_investasi=".$id_investasi, $this->token, "GET")['data'][0];
 
-		$this->load->view('includes/header', $data);
-		$this->load->view('v_profil_setting_nilai_asumsi', $data);
-		$this->load->view('includes/footer', $data);
+		$nama_pilihan = $postData['nama_portofolio'];
+
+		unset($postData["id"]);
+		unset($postData["nama_portofolio"]);
+		unset($postData["flag"]);
+		unset($postData["created_at"]);
+
+		if ($this->agent->is_browser()){
+			$agent = $this->agent->browser().' '.$this->agent->version();
+		}elseif ($this->agent->is_mobile()){
+			$agent = $this->agent->mobile();
+		}else{
+			$agent = 'Data user gagal di dapatkan';
+		}
+
+		$postData['id_user'] = $this->id_user;
+		$postData['browser'] = $agent;
+		$postData['sistem_operasi'] = $this->agent->platform();
+		$postData['ip_address'] = $this->input->ip_address();
+
+		$postData['id_setting_portofolio_ppip_admin'] = $id_investasi;
+		$postData['nama_pilihan'] = $nama_pilihan;
+
+		$response = $this->send_request_with_data('setting-ppip/user/add?id_investasi='.$id_investasi, $this->token, 'POST', $postData);
+		
+		$this->session->set_flashdata('success', "Update Setting PPIP Berhasil!");
+		redirect(base_url()."profil/setting-portofolio-ppip/".$this->id_user);
 	}
 
-	public function setting_portofolio_personal_pasar_keuangan($id_user){
+	public function setting_portofolio_ppip_by_id($id_investasi){
+		$data = $this->send_request("setting-ppip/user?id_investasi=".$id_investasi, $this->token, "GET")['data'][0];
+		echo json_encode($data, true);
+	}
+	
+	// Setting Personal Keuangan
+	public function setting_portofolio_personal_pasar_keuangan($id_user){		
+		if (!$this->temp_data) {
+			$this->session->set_flashdata('error', 'Mohon Isi Kembali Gaji & PhDP Anda!');
+			redirect(base_url()."profil/update-tracking-pengguna/".$this->id_user);
+		}
+
+		$data_setting_personal = $this->send_request("setting-personal-lifecycle/user?id_user=".$this->id_user, $this->token, "GET");
+
+		$data['opsi_setting_personal'] = $data_setting_personal["opsi"];
+		$data['data_setting_personal'] = $data_setting_personal["data"];
 		$data['title'] = "Profil - Setting Personal Pasar Keuangan";
     $data['menuLink'] = "profil/".$id_user;
 
@@ -127,7 +215,75 @@ class Profil extends MY_controller {
 		$this->load->view('includes/footer', $data);
 	}
 
-	public function setting_treatment_pembayaran_setelah_pensiun($id_user){
+	public function setting_portofolio_personal_pasar_keuangan_execute(){
+		$id_investasi = $this->input->post()['id_portofolio_ppip'];
+		echo json_encode($id_investasi, true);
+		die();
+	}
+
+	public function setting_portofolio_personal_pasar_keuangan_by_id($id_investasi){
+		$data = $this->send_request("setting-personal-lifecycle/user?id_investasi=".$id_investasi, $this->token, "GET")['data'];
+		echo json_encode($data, true);
+	}
+
+	// Setting Nilai Asumsi
+	public function setting_nilai_asumsi($id_user){		
+		if (!$this->temp_data) {
+			$this->session->set_flashdata('error', 'Mohon Isi Kembali Gaji & PhDP Anda!');
+			redirect(base_url()."profil/update-tracking-pengguna/".$this->id_user);
+		}
+		
+		$data_setting_nilai_asumsi = $this->send_request("setting-nilai-asumsi/user?id_user=".$this->id_user, $this->token, "GET");
+
+		$data['data_setting_nilai_asumsi'] = $data_setting_nilai_asumsi["data"];
+		$data['title'] = "Profil - Setting Nilai Asumsi";
+    $data['menuLink'] = "profil/".$id_user;
+
+		$this->load->view('includes/header', $data);
+		$this->load->view('v_profil_setting_nilai_asumsi', $data);
+		$this->load->view('includes/footer', $data);
+	}
+
+	public function setting_nilai_asumsi_execute(){
+		$postData = $this->input->post();
+		$nilai_admin = $this->send_request("setting-nilai-asumsi/user", $this->token, "GET")['data'][0];
+
+		if ($this->agent->is_browser()){
+			$agent = $this->agent->browser().' '.$this->agent->version();
+		}elseif ($this->agent->is_mobile()){
+			$agent = $this->agent->mobile();
+		}else{
+			$agent = 'Data user gagal di dapatkan';
+		}
+
+		$postData['id_user'] = $this->id_user;
+		$postData['browser'] = $agent;
+		$postData['sistem_operasi'] = $this->agent->platform();
+		$postData['ip_address'] = $this->input->ip_address();
+
+		$postData['kenaikan_gaji'] = $nilai_admin['kenaikan_gaji'];
+		$postData['kenaikan_phdp'] = $nilai_admin['kenaikan_phdp'];
+		$postData['iuran_ppip'] = $nilai_admin['iuran_ppip'];
+		$postData['dasar_pembayaran_iuran_personal'] = $nilai_admin['dasar_pembayaran_iuran_personal'];
+		$postData['inflasi_jangka_panjang'] = $nilai_admin['inflasi_jangka_panjang'];
+
+		$response = $this->send_request_with_data('setting-nilai-asumsi/user/add', $this->token, 'POST', $postData);
+
+		$this->session->set_flashdata('success', "Update Setting Nilai Asumsi Berhasil!");
+		redirect(base_url()."profil/setting-nilai-asumsi/".$this->id_user);
+	}
+
+
+	// Setting Treatment
+	public function setting_treatment_pembayaran_setelah_pensiun($id_user){		
+		if (!$this->temp_data) {
+			$this->session->set_flashdata('error', 'Mohon Isi Kembali Gaji & PhDP Anda!');
+			redirect(base_url()."profil/update-tracking-pengguna/".$this->id_user);
+		}
+		
+		$data_setting_treatment = $this->send_request("setting-treatment/user?id_user=".$this->id_user, $this->token, "GET");
+
+		$data['data_setting_treatment'] = $data_setting_treatment["data"];
 		$data['title'] = "Profil - Setting Treatment Pembayaran Setelah Pensiun";
     $data['menuLink'] = "profil/".$id_user;
 
@@ -135,7 +291,31 @@ class Profil extends MY_controller {
 		$this->load->view('v_profil_setting_treatment_pembayaran_setelah_pensiun', $data);
 		$this->load->view('includes/footer', $data);
 	}
+	
+	public function setting_treatment_pembayaran_setelah_pensiun_execute(){
+		$postData = $this->input->post();
 
+		if ($this->agent->is_browser()){
+			$agent = $this->agent->browser().' '.$this->agent->version();
+		}elseif ($this->agent->is_mobile()){
+			$agent = $this->agent->mobile();
+		}else{
+			$agent = 'Data user gagal di dapatkan';
+		}
+
+		$postData['id_user'] = $this->id_user;
+		$postData['browser'] = $agent;
+		$postData['sistem_operasi'] = $this->agent->platform();
+		$postData['ip_address'] = $this->input->ip_address();
+
+
+		$response = $this->send_request_with_data('setting-treatment/user/add', $this->token, 'POST', $postData);
+		
+		$this->session->set_flashdata('success', "Update Setting Treatment Pembayaran Berhasil!");
+		redirect(base_url()."profil/setting-treatment-pembayaran-setelah-pensiun/".$this->id_user);
+	}
+
+	// Ubah Password
 	public function ubah_password($id_user){
 		$data['title'] = "Profil - Ubah Password";
     $data['menuLink'] = "profil/".$id_user;
