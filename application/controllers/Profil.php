@@ -19,14 +19,14 @@ class Profil extends MY_controller {
 				$this->session->set_flashdata('error', 'Lengkapi Data Kuisioner Anda!');
 				redirect(base_url()."kuisioner");
 			}
+			if (!$this->temp_data) {
+				$this->session->set_flashdata('error', 'Mohon Isi Kembali Gaji & PhDP Anda!');
+				redirect(base_url()."profil/update-tracking-pengguna/".$this->id_user);
+			}
 		}
 	}
 	public function index($id_user)
 	{		
-		if (!$this->temp_data) {
-			$this->session->set_flashdata('error', 'Mohon Isi Kembali Gaji & PhDP Anda!');
-			redirect(base_url()."profil/update-tracking-pengguna/".$this->id_user);
-		}
 
 		$data_user = $this->send_request("user/{$this->id_user}", $this->token, "GET");
 		$data_pengumuman = $this->send_request("pengumuman", $this->token, "GET")['data'];
@@ -139,11 +139,7 @@ class Profil extends MY_controller {
 	}
 
 	// Setting PPIP
-	public function setting_portofolio_ppip($id_user){		
-		if (!$this->temp_data) {
-			$this->session->set_flashdata('error', 'Mohon Isi Kembali Gaji & PhDP Anda!');
-			redirect(base_url()."profil/update-tracking-pengguna/".$this->id_user);
-		}
+	public function setting_portofolio_ppip($id_user){	
 
 		$data_setting_ppip = $this->send_request("setting-ppip/user?id_user=".$this->id_user, $this->token, "GET");
 
@@ -198,10 +194,6 @@ class Profil extends MY_controller {
 	
 	// Setting Personal Keuangan
 	public function setting_portofolio_personal_pasar_keuangan($id_user){		
-		if (!$this->temp_data) {
-			$this->session->set_flashdata('error', 'Mohon Isi Kembali Gaji & PhDP Anda!');
-			redirect(base_url()."profil/update-tracking-pengguna/".$this->id_user);
-		}
 
 		$data_setting_personal = $this->send_request("setting-personal-lifecycle/user?id_user=".$this->id_user, $this->token, "GET");
 
@@ -269,10 +261,6 @@ class Profil extends MY_controller {
 
 	// Setting Nilai Asumsi
 	public function setting_nilai_asumsi($id_user){		
-		if (!$this->temp_data) {
-			$this->session->set_flashdata('error', 'Mohon Isi Kembali Gaji & PhDP Anda!');
-			redirect(base_url()."profil/update-tracking-pengguna/".$this->id_user);
-		}
 		
 		$data_setting_nilai_asumsi = $this->send_request("setting-nilai-asumsi/user?id_user=".$this->id_user, $this->token, "GET");
 
@@ -317,11 +305,6 @@ class Profil extends MY_controller {
 
 	// Setting Treatment
 	public function setting_treatment_pembayaran_setelah_pensiun($id_user){		
-		if (!$this->temp_data) {
-			$this->session->set_flashdata('error', 'Mohon Isi Kembali Gaji & PhDP Anda!');
-			redirect(base_url()."profil/update-tracking-pengguna/".$this->id_user);
-		}
-		
 		$data_setting_treatment = $this->send_request("setting-treatment/user?id_user=".$this->id_user, $this->token, "GET");
 
 		$data['data_setting_treatment'] = $data_setting_treatment["data"];
