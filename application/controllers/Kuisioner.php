@@ -51,6 +51,8 @@ class Kuisioner extends MY_controller {
 			'sistem_operasi' => $this->agent->platform(),
 			'ip_address' => $this->input->ip_address()
 		);
+		echo json_encode($postData, true);
+		die();
 		$this->send_request_with_data("kuisioner-activity", $token, "POST", $data_activity);
 
 		$this->input_kuisioner_api("BEKERJA_KONSUMSI", $id_user, (float) $postData["bekerja_konsumsi"]);	
