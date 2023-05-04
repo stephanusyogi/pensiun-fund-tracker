@@ -29,7 +29,9 @@ class Profil extends MY_controller {
 	{		
 
 		$data_user = $this->send_request("user/{$this->id_user}", $this->token, "GET");
-		$data_pengumuman = $this->send_request("pengumuman", $this->token, "GET")['data'];
+		$data_pengumuman = $this->send_request("pengumuman", $this->token, "GET");
+		echo json_encode($data_pengumuman, true);
+		die();
 
 		$data['data_user'] = $data_user["data"];
 		$data['data_pengumuman'] = $data_pengumuman;
