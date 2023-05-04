@@ -48,7 +48,7 @@
                 <!-- END: Profile Menu -->
                 <div class="col-span-12 lg:col-span-8 2xl:col-span-9">
                     <div class="grid grid-cols-12 gap-6">
-                        <form id="myForm" class="col-span-12 border-b" action="<?= base_url() ?>setting-portofolio-ppip" method="post">
+                        <form id="myForm" class="col-span-12 border-b" action="<?= base_url() ?>setting-portofolio-personal" method="post">
                             <label for="" class="form-label">Pilih Setting Portofolio Personal Keuangan</label>
                             <select id="jenis_investasi" class="form-select form-select-lg mt-2" name="id_portofolio_personal" aria-label=".form-select-lg example" required>
                                 <option value="">Pilih</option>
@@ -80,149 +80,312 @@
                                 <tbody>
                                     <tr>
                                         <td>Return Portofolio Personal</td>
-                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['return_s_tranche1']."%" : '' ?></td>
-                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['return_s_tranche2']."%" : '' ?></td>
-                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['return_s_tranche3']."%" : '' ?></td>
+                                        <td><?= $data_setting_komposisi ? $data_setting_komposisi[0]['return_portofolio_personal_t1']."%" : '' ?></td>
+                                        <td><?= $data_setting_komposisi ? $data_setting_komposisi[0]['return_portofolio_personal_t2']."%" : '' ?></td>
+                                        <td><?= $data_setting_komposisi ? $data_setting_komposisi[0]['return_portofolio_personal_t3']."%" : '' ?></td>
                                     </tr>
                                     <tr>
                                         <td>Risiko Pasar Portofolio Personal</td>
-                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
-                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
-                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
+                                        <td><?= $data_setting_komposisi ? $data_setting_komposisi[0]['resiko_pasar_portofolio_personal_t1']."%" : '' ?></td>
+                                        <td><?= $data_setting_komposisi ? $data_setting_komposisi[0]['resiko_pasar_portofolio_personal_t2']."%" : '' ?></td>
+                                        <td><?= $data_setting_komposisi ? $data_setting_komposisi[0]['resiko_pasar_portofolio_personal_t3']."%" : '' ?></td>
                                     </tr>
                                     <tr>
                                         <td colspan="4">Komposisi Investasi</td>
                                     </tr>
                                     <tr>
                                         <td>Saham</td>
-                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
-                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
-                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
+                                        <td><?= $data_setting_komposisi ? $data_setting_komposisi[0]['saham_t1']."%" : '' ?></td>
+                                        <td><?= $data_setting_komposisi ? $data_setting_komposisi[0]['saham_t2']."%" : '' ?></td>
+                                        <td><?= $data_setting_komposisi ? $data_setting_komposisi[0]['saham_t3']."%" : '' ?></td>
                                     </tr>
                                     <tr>
                                         <td>Pendapatan Tetap</td>
-                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
-                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
-                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
+                                        <td><?= $data_setting_komposisi ? $data_setting_komposisi[0]['pendapatan_tetap_t1']."%" : '' ?></td>
+                                        <td><?= $data_setting_komposisi ? $data_setting_komposisi[0]['pendapatan_tetap_t2']."%" : '' ?></td>
+                                        <td><?= $data_setting_komposisi ? $data_setting_komposisi[0]['pendapatan_tetap_t3']."%" : '' ?></td>
                                     </tr>
                                     <tr>
                                         <td>Deposito</td>
-                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
-                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
-                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
+                                        <td><?= $data_setting_komposisi ? $data_setting_komposisi[0]['deposito_t1']."%" : '' ?></td>
+                                        <td><?= $data_setting_komposisi ? $data_setting_komposisi[0]['deposito_t2']."%" : '' ?></td>
+                                        <td><?= $data_setting_komposisi ? $data_setting_komposisi[0]['deposito_t3']."%" : '' ?></td>
                                     </tr>
                                     <tr>
                                         <td>Rekda Dana Saham</td>
-                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
-                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
-                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
+                                        <td><?= $data_setting_komposisi ? $data_setting_komposisi[0]['reksadana_saham_t1']."%" : '' ?></td>
+                                        <td><?= $data_setting_komposisi ? $data_setting_komposisi[0]['reksadana_saham_t2']."%" : '' ?></td>
+                                        <td><?= $data_setting_komposisi ? $data_setting_komposisi[0]['reksadana_saham_t3']."%" : '' ?></td>
                                     </tr>
                                     <tr>
                                         <td>Rekda Dana Pendapatan Tetap</td>
-                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
-                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
-                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
+                                        <td><?= $data_setting_komposisi ? $data_setting_komposisi[0]['reksadana_pendapatan_tetap_t1']."%" : '' ?></td>
+                                        <td><?= $data_setting_komposisi ? $data_setting_komposisi[0]['reksadana_pendapatan_tetap_t2']."%" : '' ?></td>
+                                        <td><?= $data_setting_komposisi ? $data_setting_komposisi[0]['reksadana_pendapatan_tetap_t3']."%" : '' ?></td>
                                     </tr>
                                     <tr>
                                         <td>Rekda Dana Campuran</td>
-                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
-                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
-                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
+                                        <td><?= $data_setting_komposisi ? $data_setting_komposisi[0]['reksadana_campuran_t1']."%" : '' ?></td>
+                                        <td><?= $data_setting_komposisi ? $data_setting_komposisi[0]['reksadana_campuran_t2']."%" : '' ?></td>
+                                        <td><?= $data_setting_komposisi ? $data_setting_komposisi[0]['reksadana_campuran_t3']."%" : '' ?></td>
                                     </tr>
                                     <tr>
                                         <td colspan="4">Asumsi Return Investasi  - Personal pada Pasar Keuangan</td>
                                     </tr>
                                     <tr>
                                         <td>Saham</td>
-                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
-                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
-                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['return_s_tranche1']."%" : '' ?></td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['return_s_tranche2']."%" : '' ?></td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['return_s_tranche3']."%" : '' ?></td>
                                     </tr>
                                     <tr>
                                         <td>Pendapatan Tetap</td>
-                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
-                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
-                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['return_pt_tranche1']."%" : '' ?></td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['return_pt_tranche2']."%" : '' ?></td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['return_pt_tranche3']."%" : '' ?></td>
                                     </tr>
                                     <tr>
                                         <td>Deposito</td>
-                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
-                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
-                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['return_d_tranche1']."%" : '' ?></td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['return_d_tranche2']."%" : '' ?></td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['return_d_tranche3']."%" : '' ?></td>
                                     </tr>
                                     <tr>
                                         <td>Reksa Dana Saham</td>
-                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
-                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
-                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['return_r_s_tranche1']."%" : '' ?></td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['return_r_s_tranche2']."%" : '' ?></td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['return_r_s_tranche3']."%" : '' ?></td>
                                     </tr>
                                     <tr>
                                         <td>Reksa Dana Pendapatan Tetap</td>
-                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
-                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
-                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['return_r_pt_tranche1']."%" : '' ?></td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['return_r_pt_tranche2']."%" : '' ?></td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['return_r_pt_tranche3']."%" : '' ?></td>
                                     </tr>
                                     <tr>
                                         <td>Reksa Dana Pasar Uang</td>
-                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
-                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
-                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['return_r_pu_tranche1']."%" : '' ?></td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['return_r_pu_tranche2']."%" : '' ?></td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['return_r_pu_tranche3']."%" : '' ?></td>
                                     </tr>
                                     <tr>
                                         <td>Reksa Dana Campuran</td>
-                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
-                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
-                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['return_r_c_tranche1']."%" : '' ?></td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['return_r_c_tranche2']."%" : '' ?></td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['return_r_c_tranche3']."%" : '' ?></td>
                                     </tr>
                                     <tr>
                                         <td colspan="4">Asumsi Risiko Pasar Investasi  - Personal pada Pasar Keuangan</td>
                                     </tr>
                                     <tr>
                                         <td>Saham</td>
-                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
-                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
-                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['resiko_s_tranche1']."%" : '' ?></td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['resiko_s_tranche2']."%" : '' ?></td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['resiko_s_tranche3']."%" : '' ?></td>
                                     </tr>
                                     <tr>
                                         <td>Pendapatan Tetap</td>
-                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
-                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
-                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['resiko_pt_tranche1']."%" : '' ?></td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['resiko_pt_tranche2']."%" : '' ?></td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['resiko_pt_tranche3']."%" : '' ?></td>
                                     </tr>
                                     <tr>
                                         <td>Deposito</td>
-                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
-                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
-                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['resiko_d_tranche1']."%" : '' ?></td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['resiko_d_tranche1']."%" : '' ?></td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['resiko_d_tranche1']."%" : '' ?></td>
                                     </tr>
                                     <tr>
                                         <td>Reksa Dana Saham</td>
-                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
-                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
-                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['resiko_r_s_tranche1']."%" : '' ?></td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['resiko_r_s_tranche2']."%" : '' ?></td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['resiko_r_s_tranche3']."%" : '' ?></td>
                                     </tr>
                                     <tr>
                                         <td>Reksa Dana Pendapatan Tetap</td>
-                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
-                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
-                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['resiko_r_pt_tranche1']."%" : '' ?></td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['resiko_r_pt_tranche2']."%" : '' ?></td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['resiko_r_pt_tranche3']."%" : '' ?></td>
                                     </tr>
                                     <tr>
                                         <td>Reksa Dana Pasar Uang</td>
-                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
-                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
-                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['resiko_r_pu_tranche1']."%" : '' ?></td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['resiko_r_pu_tranche2']."%" : '' ?></td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['resiko_r_pu_tranche3']."%" : '' ?></td>
                                     </tr>
                                     <tr>
                                         <td>Reksa Dana Campuran</td>
-                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
-                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
-                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['nama_pilihan']."%" : '' ?></td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['resiko_r_c_tranche1']."%" : '' ?></td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['resiko_r_c_tranche2']."%" : '' ?></td>
+                                        <td><?= $data_setting_personal ? $data_setting_personal[0]['resiko_r_c_tranche3']."%" : '' ?></td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
                         <div class="overflow-x-auto" id="containerSelected" style="display:none;">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th class="whitespace-nowrap">Informasi Portofolio Personal Terpilih</th>
+                                        <th class="whitespace-nowrap" colspan="3" id="namaPortofolio"></th>
+                                    </tr>
+                                    <tr>
+                                        <th class="whitespace-nowrap">Capital Market Ecpectation</th>
+                                        <th class="whitespace-nowrap">Tranche 1</th>
+                                        <th class="whitespace-nowrap">Tranche 2</th>
+                                        <th class="whitespace-nowrap">Tranche 3</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Return Portofolio Personal</td>
+                                        <td id="return_portofolio_personal_t1"></td>
+                                        <td id="return_portofolio_personal_t2"></td>
+                                        <td id="return_portofolio_personal_t3"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Risiko Pasar Portofolio Personal</td>
+                                        <td id="resiko_pasar_portofolio_personal_t1"></td>
+                                        <td id="resiko_pasar_portofolio_personal_t2"></td>
+                                        <td id="resiko_pasar_portofolio_personal_t3"></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="4">Komposisi Investasi</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Saham</td>
+                                        <td id="saham_t1"></td>
+                                        <td id="saham_t2"></td>
+                                        <td id="saham_t3"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Pendapatan Tetap</td>
+                                        <td id="pendapatan_tetap_t1"></td>
+                                        <td id="pendapatan_tetap_t2"></td>
+                                        <td id="pendapatan_tetap_t3"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Deposito</td>
+                                        <td id="deposito_t1"></td>
+                                        <td id="deposito_t2"></td>
+                                        <td id="deposito_t3"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Rekda Dana Saham</td>
+                                        <td id="reksadana_saham_t1"></td>
+                                        <td id="reksadana_saham_t2"></td>
+                                        <td id="reksadana_saham_t3"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Rekda Dana Pendapatan Tetap</td>
+                                        <td id="reksadana_pendapatan_tetap_t1"></td>
+                                        <td id="reksadana_pendapatan_tetap_t2"></td>
+                                        <td id="reksadana_pendapatan_tetap_t3"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Rekda Dana Pasar Uang</td>
+                                        <td id="reksadana_pasar_uang_t1"></td>
+                                        <td id="reksadana_pasar_uang_t2"></td>
+                                        <td id="reksadana_pasar_uang_t3"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Rekda Dana Campuran</td>
+                                        <td id="reksadana_campuran_t1"></td>
+                                        <td id="reksadana_campuran_t2"></td>
+                                        <td id="reksadana_campuran_t3"></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="4">Asumsi Return Investasi  - Personal pada Pasar Keuangan</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Saham</td>
+                                        <td id="return_s_tranche1"></td>
+                                        <td id="return_s_tranche2"></td>
+                                        <td id="return_s_tranche3"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Pendapatan Tetap</td>
+                                        <td id="return_pt_tranche1"></td>
+                                        <td id="return_pt_tranche2"></td>
+                                        <td id="return_pt_tranche3"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Deposito</td>
+                                        <td id="return_d_tranche1"></td>
+                                        <td id="return_d_tranche2"></td>
+                                        <td id="return_d_tranche3"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Reksa Dana Saham</td>
+                                        <td id="return_r_s_tranche1"></td>
+                                        <td id="return_r_s_tranche2"></td>
+                                        <td id="return_r_s_tranche3"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Reksa Dana Pendapatan Tetap</td>
+                                        <td id="return_r_pt_tranche1"></td>
+                                        <td id="return_r_pt_tranche2"></td>
+                                        <td id="return_r_pt_tranche3"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Reksa Dana Pasar Uang</td>
+                                        <td id="return_r_pu_tranche1"></td>
+                                        <td id="return_r_pu_tranche2"></td>
+                                        <td id="return_r_pu_tranche3"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Reksa Dana Campuran</td>
+                                        <td id="return_r_c_tranche1"></td>
+                                        <td id="return_r_c_tranche2"></td>
+                                        <td id="return_r_c_tranche3"></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="4">Asumsi Risiko Pasar Investasi  - Personal pada Pasar Keuangan</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Saham</td>
+                                        <td id="resiko_s_tranche1"></td>
+                                        <td id="resiko_s_tranche2"></td>
+                                        <td id="resiko_s_tranche3"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Pendapatan Tetap</td>
+                                        <td id="resiko_pt_tranche1"></td>
+                                        <td id="resiko_pt_tranche2"></td>
+                                        <td id="resiko_pt_tranche3"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Deposito</td>
+                                        <td id="resiko_d_tranche1"></td>
+                                        <td id="resiko_d_tranche2"></td>
+                                        <td id="resiko_d_tranche3"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Reksa Dana Saham</td>
+                                        <td id="resiko_r_s_tranche1"></td>
+                                        <td id="resiko_r_s_tranche2"></td>
+                                        <td id="resiko_r_s_tranche3"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Reksa Dana Pendapatan Tetap</td>
+                                        <td id="resiko_r_pt_tranche1"></td>
+                                        <td id="resiko_r_pt_tranche2"></td>
+                                        <td id="resiko_r_pt_tranche3"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Reksa Dana Pasar Uang</td>
+                                        <td id="resiko_r_pu_tranche1"></td>
+                                        <td id="resiko_r_pu_tranche2"></td>
+                                        <td id="resiko_r_pu_tranche3"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Reksa Dana Campuran</td>
+                                        <td id="resiko_r_c_tranche1"></td>
+                                        <td id="resiko_r_c_tranche2"></td>
+                                        <td id="resiko_r_c_tranche3"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                       </div>
                     </div>
@@ -255,22 +418,42 @@
     });
     
     function setDataToPage(data){
-      const namaPortofolio = document.getElementById("namaPortofolio");
-      namaPortofolio.textContent = data.nama_portofolio;
-
       // Nilai Variabel
-      const nilai = data;
-      delete data.id;
-      delete data.nama_portofolio;
-      delete data.created_at;
-      delete data.flag;
+      const nilai_personal_keuangan = data['personal_keuangan'][0];
+      
+      const namaPortofolio = document.getElementById("namaPortofolio");
+      namaPortofolio.textContent = nilai_personal_keuangan.nama;
 
-      for (var key in nilai) {
-        var value = nilai[key];
+      delete nilai_personal_keuangan.id;
+      delete nilai_personal_keuangan.nama;
+      delete nilai_personal_keuangan.created_at;
+      delete nilai_personal_keuangan.flag;
+      const filteredPersonalKeuangan = Object.keys(nilai_personal_keuangan)
+        .filter(key => !key.includes("korelasi_"))
+        .reduce((newObj, key) => {
+            newObj[key] = nilai_personal_keuangan[key];
+            return newObj;
+        }, {});
+
+      const nilai_komposisi_investasi = data['komposisi_investasi'][0];
+      delete nilai_komposisi_investasi.id;
+      delete nilai_komposisi_investasi.id_setting_portofolio_personal_admin;
+      delete nilai_komposisi_investasi.nama;
+      delete nilai_komposisi_investasi.created_at;
+      delete nilai_komposisi_investasi.flag;
+
+      for (var key in filteredPersonalKeuangan) {
+        var value = filteredPersonalKeuangan[key];
         eval("var " + key + " = " + value + ";");
         document.getElementById(key).textContent = value+"%";
       }
 
+      for (var key in nilai_komposisi_investasi) {
+        var value = nilai_komposisi_investasi[key];
+        eval("var " + key + " = " + value + ";");
+        document.getElementById(key).textContent = value+"%";
+      }
+      
     }
 
     const select = document.getElementById('jenis_investasi');
@@ -297,8 +480,7 @@
             if(this.readyState === 4) {
                 let data = xhr.response;
                 let response = JSON.parse(data);
-                console.log(response)
-                // setDataToPage(response);
+                setDataToPage(response);
             }
         });
         xhr.open("GET", "<?= base_url() ?>profil/personal-by-id/"+select.value);

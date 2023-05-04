@@ -206,7 +206,8 @@ class Profil extends MY_controller {
 		$data_setting_personal = $this->send_request("setting-personal-lifecycle/user?id_user=".$this->id_user, $this->token, "GET");
 
 		$data['opsi_setting_personal'] = $data_setting_personal["opsi"];
-		$data['data_setting_personal'] = $data_setting_personal["data"];
+		$data['data_setting_personal'] = $data_setting_personal["data"]['personal_keuangan'];
+		$data['data_setting_komposisi'] = $data_setting_personal["data"]['komposisi_investasi'];
 		$data['title'] = "Profil - Setting Personal Pasar Keuangan";
     $data['menuLink'] = "profil/".$id_user;
 
@@ -216,9 +217,49 @@ class Profil extends MY_controller {
 	}
 
 	public function setting_portofolio_personal_pasar_keuangan_execute(){
-		$id_investasi = $this->input->post()['id_portofolio_ppip'];
-		echo json_encode($id_investasi, true);
-		die();
+		$id_investasi = $this->input->post()['id_portofolio_personal'];
+		$investasi = $this->send_request("setting-personal-lifecycle/user?id_investasi=".$id_investasi, $this->token, "GET")['data'];
+
+		$nama_pilihan = $investasi['personal_keuangan'][0]['nama'];
+
+		$personal_keuangan = $investasi['personal_keuangan'][0];
+		$komposisi_investasi = $investasi['komposisi_investasi'][0];
+
+		$keysToRemovePersonal = ['id', 'flag', 'created_at', 'nama'];	
+		$keysToRemoveKomposisi = ['id', 'flag', 'created_at', 'nama', 'id_setting_portofolio_personal_admin'];
+
+		$postData = [];
+		foreach ($komposisi_investasi as $key => $value) {
+			if (!in_array($key, $keysToRemoveKomposisi)) {
+				$postData[$key] = $value;
+			}
+		}
+		foreach ($personal_keuangan as $key => $value) {
+			if (!in_array($key, $keysToRemovePersonal)) {
+				$postData[$key] = $value;
+			}
+		}
+
+		if ($this->agent->is_browser()){
+			$agent = $this->agent->browser().' '.$this->agent->version();
+		}elseif ($this->agent->is_mobile()){
+			$agent = $this->agent->mobile();
+		}else{
+			$agent = 'Data user gagal di dapatkan';
+		}
+
+		$postData['id_user'] = $this->id_user;
+		$postData['browser'] = $agent;
+		$postData['sistem_operasi'] = $this->agent->platform();
+		$postData['ip_address'] = $this->input->ip_address();
+
+		$postData['id_setting_portofolio_personal_admin'] = $id_investasi;
+		$postData['nama'] = $nama_pilihan;
+
+		$response = $this->send_request_with_data('setting-personal-lifecycle/user/add?id_investasi='.$id_investasi, $this->token, 'POST', $postData);
+		
+		$this->session->set_flashdata('success', "Update Setting Personal Berhasil!");
+		redirect(base_url()."profil/setting-portofolio-personal/".$this->id_user);
 	}
 
 	public function setting_portofolio_personal_pasar_keuangan_by_id($id_investasi){
