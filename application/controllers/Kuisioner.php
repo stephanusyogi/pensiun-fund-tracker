@@ -12,16 +12,6 @@ class Kuisioner extends MY_controller {
 		if (!$this->session_status) {
 			$this->session->set_flashdata('error', 'Your Session Has Expired!');
 			return redirect(base_url() . 'login');
-		}else{
-			$check_kuisioner = $this->send_request("check-kuisioner-empty/{$this->id_user}", $this->token, "GET");
-			$check_data_empty = $this->send_request("check-data-empty/{$this->id_user}", $this->token, "GET");
-			
-			if ($check_kuisioner["status"]) {
-				if (!$this->temp_data) {
-					$this->session->set_flashdata('error', 'Mohon Isi Kembali Gaji & PhDP Anda!');
-					redirect(base_url()."profil/update-tracking-pengguna/".$this->id_user);
-				}
-			}
 		}
 	}
 	public function index()
