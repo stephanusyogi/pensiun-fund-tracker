@@ -19,10 +19,10 @@ class Profil extends MY_controller {
 				$this->session->set_flashdata('error', 'Lengkapi Data Kuisioner Anda!');
 				redirect(base_url()."kuisioner");
 			}
-			if (!$this->temp_data) {
-				$this->session->set_flashdata('error', 'Mohon Isi Kembali Gaji & PhDP Anda!');
-				redirect(base_url()."profil/update-tracking-pengguna/".$this->id_user);
-			}
+			// if (!$this->temp_data) {
+			// 	$this->session->set_flashdata('error', 'Mohon Isi Kembali Gaji & PhDP Anda!');
+			// 	redirect(base_url()."profil/update-tracking-pengguna/".$this->id_user);
+			// }
 		}
 	}
 	public function index($id_user)
