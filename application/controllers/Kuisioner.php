@@ -7,14 +7,20 @@ class Kuisioner extends MY_controller {
     $this->session_status = $this->session->userdata('pension_fund_tracker_isLoggedIn');
 		$this->id_user = $this->session->userdata('pension_fund_tracker_data')['id'];
 		$this->temp_data = $this->session->userdata('pension_fund_tracker_data_temp');
+		$this->token = $this->session->userdata('pension_fund_tracker_token');
 		
 		if (!$this->session_status) {
 			$this->session->set_flashdata('error', 'Your Session Has Expired!');
 			return redirect(base_url() . 'login');
 		}else{
-			if (!$this->temp_data) {
-				$this->session->set_flashdata('error', 'Mohon Isi Kembali Gaji & PhDP Anda!');
-				redirect(base_url()."profil/update-tracking-pengguna/".$this->id_user);
+			$check_kuisioner = $this->send_request("check-kuisioner-empty/{$this->id_user}", $this->token, "GET");
+			$check_data_empty = $this->send_request("check-data-empty/{$this->id_user}", $this->token, "GET");
+			
+			if ($check_kuisioner["status"]) {
+				if (!$this->temp_data) {
+					$this->session->set_flashdata('error', 'Mohon Isi Kembali Gaji & PhDP Anda!');
+					redirect(base_url()."profil/update-tracking-pengguna/".$this->id_user);
+				}
 			}
 		}
 	}
