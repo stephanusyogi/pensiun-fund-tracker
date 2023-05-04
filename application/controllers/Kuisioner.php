@@ -51,9 +51,6 @@ class Kuisioner extends MY_controller {
 			'sistem_operasi' => $this->agent->platform(),
 			'ip_address' => $this->input->ip_address()
 		);
-		$rata = ((float) $postData["gaji"] != 0) ? (float) $postData["pensiun_total_pengeluaran"] / (float) $postData["gaji"] : 0;
-		echo json_encode($rata, true);
-		die();
 		$this->send_request_with_data("kuisioner-activity", $token, "POST", $data_activity);
 
 		$this->input_kuisioner_api("BEKERJA_KONSUMSI", $id_user, (float) $postData["bekerja_konsumsi"]);	
@@ -93,7 +90,7 @@ class Kuisioner extends MY_controller {
 
 		$this->input_kuisioner_api("FREE_CASHFLOW", $id_user, (float) $postData["free_cashflow"]);	
 
-		$this->input_kuisioner_api("TARGET_RR", $id_user, (float) $postData["pensiun_total_pengeluaran"] / (float) $postData["gaji"]);	
+		$this->input_kuisioner_api("TARGET_RR", $id_user, ((float) $postData["gaji"] != 0) ? (float) $postData["pensiun_total_pengeluaran"] / (float) $postData["gaji"] : 0);	
 		
 		$this->session->set_flashdata('success', 'Update Kuisioner Berhasil!');
 		return redirect(base_url() . 'kuisioner');
