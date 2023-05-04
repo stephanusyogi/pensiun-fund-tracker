@@ -51,8 +51,8 @@ class Kuisioner extends MY_controller {
 			'sistem_operasi' => $this->agent->platform(),
 			'ip_address' => $this->input->ip_address()
 		);
-		$test = (float) $postData["pensiun_total_pengeluaran"] / (float) $postData["gaji"];
-		echo json_encode($test, true);
+		$rata = ((float) $postData["gaji"] != 0) ? (float) $postData["pensiun_total_pengeluaran"] / (float) $postData["gaji"] : 0;
+		echo json_encode($rata, true);
 		die();
 		$this->send_request_with_data("kuisioner-activity", $token, "POST", $data_activity);
 
