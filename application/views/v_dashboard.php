@@ -1625,8 +1625,7 @@ const showLoading = function() {
         });
 
         xhr.open("POST", "<?= base_url() ?>dashboard/generate_data");
-
-        xhr.send(data);
+        xhr.send();
     });
 }
 //showLoading();
