@@ -294,20 +294,6 @@
                             <h2 class="text-lg font-semibold">
                                 Pemantauan Layer Perkembangan Saldo PPIP
                             </h2>
-                            <div class="flex items-center gap-2">
-                                <select class="form-select form-select-sm" aria-label=".form-select-sm example">
-                                    <option>01/01/2023</option>
-                                    <option>01/01/2024</option>
-                                    <option>01/01/2025</option>
-                                </select>
-                                -
-                                <select class="form-select form-select-sm" aria-label=".form-select-sm example">
-                                    <option>01/01/2023</option>
-                                    <option>01/01/2024</option>
-                                    <option>01/01/2025</option>
-                                </select>
-                                <a href="<?= base_url() ?>" class="btn btn-primary btn-sm"><i data-lucide="search" class="h-4"></i></a>
-                            </div>
                         </div>
                         <button id="reset-zoom" class="btn btn-primary">Reset Zoom</button>
                     </div>
