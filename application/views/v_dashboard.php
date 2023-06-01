@@ -1607,7 +1607,7 @@ const showLoading = function() {
     allowEscapeKey: false,
     allowOutsideClick: false,
     timer: 2000,
-    onOpen: () => {
+    didOpen: () => {
       swal.showLoading();
     }
   }).then(
