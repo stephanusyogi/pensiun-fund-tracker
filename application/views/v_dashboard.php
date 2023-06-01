@@ -1619,7 +1619,8 @@ const showLoading = function() {
     didOpen: () => {
       swal.showLoading();
     }
-  }).then(() => {
+  })
+  .then(() => {
     var data = new FormData();
     data.append("tgl_update_gaji_phdp", "<?= $this->session->userdata('pension_fund_tracker_data_temp')['tgl_update_gaji_phdp'] ?>");
     data.append("gaji", "<?= $this->session->userdata('pension_fund_tracker_data_temp')['gaji'] ?>");
@@ -1648,7 +1649,8 @@ const showLoading = function() {
     xhr.setRequestHeader("Authorization", "Bearer <?= $this->session->userdata('pension_fund_tracker_token') ?>");
 
     xhr.send(data);
-});
+    });
+}
 //showLoading();
 
 document.getElementById("generateBtn")
