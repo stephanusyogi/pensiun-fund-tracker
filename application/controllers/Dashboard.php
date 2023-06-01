@@ -53,6 +53,25 @@ class Dashboard extends MY_controller {
 	}
 
 	public function generate_data(){
-		
+		if ($this->agent->is_browser()){
+			$agent = $this->agent->browser().' '.$this->agent->version();
+		}elseif ($this->agent->is_mobile()){
+			$agent = $this->agent->mobile();
+		}else{
+			$agent = 'Data user gagal di dapatkan';
+		}
+
+		$data = array(
+			'tgl_update_gaji_phdp' => $this->session->userdata('pension_fund_tracker_data_temp')['tgl_update_gaji_phdp'],
+			'gaji' => $this->session->userdata('pension_fund_tracker_data_temp')['gaji'],
+			'phdp' => $this->session->userdata('pension_fund_tracker_data_temp')['phdp'],
+			'browser' => $agent,
+			'sistem_operasi' => $this->agent->platform(),
+			'ip_address' => $this->input->ip_address(),
+		);
+
+		$response = $this->send_request_with_data('generate-data-dashboard?id_user='.$this->id_user, $this->token, 'POST', $data);
+
+		echo json_encode($response, true);
 	}
 }

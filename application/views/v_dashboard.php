@@ -1616,11 +1616,12 @@ const showLoading = function() {
         xhr.withCredentials = true;
 
         xhr.addEventListener("readystatechange", function() {
+            console.log(JSON.parse(this.responseText));
             if(this.readyState === 4) {
-                Swal.fire(
-                'Tracking Complete!',
-                'success'
-                )
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Tracking Complete!'
+                })
             }
         });
 
