@@ -1648,7 +1648,7 @@ const showLoading = function() {
     xhr.setRequestHeader("Authorization", "Bearer <?= $this->session->userdata('pension_fund_tracker_token') ?>");
 
     xhr.send(data);
-};
+});
 //showLoading();
 
 document.getElementById("generateBtn")
