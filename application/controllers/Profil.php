@@ -54,6 +54,7 @@ class Profil extends MY_controller {
 		}
 
 		$data_temp = array(
+			'tgl_update_gaji_phdp' => date("Y-m-d"),
 			'gaji' => $postData['gaji'],
 			'phdp' => $postData['phdp'],
 		);

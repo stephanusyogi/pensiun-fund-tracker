@@ -1601,6 +1601,9 @@
 </div>
 
 <script>     
+console.log("<?= $this->session->userdata('pension_fund_tracker_data_temp')['phdp'] ?>");
+console.log("<?= $this->session->userdata('pension_fund_tracker_data_temp')['gaji'] ?>");
+console.log("<?= $this->session->userdata('pension_fund_tracker_data_temp')['tgl_update_gaji_phdp'] ?>");
 const showLoading = function() {
   Swal.fire({
     title: 'Load Your Tracking Report',
