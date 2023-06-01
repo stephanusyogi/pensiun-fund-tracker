@@ -1600,7 +1600,8 @@
     </div>
 </div>
 
-<script>     const showLoading = function() {
+<script>     
+const showLoading = function() {
   Swal.fire({
     title: 'Load Your Tracking Report',
     allowEscapeKey: false,
@@ -1613,8 +1614,7 @@
     () => {},
     (dismiss) => {
       if (dismiss === 'timer') {
-        console.log('closed by timer!!!!');
-        swal({ 
+        Swal.fire({ 
           title: 'Finished!',
           type: 'success',
           timer: 2000,
