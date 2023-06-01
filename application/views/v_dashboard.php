@@ -1635,11 +1635,10 @@ const showLoading = function() {
         if(this.readyState === 4) {
             console.log(JSON.parse(this.responseText));
             Swal.fire({
-                    title: 'Finished!',
-                    type: 'success',
-                    timer: 2000,
-                    showConfirmButton: false
-                })
+                title: 'Finished!',
+                type: 'success',
+                timer: 2000,
+                showConfirmButton: false
             });
         }
     });
