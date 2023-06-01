@@ -1601,15 +1601,6 @@
 </div>
 
 <script>     
-<?php
-    if ($this->agent->is_browser()){
-        $agent = $this->agent->browser().' '.$this->agent->version();
-    }elseif ($this->agent->is_mobile()){
-        $agent = $this->agent->mobile();
-    }else{
-        $agent = 'Data user gagal di dapatkan';
-    }
-?>
 const showLoading = function() {
   Swal.fire({
     title: 'Load Your Tracking Report',
@@ -1621,34 +1612,21 @@ const showLoading = function() {
     }
   })
   .then(() => {
-    var data = new FormData();
-    data.append("tgl_update_gaji_phdp", "<?= $this->session->userdata('pension_fund_tracker_data_temp')['tgl_update_gaji_phdp'] ?>");
-    data.append("gaji", "<?= $this->session->userdata('pension_fund_tracker_data_temp')['gaji'] ?>");
-    data.append("phdp", "<?= $this->session->userdata('pension_fund_tracker_data_temp')['gaji'] ?>");
-    data.append("browser", "<?= $agent ?>");
-    data.append("sistem_operasi", "<?= $this->agent->platform() ?>");
-    data.append("ip_address", "<?= $this->input->ip_address() ?>");
+        var xhr = new XMLHttpRequest();
+        xhr.withCredentials = true;
 
-    var xhr = new XMLHttpRequest();
-    xhr.withCredentials = true;
+        xhr.addEventListener("readystatechange", function() {
+            if(this.readyState === 4) {
+                Swal.fire(
+                'Tracking Complete!',
+                'success'
+                )
+            }
+        });
 
-    xhr.addEventListener("readystatechange", function() {
-        if(this.readyState === 4) {
-            console.log(JSON.parse(this.responseText));
-            Swal.fire({
-                title: 'Finished!',
-                type: 'success',
-                timer: 2000,
-                showConfirmButton: false
-            });
-        }
-    });
+        xhr.open("POST", "<?= base_url() ?>dashboard/generate_data");
 
-    xhr.open("POST", "https://api.yourpensiontracker.id/api/generate-data-dashboard?id_user=<?= $this->session->userdata('pension_fund_tracker_data')['id'] ?>");
-    xhr.setRequestHeader("Accept", "application/json");
-    xhr.setRequestHeader("Authorization", "Bearer <?= $this->session->userdata('pension_fund_tracker_token') ?>");
-
-    xhr.send(data);
+        xhr.send(data);
     });
 }
 //showLoading();

@@ -51,4 +51,8 @@ class Dashboard extends MY_controller {
 		$this->load->view('v_dashboard', $data);
 		$this->load->view('includes/footer', $data);
 	}
+
+	public function generate_data(){
+		
+	}
 }
