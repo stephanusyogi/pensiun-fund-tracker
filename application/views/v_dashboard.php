@@ -1619,7 +1619,11 @@ const showLoading = function() {
             if(this.readyState === 4) {
                 Swal.fire({
                     icon: 'success',
-                    title: 'Tracking Complete!'
+                    title: 'Tracking Complete!',
+                    showConfirmButton: false,
+                    timer: 1500
+                }).then(()=>{
+                    location.reload();
                 })
             }
         });
