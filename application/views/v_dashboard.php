@@ -7,7 +7,7 @@
                 <h2 class="text-2xl font-bold">
                     Tracker Analysis Report
                 </h2>
-                <a href="<?= base_url() ?>" class="btn btn-primary"><span class="mr-2"><i data-lucide="refresh-ccw"></i></span> Generate Data</a>
+                <button id="generateBtn" class="btn btn-primary"><span class="mr-2"><i data-lucide="refresh-ccw"></i></span> Generate Data</button>
             </div>
             <div class="grid grid-cols-12 gap-6">
                 <div class="-intro-x col-span-12 border p-5 border-slate-300">
@@ -1599,3 +1599,35 @@
     <!-- END: Content -->
     </div>
 </div>
+
+<script>     const showLoading = function() {
+  Swal.fire({
+    title: 'Load Your Tracking Report',
+    allowEscapeKey: false,
+    allowOutsideClick: false,
+    timer: 2000,
+    onOpen: () => {
+      swal.showLoading();
+    }
+  }).then(
+    () => {},
+    (dismiss) => {
+      if (dismiss === 'timer') {
+        console.log('closed by timer!!!!');
+        swal({ 
+          title: 'Finished!',
+          type: 'success',
+          timer: 2000,
+          showConfirmButton: false
+        })
+      }
+    }
+  )
+};
+//showLoading();
+
+document.getElementById("generateBtn")
+  .addEventListener('click', (event) => {
+    showLoading();
+  });
+</script>
