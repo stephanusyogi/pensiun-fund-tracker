@@ -1604,6 +1604,7 @@
 const showLoading = function() {
   Swal.fire({
     title: 'Load Your Tracking Report',
+    text: 'Do not leave the web until process complete',
     allowEscapeKey: false,
     allowOutsideClick: false,
     timer: 2000,
