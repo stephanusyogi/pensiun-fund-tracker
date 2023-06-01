@@ -130,6 +130,7 @@ class Profil extends MY_controller {
 		$response = $this->send_request_with_data('update-tracking-data', $this->token, 'POST', $postData);
 		
 		$data_temp = array(
+			'tgl_update_gaji_phdp' => date("Y-m-d"),
 			'gaji' => $postData['gaji'],
 			'phdp' => $postData['phdp'],
 		);
