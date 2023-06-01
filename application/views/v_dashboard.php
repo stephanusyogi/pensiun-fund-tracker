@@ -1610,19 +1610,14 @@ const showLoading = function() {
     didOpen: () => {
       swal.showLoading();
     }
-  }).then(
-    () => {},
-    (dismiss) => {
-      if (dismiss === 'timer') {
-        Swal.fire({ 
-          title: 'Finished!',
-          type: 'success',
-          timer: 2000,
-          showConfirmButton: false
+  }).then(() => {
+    Swal.fire({
+            title: 'Finished!',
+            type: 'success',
+            timer: 2000,
+            showConfirmButton: false
         })
-      }
-    }
-  )
+    });
 };
 //showLoading();
 
