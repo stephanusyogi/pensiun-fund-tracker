@@ -140,7 +140,7 @@
                     <tbody>
                       <tr>
                         <td>Target Replacement Ratio</td>
-                        <td class="font-semibold" id="targetrr"><?= $answer["TARGET_RR"] ? round($answer["TARGET_RR"], 2)." %" : "- %" ?></td>
+                        <td class="font-semibold" id="targetrr"><?= $answer["TARGET_RR"] ? (round($answer["TARGET_RR"], 2)*100)." %" : "- %" ?></td>
                       </tr>
                       <tr>
                         <td>Penghasilan Setelah Pensiun</td>
@@ -246,6 +246,6 @@
     
     document.getElementById("free_cashflow").value = hasil;
 
-    document.getElementById("targetrr").innerText = hasil_target_rr + " %";
+    document.getElementById("targetrr").innerText = "%";
   }
 </script>
