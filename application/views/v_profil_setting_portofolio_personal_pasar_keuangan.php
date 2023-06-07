@@ -41,7 +41,7 @@
                             <div class="text-xs bg-white dark:bg-primary dark:text-white text-slate-700 px-1 rounded-md ml-auto"><i data-lucide="info" class="w-4 h-4"></i></div>
                         </div>
                         <div class="mt-4">
-                          Karena nilai Gaji dan PhDP anda tidak kami simpan kedalam database untuk mendukung privasi pengguna. Mohon untuk melakukan pengisian Gaji dan PhDP setiap setelah anda login untuk melakukan tracking data.
+                        Return dan risiko pada PPIP merupakan estimasi jangka panjang dan sesuai dengan profile investasi personal yang mengacu pada hasil estimasi financial planner.
                         </div>
                     </div>
                 </div>
