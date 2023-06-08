@@ -60,6 +60,13 @@ class Profil extends MY_controller {
 		);
 		$this->session->set_userdata('pension_fund_tracker_data_temp', $data_temp);
 
+		// Hitung Usia Diangkat Tahun & Bulan
+		$tgl_lahir = $postData['tgl_lahir']; //Read tanggal lahir
+		$tgl_diangkat_pegawai = $postData['tgl_diangkat_pegawai']; //Read tanggal diangkat
+		$diff = date_diff($date1,$date2);
+		$usia_diangkat_tahun = $diff->format('%y');
+		$usia_diangkat_bulan = $diff->format('%m');
+
 		$dataUpdate = array(
 			'id_user' => $id_user,
 			'browser' => $agent,
@@ -74,8 +81,8 @@ class Profil extends MY_controller {
 			'satker' => $postData['satker'],
 			'tgl_lahir' => $postData['tgl_lahir'],
 			'tgl_diangkat_pegawai' => $postData['tgl_diangkat_pegawai'],
-			'usia_diangkat_tahun' => $postData['usia_diangkat_tahun'],
-			'usia_diangkat_bulan' => $postData['usia_diangkat_bulan'],
+			'usia_diangkat_tahun' => $usia_diangkat_tahun,
+			'usia_diangkat_bulan' => $usia_diangkat_bulan,
 			'usia_pensiun' => $postData['usia_pensiun'],
 			'tgl_registrasi' => $postData['tgl_registrasi'],
 			'layer_ppmp' => 1,

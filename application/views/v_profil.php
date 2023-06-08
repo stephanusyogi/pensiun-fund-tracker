@@ -91,7 +91,7 @@
                                   <?php if ($data_user['satker']) { ?>
                                     <option value="<?= $data_user['satker'] ?>" selected><?= $data_user['satker'] ?></option>
                                   <?php }else{ ?>
-                                    <option selected disabled>Pilih Satuan Kerja</option>
+                                    <option disabled>Pilih Satuan Kerja</option>
                                   <?php } ?>
                                   <option value="Departemen Kebijakan Ekonomi dan Moneter">DKEM</option>
                                   <option value="Departemen Pengelolaan Devisa">DPD</option>
@@ -191,11 +191,11 @@
                             </div>
                             <div class="col-span-12 lg:col-span-4">
                                 <label for="usia_diangkat_tahun" class="form-label">Usia Diangkat (Tahun)</label>
-                                <input id="usia_diangkat_tahun" name="usia_diangkat_tahun" value="<?= $data_user['usia_diangkat_tahun'] ? $data_user['usia_diangkat_tahun'] : '' ?>" type="number" class="form-control" required>
+                                <input id="usia_diangkat_tahun" name="usia_diangkat_tahun" value="<?= $data_user['usia_diangkat_tahun'] ? $data_user['usia_diangkat_tahun'] : '' ?>" type="number" class="form-control" readonly>
                             </div>
                             <div class="col-span-12 lg:col-span-4">
                                 <label for="usia_diangkat_bulan" class="form-label">Usia Diangkat (Bulan)</label>
-                                <input id="usia_diangkat_bulan" name="usia_diangkat_bulan" value="<?= $data_user['usia_diangkat_bulan'] ? $data_user['usia_diangkat_bulan'] : '' ?>" type="number" class="form-control" required>
+                                <input id="usia_diangkat_bulan" name="usia_diangkat_bulan" value="<?= $data_user['usia_diangkat_bulan'] ? $data_user['usia_diangkat_bulan'] : '' ?>" type="number" class="form-control" readonly>
                             </div>
                             <div class="col-span-12 lg:col-span-4">
                                 <label for="usia_pensiun" class="form-label">Usia Pensiun</label>
