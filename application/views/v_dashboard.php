@@ -1,4 +1,10 @@
 <!-- BEGIN: Content -->
+<?php 
+function formatNumber($value) {
+    $formatted = number_format($value, 0, ',', '.');
+    return 'Rp '.$formatted.',-';
+}
+?>
 <div class="wrapper wrapper--top-nav">
     <div class="wrapper-box">
     <!-- BEGIN: Content -->
@@ -16,7 +22,7 @@
                             <tbody>
                                 <tr>
                                     <th>Target Replacement Ratio</th>
-                                    <td><?= $dashboard ? $dashboard['rr_ppmp'] !== null ? (round($dashboard['rr_ppmp'],2)*100)."%" : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['target_rr'] !== null ? (round($dashboard['target_rr'],2)*100)."%" : '' : '' ?></td>
                                 </tr>
                                 <tr>
                                     <th>Kesimpulan</th>
@@ -106,33 +112,33 @@
                             <tbody>
                                 <tr>
                                     <td>Layer PPMP</td>
-                                    <td><?= $dashboard ? $dashboard['penghasilan_ppmp'] !== null ? "Rp. ".$dashboard['penghasilan_ppmp'].",-" : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['penghasilan_ppmp'] !== null ? formatNumber($dashboard['penghasilan_ppmp']) : '' : '' ?></td>
                                     <td></td>
                                     <td></td>
                                 </tr>
                                 <tr>
                                     <td>Layer PPIP</td>
-                                    <td><?= $dashboard ? $dashboard['penghasilan_ppip_minimal'] !== null ? "Rp. ".$dashboard['penghasilan_ppip_minimal'].",-" : '' : '' ?></td>
-                                    <td><?= $dashboard ? $dashboard['penghasilan_ppip_median'] !== null ? "Rp. ".$dashboard['penghasilan_ppip_median'].",-" : '' : '' ?></td>
-                                    <td><?= $dashboard ? $dashboard['penghasilan_ppip_maksimal'] !== null ? "Rp. ".$dashboard['penghasilan_ppip_maksimal'].",-" : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['penghasilan_ppip_minimal'] !== null ? formatNumber($dashboard['penghasilan_ppip_minimal']) : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['penghasilan_ppip_median'] !== null ? formatNumber($dashboard['penghasilan_ppip_median']) : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['penghasilan_ppip_maksimal'] !== null ? formatNumber($dashboard['penghasilan_ppip_maksimal']) : '' : '' ?></td>
                                 </tr>
                                 <tr>
                                     <td>Layer Personal-Pasar Keuangan</td>
-                                    <td><?= $dashboard ? $dashboard['penghasilan_personal_keuangan_minimal'] !== null ? "Rp. ".$dashboard['penghasilan_personal_keuangan_minimal'].",-" : '' : '' ?></td>
-                                    <td><?= $dashboard ? $dashboard['penghasilan_personal_keuangan_median'] !== null ? "Rp. ".$dashboard['penghasilan_personal_keuangan_median'].",-" : '' : '' ?></td>
-                                    <td><?= $dashboard ? $dashboard['penghasilan_personal_keuangan_maksimal'] !== null ? "Rp. ".$dashboard['penghasilan_personal_keuangan_maksimal'].",-" : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['penghasilan_personal_keuangan_minimal'] !== null ? formatNumber($dashboard['penghasilan_personal_keuangan_minimal']) : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['penghasilan_personal_keuangan_median'] !== null ? formatNumber($dashboard['penghasilan_personal_keuangan_median']) : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['penghasilan_personal_keuangan_maksimal'] !== null ? formatNumber($dashboard['penghasilan_personal_keuangan_maksimal']) : '' : '' ?></td>
                                 </tr>
                                 <tr>
                                     <td>Layer Personal-Properti</td>
-                                    <td><?= $dashboard ? $dashboard['penghasilan_personal_properti'] !== null ? "Rp. ".$dashboard['penghasilan_personal_properti'].",-" : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['penghasilan_personal_properti'] !== null ? formatNumber($dashboard['penghasilan_personal_properti']) : '' : '' ?></td>
                                     <td></td>
                                     <td></td>
                                 </tr>
                                 <tr>
                                     <td>Total Penghasilan</td>
-                                    <td><?= $dashboard ? $dashboard['penghasilan_total_minimal'] !== null ? "Rp. ".$dashboard['penghasilan_total_minimal'].",-" : '' : '' ?></td>
-                                    <td><?= $dashboard ? $dashboard['penghasilan_total_median'] !== null ? "Rp. ".$dashboard['penghasilan_total_median'].",-" : '' : '' ?></td>
-                                    <td><?= $dashboard ? $dashboard['penghasilan_total_maksimal'] !== null ? "Rp. ".$dashboard['penghasilan_total_maksimal'].",-" : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['penghasilan_total_minimal'] !== null ? formatNumber($dashboard['penghasilan_total_minimal']) : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['penghasilan_total_median'] !== null ? formatNumber($dashboard['penghasilan_total_median']) : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['penghasilan_total_maksimal'] !== null ? formatNumber($dashboard['penghasilan_total_maksimal']) : '' : '' ?></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -160,33 +166,33 @@
                             <tbody>
                                 <tr>
                                     <td>Layer PPMP</td>
-                                    <td><?= $dashboard ? $dashboard['pv_penghasilan_ppmp'] !== null ? "Rp. ".$dashboard['pv_penghasilan_ppmp'].",-" : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['pv_penghasilan_ppmp'] !== null ? formatNumber($dashboard['pv_penghasilan_ppmp']) : '' : '' ?></td>
                                     <td></td>
                                     <td></td>
                                 </tr>
                                 <tr>
                                     <td>Layer PPIP</td>
-                                    <td><?= $dashboard ? $dashboard['pv_penghasilan_ppip_minimal'] !== null ? "Rp. ".$dashboard['pv_penghasilan_ppip_minimal'].",-" : '' : '' ?></td>
-                                    <td><?= $dashboard ? $dashboard['pv_penghasilan_ppip_median'] !== null ? "Rp. ".$dashboard['pv_penghasilan_ppip_median'].",-" : '' : '' ?></td>
-                                    <td><?= $dashboard ? $dashboard['pv_penghasilan_ppip_maksimal'] !== null ? "Rp. ".$dashboard['pv_penghasilan_ppip_maksimal'].",-" : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['pv_penghasilan_ppip_minimal'] !== null ? formatNumber($dashboard['pv_penghasilan_ppip_minimal']) : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['pv_penghasilan_ppip_median'] !== null ? formatNumber($dashboard['pv_penghasilan_ppip_median']) : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['pv_penghasilan_ppip_maksimal'] !== null ? formatNumber($dashboard['pv_penghasilan_ppip_maksimal']) : '' : '' ?></td>
                                 </tr>
                                 <tr>
                                     <td>Layer Personal-Pasar Keuangan</td>
-                                    <td><?= $dashboard ? $dashboard['pv_penghasilan_personal_keuangan_minimal'] !== null ? "Rp. ".$dashboard['pv_penghasilan_personal_keuangan_minimal'].",-" : '' : '' ?></td>
-                                    <td><?= $dashboard ? $dashboard['pv_penghasilan_personal_keuangan_median'] !== null ? "Rp. ".$dashboard['pv_penghasilan_personal_keuangan_median'].",-" : '' : '' ?></td>
-                                    <td><?= $dashboard ? $dashboard['pv_penghasilan_personal_keuangan_maksimal'] !== null ? "Rp. ".$dashboard['pv_penghasilan_personal_keuangan_maksimal'].",-" : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['pv_penghasilan_personal_keuangan_minimal'] !== null ? formatNumber($dashboard['pv_penghasilan_personal_keuangan_minimal']) : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['pv_penghasilan_personal_keuangan_median'] !== null ? formatNumber($dashboard['pv_penghasilan_personal_keuangan_median']) : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['pv_penghasilan_personal_keuangan_maksimal'] !== null ? formatNumber($dashboard['pv_penghasilan_personal_keuangan_maksimal']) : '' : '' ?></td>
                                 </tr>
                                 <tr>
                                     <td>Layer Personal-Properti</td>
-                                    <td><?= $dashboard ? $dashboard['pv_penghasilan_personal_properti'] !== null ? "Rp. ".$dashboard['pv_penghasilan_personal_properti'].",-" : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['pv_penghasilan_personal_properti'] !== null ? formatNumber($dashboard['pv_penghasilan_personal_properti']) : '' : '' ?></td>
                                     <td></td>
                                     <td></td>
                                 </tr>
                                 <tr>
                                     <td>Total Penghasilan</td>
-                                    <td><?= $dashboard ? $dashboard['pv_penghasilan_total_minimal'] !== null ? "Rp. ".$dashboard['pv_penghasilan_total_minimal'].",-" : '' : '' ?></td>
-                                    <td><?= $dashboard ? $dashboard['pv_penghasilan_total_median'] !== null ? "Rp. ".$dashboard['pv_penghasilan_total_median'].",-" : '' : '' ?></td>
-                                    <td><?= $dashboard ? $dashboard['pv_penghasilan_total_maksimal'] !== null ? "Rp. ".$dashboard['pv_penghasilan_total_maksimal'].",-" : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['pv_penghasilan_total_minimal'] !== null ? formatNumber($dashboard['pv_penghasilan_total_minimal']) : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['pv_penghasilan_total_median'] !== null ? formatNumber($dashboard['pv_penghasilan_total_median']) : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['pv_penghasilan_total_maksimal'] !== null ? formatNumber($dashboard['pv_penghasilan_total_maksimal']) : '' : '' ?></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -214,33 +220,33 @@
                             <tbody>
                                 <tr>
                                     <td>Layer PPMP</td>
-                                    <td><?= $dashboard ? $dashboard['kekayaan_ppmp'] !== null ? "Rp. ".$dashboard['kekayaan_ppmp'].",-" : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['kekayaan_ppmp'] !== null ? formatNumber($dashboard['kekayaan_ppmp']) : '' : '' ?></td>
                                     <td></td>
                                     <td></td>
                                 </tr>
                                 <tr>
                                     <td>Layer PPIP</td>
-                                    <td><?= $dashboard ? $dashboard['kekayaan_ppip_minimal'] !== null ? "Rp. ".$dashboard['kekayaan_ppip_minimal'].",-" : '' : '' ?></td>
-                                    <td><?= $dashboard ? $dashboard['kekayaan_ppip_median'] !== null ? "Rp. ".$dashboard['kekayaan_ppip_median'].",-" : '' : '' ?></td>
-                                    <td><?= $dashboard ? $dashboard['kekayaan_ppip_maksimal'] !== null ? "Rp. ".$dashboard['kekayaan_ppip_maksimal'].",-" : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['kekayaan_ppip_minimal'] !== null ? formatNumber($dashboard['kekayaan_ppip_minimal']) : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['kekayaan_ppip_median'] !== null ? formatNumber($dashboard['kekayaan_ppip_median']) : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['kekayaan_ppip_maksimal'] !== null ? formatNumber($dashboard['kekayaan_ppip_maksimal']) : '' : '' ?></td>
                                 </tr>
                                 <tr>
                                     <td>Layer Personal-Pasar Keuangan</td>
-                                    <td><?= $dashboard ? $dashboard['kekayaan_personal_keuangan_minimal'] !== null ? "Rp. ".$dashboard['kekayaan_personal_keuangan_minimal'].",-" : '' : '' ?></td>
-                                    <td><?= $dashboard ? $dashboard['kekayaan_personal_keuangan_median'] !== null ? "Rp. ".$dashboard['kekayaan_personal_keuangan_median'].",-" : '' : '' ?></td>
-                                    <td><?= $dashboard ? $dashboard['kekayaan_personal_keuangan_maksimal'] !== null ? "Rp. ".$dashboard['kekayaan_personal_keuangan_maksimal'].",-" : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['kekayaan_personal_keuangan_minimal'] !== null ? formatNumber($dashboard['kekayaan_personal_keuangan_minimal']) : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['kekayaan_personal_keuangan_median'] !== null ? formatNumber($dashboard['kekayaan_personal_keuangan_median']) : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['kekayaan_personal_keuangan_maksimal'] !== null ? formatNumber($dashboard['kekayaan_personal_keuangan_maksimal']) : '' : '' ?></td>
                                 </tr>
                                 <tr>
                                     <td>Layer Personal-Properti</td>
-                                    <td><?= $dashboard ? $dashboard['kekayaan_personal_properti'] !== null ? "Rp. ".$dashboard['kekayaan_personal_properti'].",-" : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['kekayaan_personal_properti'] !== null ? formatNumber($dashboard['kekayaan_personal_properti']) : '' : '' ?></td>
                                     <td></td>
                                     <td></td>
                                 </tr>
                                 <tr>
                                     <td>Total Kekayaan</td>
-                                    <td><?= $dashboard ? $dashboard['kekayaan_total_minimal'] !== null ? "Rp. ".$dashboard['kekayaan_total_minimal'].",-" : '' : '' ?></td>
-                                    <td><?= $dashboard ? $dashboard['kekayaan_total_median'] !== null ? "Rp. ".$dashboard['kekayaan_total_median'].",-" : '' : '' ?></td>
-                                    <td><?= $dashboard ? $dashboard['kekayaan_total_maksimal'] !== null ? "Rp. ".$dashboard['kekayaan_total_maksimal'].",-" : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['kekayaan_total_minimal'] !== null ? formatNumber($dashboard['kekayaan_total_minimal']) : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['kekayaan_total_median'] !== null ? formatNumber($dashboard['kekayaan_total_median']) : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['kekayaan_total_maksimal'] !== null ? formatNumber($dashboard['kekayaan_total_maksimal']) : '' : '' ?></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -268,33 +274,33 @@
                             <tbody>
                                 <tr>
                                     <td>Layer PPMP</td>
-                                    <td><?= $dashboard ? $dashboard['pv_kekayaan_ppmp'] !== null ? "Rp. ".$dashboard['pv_kekayaan_ppmp'].",-" : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['pv_kekayaan_ppmp'] !== null ? formatNumber($dashboard['pv_kekayaan_ppmp']) : '' : '' ?></td>
                                     <td></td>
                                     <td></td>
                                 </tr>
                                 <tr>
                                     <td>Layer PPIP</td>
-                                    <td><?= $dashboard ? $dashboard['pv_kekayaan_ppip_minimal'] !== null ? "Rp. ".$dashboard['pv_kekayaan_ppip_minimal'].",-" : '' : '' ?></td>
-                                    <td><?= $dashboard ? $dashboard['pv_kekayaan_ppip_median'] !== null ? "Rp. ".$dashboard['pv_kekayaan_ppip_median'].",-" : '' : '' ?></td>
-                                    <td><?= $dashboard ? $dashboard['pv_kekayaan_ppip_maksimal'] !== null ? "Rp. ".$dashboard['pv_kekayaan_ppip_maksimal'].",-" : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['pv_kekayaan_ppip_minimal'] !== null ? formatNumber($dashboard['pv_kekayaan_ppip_minimal']) : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['pv_kekayaan_ppip_median'] !== null ? formatNumber($dashboard['pv_kekayaan_ppip_median']) : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['pv_kekayaan_ppip_maksimal'] !== null ? formatNumber($dashboard['pv_kekayaan_ppip_maksimal']) : '' : '' ?></td>
                                 </tr>
                                 <tr>
                                     <td>Layer Personal-Pasar Keuangan</td>
-                                    <td><?= $dashboard ? $dashboard['pv_kekayaan_personal_keuangan_minimal'] !== null ? "Rp. ".$dashboard['pv_kekayaan_personal_keuangan_minimal'].",-" : '' : '' ?></td>
-                                    <td><?= $dashboard ? $dashboard['pv_kekayaan_personal_keuangan_median'] !== null ? "Rp. ".$dashboard['pv_kekayaan_personal_keuangan_median'].",-" : '' : '' ?></td>
-                                    <td><?= $dashboard ? $dashboard['pv_kekayaan_personal_keuangan_maksimal'] !== null ? "Rp. ".$dashboard['pv_kekayaan_personal_keuangan_maksimal'].",-" : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['pv_kekayaan_personal_keuangan_minimal'] !== null ? formatNumber($dashboard['pv_kekayaan_personal_keuangan_minimal']) : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['pv_kekayaan_personal_keuangan_median'] !== null ? formatNumber($dashboard['pv_kekayaan_personal_keuangan_median']) : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['pv_kekayaan_personal_keuangan_maksimal'] !== null ? formatNumber($dashboard['pv_kekayaan_personal_keuangan_maksimal']) : '' : '' ?></td>
                                 </tr>
                                 <tr>
                                     <td>Layer Personal-Properti</td>
-                                    <td><?= $dashboard ? $dashboard['pv_kekayaan_personal_properti'] !== null ? "Rp. ".$dashboard['pv_kekayaan_personal_properti'].",-" : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['pv_kekayaan_personal_properti'] !== null ? formatNumber($dashboard['pv_kekayaan_personal_properti']) : '' : '' ?></td>
                                     <td></td>
                                     <td></td>
                                 </tr>
                                 <tr>
                                     <td>Total Kekayaan</td>
-                                    <td><?= $dashboard ? $dashboard['pv_kekayaan_total_minimal'] !== null ? "Rp. ".$dashboard['pv_kekayaan_total_minimal'].",-" : '' : '' ?></td>
-                                    <td><?= $dashboard ? $dashboard['pv_kekayaan_total_median'] !== null ? "Rp. ".$dashboard['pv_kekayaan_total_median'].",-" : '' : '' ?></td>
-                                    <td><?= $dashboard ? $dashboard['pv_kekayaan_total_maksimal'] !== null ? "Rp. ".$dashboard['pv_kekayaan_total_maksimal'].",-" : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['pv_kekayaan_total_minimal'] !== null ? formatNumber($dashboard['pv_kekayaan_total_minimal']) : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['pv_kekayaan_total_median'] !== null ? formatNumber($dashboard['pv_kekayaan_total_median']) : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['pv_kekayaan_total_maksimal'] !== null ? formatNumber($dashboard['pv_kekayaan_total_maksimal']) : '' : '' ?></td>
                                 </tr>
                             </tbody>
                         </table>
