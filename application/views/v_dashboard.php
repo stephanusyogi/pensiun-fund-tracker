@@ -16,15 +16,15 @@
                             <tbody>
                                 <tr>
                                     <th>Target Replacement Ratio</th>
-                                    <td><?= $dashboard ? (round($dashboard['target_rr'],2)*100)."%" : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['rr_ppmp'] !== null ? (round($dashboard['rr_ppmp'],2)*100)."%" : '' : '' ?></td>
                                 </tr>
                                 <tr>
                                     <th>Kesimpulan</th>
-                                    <td><?= $dashboard ? $dashboard['target_rr'] : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['kesimpulan'] : '' ?></td>
                                 </tr>
                                 <tr>
                                     <th>Rekomendasi</th>
-                                    <td><?= $dashboard ? $dashboard['target_rr'] : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['rekomendasi'] : '' ?></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -52,33 +52,33 @@
                             <tbody>
                                 <tr>
                                     <td>Layer PPMP</td>
-                                    <td><?= $dashboard ? $dashboard['target_rr'] !== null ? (round($dashboard['target_rr'],2)*100)."%" : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['rr_ppmp'] !== null ? (round($dashboard['rr_ppmp'],2)*100)."%" : '' : '' ?></td>
                                     <td></td>
                                     <td></td>
                                 </tr>
                                 <tr>
                                     <td>Layer PPIP</td>
-                                    <td><?= $dashboard ? (round($dashboard['target_rr'],2)*100)."%" : '' ?></td>
-                                    <td><?= $dashboard ? (round($dashboard['target_rr'],2)*100)."%" : '' ?></td>
-                                    <td><?= $dashboard ? (round($dashboard['target_rr'],2)*100)."%" : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['rr_ppip_minimal'] !== null ? (round($dashboard['rr_ppip_minimal'],2)*100)."%" : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['rr_ppip_median'] !== null ? (round($dashboard['rr_ppip_median'],2)*100)."%" : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['rr_ppip_maksimal'] !== null ? (round($dashboard['rr_ppip_maksimal'],2)*100)."%" : '' : '' ?></td>
                                 </tr>
                                 <tr>
                                     <td>Layer Personal-Pasar Keuangan</td>
-                                    <td><?= $dashboard ? (round($dashboard['target_rr'],2)*100)."%" : '' ?></td>
-                                    <td><?= $dashboard ? (round($dashboard['target_rr'],2)*100)."%" : '' ?></td>
-                                    <td><?= $dashboard ? (round($dashboard['target_rr'],2)*100)."%" : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['rr_personal_keuangan_minimal'] !== null ? (round($dashboard['rr_personal_keuangan_minimal'],2)*100)."%" : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['rr_personal_keuangan_median'] !== null ? (round($dashboard['rr_personal_keuangan_median'],2)*100)."%" : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['rr_personal_keuangan_maksimal'] !== null ? (round($dashboard['rr_personal_keuangan_maksimal'],2)*100)."%" : '' : '' ?></td>
                                 </tr>
                                 <tr>
                                     <td>Layer Personal-Properti</td>
-                                    <td><?= $dashboard ? (round($dashboard['target_rr'],2)*100)."%" : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['rr_personal_properti'] !== null ? (round($dashboard['rr_personal_properti'],2)*100)."%" : '' : '' ?></td>
                                     <td></td>
                                     <td></td>
                                 </tr>
                                 <tr>
                                     <td>Total RR</td>
-                                    <td><?= $dashboard ? (round($dashboard['target_rr'],2)*100)."%" : '' ?></td>
-                                    <td><?= $dashboard ? (round($dashboard['target_rr'],2)*100)."%" : '' ?></td>
-                                    <td><?= $dashboard ? (round($dashboard['target_rr'],2)*100)."%" : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['rr_total_minimal'] !== null ? (round($dashboard['rr_total_minimal'],2)*100)."%" : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['rr_total_median'] !== null ? (round($dashboard['rr_total_median'],2)*100)."%" : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['rr_total_maksimal'] !== null ? (round($dashboard['rr_total_maksimal'],2)*100)."%" : '' : '' ?></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -106,33 +106,33 @@
                             <tbody>
                                 <tr>
                                     <td>Layer PPMP</td>
-                                    <td><?= $dashboard ? $dashboard['target_rr'] !== null ? "Rp. ".$dashboard['target_rr'].",-" : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['penghasilan_ppmp'] !== null ? "Rp. ".$dashboard['penghasilan_ppmp'].",-" : '' : '' ?></td>
                                     <td></td>
                                     <td></td>
                                 </tr>
                                 <tr>
                                     <td>Layer PPIP</td>
-                                    <td><?= $dashboard ? $dashboard['target_rr'] !== null ? "Rp. ".$dashboard['target_rr'].",-" : '' : '' ?></td>
-                                    <td><?= $dashboard ? $dashboard['target_rr'] !== null ? "Rp. ".$dashboard['target_rr'].",-" : '' : '' ?></td>
-                                    <td><?= $dashboard ? $dashboard['target_rr'] !== null ? "Rp. ".$dashboard['target_rr'].",-" : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['penghasilan_ppip_minimal'] !== null ? "Rp. ".$dashboard['penghasilan_ppip_minimal'].",-" : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['penghasilan_ppip_median'] !== null ? "Rp. ".$dashboard['penghasilan_ppip_median'].",-" : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['penghasilan_ppip_maksimal'] !== null ? "Rp. ".$dashboard['penghasilan_ppip_maksimal'].",-" : '' : '' ?></td>
                                 </tr>
                                 <tr>
                                     <td>Layer Personal-Pasar Keuangan</td>
-                                    <td><?= $dashboard ? $dashboard['target_rr'] !== null ? "Rp. ".$dashboard['target_rr'].",-" : '' : '' ?></td>
-                                    <td><?= $dashboard ? $dashboard['target_rr'] !== null ? "Rp. ".$dashboard['target_rr'].",-" : '' : '' ?></td>
-                                    <td><?= $dashboard ? $dashboard['target_rr'] !== null ? "Rp. ".$dashboard['target_rr'].",-" : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['penghasilan_personal_keuangan_minimal'] !== null ? "Rp. ".$dashboard['penghasilan_personal_keuangan_minimal'].",-" : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['penghasilan_personal_keuangan_median'] !== null ? "Rp. ".$dashboard['penghasilan_personal_keuangan_median'].",-" : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['penghasilan_personal_keuangan_maksimal'] !== null ? "Rp. ".$dashboard['penghasilan_personal_keuangan_maksimal'].",-" : '' : '' ?></td>
                                 </tr>
                                 <tr>
                                     <td>Layer Personal-Properti</td>
-                                    <td><?= $dashboard ? $dashboard['target_rr'] !== null ? "Rp. ".$dashboard['target_rr'].",-" : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['penghasilan_personal_properti'] !== null ? "Rp. ".$dashboard['penghasilan_personal_properti'].",-" : '' : '' ?></td>
                                     <td></td>
                                     <td></td>
                                 </tr>
                                 <tr>
                                     <td>Total Penghasilan</td>
-                                    <td><?= $dashboard ? $dashboard['target_rr'] !== null ? "Rp. ".$dashboard['target_rr'].",-" : '' : '' ?></td>
-                                    <td><?= $dashboard ? $dashboard['target_rr'] !== null ? "Rp. ".$dashboard['target_rr'].",-" : '' : '' ?></td>
-                                    <td><?= $dashboard ? $dashboard['target_rr'] !== null ? "Rp. ".$dashboard['target_rr'].",-" : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['penghasilan_total_minimal'] !== null ? "Rp. ".$dashboard['penghasilan_total_minimal'].",-" : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['penghasilan_total_median'] !== null ? "Rp. ".$dashboard['penghasilan_total_median'].",-" : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['penghasilan_total_maksimal'] !== null ? "Rp. ".$dashboard['penghasilan_total_maksimal'].",-" : '' : '' ?></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -160,33 +160,33 @@
                             <tbody>
                                 <tr>
                                     <td>Layer PPMP</td>
-                                    <td><?= $dashboard ? $dashboard['target_rr'] !== null ? "Rp. ".$dashboard['target_rr'].",-" : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['pv_penghasilan_ppmp'] !== null ? "Rp. ".$dashboard['pv_penghasilan_ppmp'].",-" : '' : '' ?></td>
                                     <td></td>
                                     <td></td>
                                 </tr>
                                 <tr>
                                     <td>Layer PPIP</td>
-                                    <td><?= $dashboard ? $dashboard['target_rr'] !== null ? "Rp. ".$dashboard['target_rr'].",-" : '' : '' ?></td>
-                                    <td><?= $dashboard ? $dashboard['target_rr'] !== null ? "Rp. ".$dashboard['target_rr'].",-" : '' : '' ?></td>
-                                    <td><?= $dashboard ? $dashboard['target_rr'] !== null ? "Rp. ".$dashboard['target_rr'].",-" : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['pv_penghasilan_ppip_minimal'] !== null ? "Rp. ".$dashboard['pv_penghasilan_ppip_minimal'].",-" : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['pv_penghasilan_ppip_median'] !== null ? "Rp. ".$dashboard['pv_penghasilan_ppip_median'].",-" : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['pv_penghasilan_ppip_maksimal'] !== null ? "Rp. ".$dashboard['pv_penghasilan_ppip_maksimal'].",-" : '' : '' ?></td>
                                 </tr>
                                 <tr>
                                     <td>Layer Personal-Pasar Keuangan</td>
-                                    <td><?= $dashboard ? $dashboard['target_rr'] !== null ? "Rp. ".$dashboard['target_rr'].",-" : '' : '' ?></td>
-                                    <td><?= $dashboard ? $dashboard['target_rr'] !== null ? "Rp. ".$dashboard['target_rr'].",-" : '' : '' ?></td>
-                                    <td><?= $dashboard ? $dashboard['target_rr'] !== null ? "Rp. ".$dashboard['target_rr'].",-" : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['pv_penghasilan_personal_keuangan_minimal'] !== null ? "Rp. ".$dashboard['pv_penghasilan_personal_keuangan_minimal'].",-" : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['pv_penghasilan_personal_keuangan_median'] !== null ? "Rp. ".$dashboard['pv_penghasilan_personal_keuangan_median'].",-" : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['pv_penghasilan_personal_keuangan_maksimal'] !== null ? "Rp. ".$dashboard['pv_penghasilan_personal_keuangan_maksimal'].",-" : '' : '' ?></td>
                                 </tr>
                                 <tr>
                                     <td>Layer Personal-Properti</td>
-                                    <td><?= $dashboard ? $dashboard['target_rr'] !== null ? "Rp. ".$dashboard['target_rr'].",-" : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['pv_penghasilan_personal_properti'] !== null ? "Rp. ".$dashboard['pv_penghasilan_personal_properti'].",-" : '' : '' ?></td>
                                     <td></td>
                                     <td></td>
                                 </tr>
                                 <tr>
                                     <td>Total Penghasilan</td>
-                                    <td><?= $dashboard ? $dashboard['target_rr'] !== null ? "Rp. ".$dashboard['target_rr'].",-" : '' : '' ?></td>
-                                    <td><?= $dashboard ? $dashboard['target_rr'] !== null ? "Rp. ".$dashboard['target_rr'].",-" : '' : '' ?></td>
-                                    <td><?= $dashboard ? $dashboard['target_rr'] !== null ? "Rp. ".$dashboard['target_rr'].",-" : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['pv_penghasilan_total_minimal'] !== null ? "Rp. ".$dashboard['pv_penghasilan_total_minimal'].",-" : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['pv_penghasilan_total_median'] !== null ? "Rp. ".$dashboard['pv_penghasilan_total_median'].",-" : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['pv_penghasilan_total_maksimal'] !== null ? "Rp. ".$dashboard['pv_penghasilan_total_maksimal'].",-" : '' : '' ?></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -214,27 +214,33 @@
                             <tbody>
                                 <tr>
                                     <td>Layer PPMP</td>
-                                    <td></td>
+                                    <td><?= $dashboard ? $dashboard['kekayaan_ppmp'] !== null ? "Rp. ".$dashboard['kekayaan_ppmp'].",-" : '' : '' ?></td>
                                     <td></td>
                                     <td></td>
                                 </tr>
                                 <tr>
                                     <td>Layer PPIP</td>
-                                    <td><?= $dashboard ? $dashboard['target_rr'] !== null ? "Rp. ".$dashboard['target_rr'].",-" : '' : '' ?></td>
-                                    <td><?= $dashboard ? $dashboard['target_rr'] !== null ? "Rp. ".$dashboard['target_rr'].",-" : '' : '' ?></td>
-                                    <td><?= $dashboard ? $dashboard['target_rr'] !== null ? "Rp. ".$dashboard['target_rr'].",-" : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['kekayaan_ppip_minimal'] !== null ? "Rp. ".$dashboard['kekayaan_ppip_minimal'].",-" : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['kekayaan_ppip_median'] !== null ? "Rp. ".$dashboard['kekayaan_ppip_median'].",-" : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['kekayaan_ppip_maksimal'] !== null ? "Rp. ".$dashboard['kekayaan_ppip_maksimal'].",-" : '' : '' ?></td>
                                 </tr>
                                 <tr>
                                     <td>Layer Personal-Pasar Keuangan</td>
-                                    <td><?= $dashboard ? $dashboard['target_rr'] !== null ? "Rp. ".$dashboard['target_rr'].",-" : '' : '' ?></td>
-                                    <td><?= $dashboard ? $dashboard['target_rr'] !== null ? "Rp. ".$dashboard['target_rr'].",-" : '' : '' ?></td>
-                                    <td><?= $dashboard ? $dashboard['target_rr'] !== null ? "Rp. ".$dashboard['target_rr'].",-" : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['kekayaan_personal_keuangan_minimal'] !== null ? "Rp. ".$dashboard['kekayaan_personal_keuangan_minimal'].",-" : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['kekayaan_personal_keuangan_median'] !== null ? "Rp. ".$dashboard['kekayaan_personal_keuangan_median'].",-" : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['kekayaan_personal_keuangan_maksimal'] !== null ? "Rp. ".$dashboard['kekayaan_personal_keuangan_maksimal'].",-" : '' : '' ?></td>
                                 </tr>
                                 <tr>
                                     <td>Layer Personal-Properti</td>
-                                    <td><?= $dashboard ? $dashboard['target_rr'] !== null ? "Rp. ".$dashboard['target_rr'].",-" : '' : '' ?></td>
-                                    <td><?= $dashboard ? $dashboard['target_rr'] !== null ? "Rp. ".$dashboard['target_rr'].",-" : '' : '' ?></td>
-                                    <td><?= $dashboard ? $dashboard['target_rr'] !== null ? "Rp. ".$dashboard['target_rr'].",-" : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['kekayaan_personal_properti'] !== null ? "Rp. ".$dashboard['kekayaan_personal_properti'].",-" : '' : '' ?></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Total Kekayaan</td>
+                                    <td><?= $dashboard ? $dashboard['kekayaan_total_minimal'] !== null ? "Rp. ".$dashboard['kekayaan_total_minimal'].",-" : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['kekayaan_total_median'] !== null ? "Rp. ".$dashboard['kekayaan_total_median'].",-" : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['kekayaan_total_maksimal'] !== null ? "Rp. ".$dashboard['kekayaan_total_maksimal'].",-" : '' : '' ?></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -262,27 +268,33 @@
                             <tbody>
                                 <tr>
                                     <td>Layer PPMP</td>
-                                    <td></td>
+                                    <td><?= $dashboard ? $dashboard['pv_kekayaan_ppmp'] !== null ? "Rp. ".$dashboard['pv_kekayaan_ppmp'].",-" : '' : '' ?></td>
                                     <td></td>
                                     <td></td>
                                 </tr>
                                 <tr>
                                     <td>Layer PPIP</td>
-                                    <td><?= $dashboard ? $dashboard['target_rr'] !== null ? "Rp. ".$dashboard['target_rr'].",-" : '' : '' ?></td>
-                                    <td><?= $dashboard ? $dashboard['target_rr'] !== null ? "Rp. ".$dashboard['target_rr'].",-" : '' : '' ?></td>
-                                    <td><?= $dashboard ? $dashboard['target_rr'] !== null ? "Rp. ".$dashboard['target_rr'].",-" : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['pv_kekayaan_ppip_minimal'] !== null ? "Rp. ".$dashboard['pv_kekayaan_ppip_minimal'].",-" : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['pv_kekayaan_ppip_median'] !== null ? "Rp. ".$dashboard['pv_kekayaan_ppip_median'].",-" : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['pv_kekayaan_ppip_maksimal'] !== null ? "Rp. ".$dashboard['pv_kekayaan_ppip_maksimal'].",-" : '' : '' ?></td>
                                 </tr>
                                 <tr>
                                     <td>Layer Personal-Pasar Keuangan</td>
-                                    <td><?= $dashboard ? $dashboard['target_rr'] !== null ? "Rp. ".$dashboard['target_rr'].",-" : '' : '' ?></td>
-                                    <td><?= $dashboard ? $dashboard['target_rr'] !== null ? "Rp. ".$dashboard['target_rr'].",-" : '' : '' ?></td>
-                                    <td><?= $dashboard ? $dashboard['target_rr'] !== null ? "Rp. ".$dashboard['target_rr'].",-" : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['pv_kekayaan_personal_keuangan_minimal'] !== null ? "Rp. ".$dashboard['pv_kekayaan_personal_keuangan_minimal'].",-" : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['pv_kekayaan_personal_keuangan_median'] !== null ? "Rp. ".$dashboard['pv_kekayaan_personal_keuangan_median'].",-" : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['pv_kekayaan_personal_keuangan_maksimal'] !== null ? "Rp. ".$dashboard['pv_kekayaan_personal_keuangan_maksimal'].",-" : '' : '' ?></td>
                                 </tr>
                                 <tr>
                                     <td>Layer Personal-Properti</td>
-                                    <td><?= $dashboard ? $dashboard['target_rr'] !== null ? "Rp. ".$dashboard['target_rr'].",-" : '' : '' ?></td>
-                                    <td><?= $dashboard ? $dashboard['target_rr'] !== null ? "Rp. ".$dashboard['target_rr'].",-" : '' : '' ?></td>
-                                    <td><?= $dashboard ? $dashboard['target_rr'] !== null ? "Rp. ".$dashboard['target_rr'].",-" : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['pv_kekayaan_personal_properti'] !== null ? "Rp. ".$dashboard['pv_kekayaan_personal_properti'].",-" : '' : '' ?></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Total Kekayaan</td>
+                                    <td><?= $dashboard ? $dashboard['pv_kekayaan_total_minimal'] !== null ? "Rp. ".$dashboard['pv_kekayaan_total_minimal'].",-" : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['pv_kekayaan_total_median'] !== null ? "Rp. ".$dashboard['pv_kekayaan_total_median'].",-" : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['pv_kekayaan_total_maksimal'] !== null ? "Rp. ".$dashboard['pv_kekayaan_total_maksimal'].",-" : '' : '' ?></td>
                                 </tr>
                             </tbody>
                         </table>
