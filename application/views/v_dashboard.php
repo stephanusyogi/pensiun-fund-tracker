@@ -16,15 +16,15 @@
                             <tbody>
                                 <tr>
                                     <th>Target Replacement Ratio</th>
-                                    <td>45%</td>
+                                    <td><?= $dashboard ? (round($dashboard['target_rr'],2)*100)."%" : '' ?></td>
                                 </tr>
                                 <tr>
                                     <th>Kesimpulan</th>
-                                    <td>Total Replacement Ratio tanpa PPMP masih memenuhi target.</td>
+                                    <td><?= $dashboard ? $dashboard['target_rr'] : '' ?></td>
                                 </tr>
                                 <tr>
                                     <th>Rekomendasi</th>
-                                    <td>Terus pantau pencapaian investasi.</td>
+                                    <td><?= $dashboard ? $dashboard['target_rr'] : '' ?></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -52,33 +52,33 @@
                             <tbody>
                                 <tr>
                                     <td>Layer PPMP</td>
-                                    <td>16.8%</td>
+                                    <td><?= $dashboard ? $dashboard['target_rr'] !== null ? (round($dashboard['target_rr'],2)*100)."%" : '' : '' ?></td>
                                     <td></td>
                                     <td></td>
                                 </tr>
                                 <tr>
                                     <td>Layer PPIP</td>
-                                    <td>32.18%</td>
-                                    <td>40.55%</td>
-                                    <td>51.43%</td>
+                                    <td><?= $dashboard ? (round($dashboard['target_rr'],2)*100)."%" : '' ?></td>
+                                    <td><?= $dashboard ? (round($dashboard['target_rr'],2)*100)."%" : '' ?></td>
+                                    <td><?= $dashboard ? (round($dashboard['target_rr'],2)*100)."%" : '' ?></td>
                                 </tr>
                                 <tr>
                                     <td>Layer Personal-Pasar Keuangan</td>
-                                    <td>12.3%</td>
-                                    <td>16.38%</td>
-                                    <td>23.10%</td>
+                                    <td><?= $dashboard ? (round($dashboard['target_rr'],2)*100)."%" : '' ?></td>
+                                    <td><?= $dashboard ? (round($dashboard['target_rr'],2)*100)."%" : '' ?></td>
+                                    <td><?= $dashboard ? (round($dashboard['target_rr'],2)*100)."%" : '' ?></td>
                                 </tr>
                                 <tr>
                                     <td>Layer Personal-Properti</td>
-                                    <td>7.15%</td>
+                                    <td><?= $dashboard ? (round($dashboard['target_rr'],2)*100)."%" : '' ?></td>
                                     <td></td>
                                     <td></td>
                                 </tr>
                                 <tr>
                                     <td>Total RR</td>
-                                    <td>68.63%</td>
-                                    <td>80.87%</td>
-                                    <td>98.48%</td>
+                                    <td><?= $dashboard ? (round($dashboard['target_rr'],2)*100)."%" : '' ?></td>
+                                    <td><?= $dashboard ? (round($dashboard['target_rr'],2)*100)."%" : '' ?></td>
+                                    <td><?= $dashboard ? (round($dashboard['target_rr'],2)*100)."%" : '' ?></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -106,33 +106,33 @@
                             <tbody>
                                 <tr>
                                     <td>Layer PPMP</td>
-                                    <td>Rp. 10.243.724,-</td>
+                                    <td><?= $dashboard ? $dashboard['target_rr'] !== null ? "Rp. ".$dashboard['target_rr'].",-" : '' : '' ?></td>
                                     <td></td>
                                     <td></td>
                                 </tr>
                                 <tr>
                                     <td>Layer PPIP</td>
-                                    <td>Rp. 19.707.137,-</td>
-                                    <td>Rp. 24.726.377,-</td>
-                                    <td>Rp. 31.365.835,-</td>
+                                    <td><?= $dashboard ? $dashboard['target_rr'] !== null ? "Rp. ".$dashboard['target_rr'].",-" : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['target_rr'] !== null ? "Rp. ".$dashboard['target_rr'].",-" : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['target_rr'] !== null ? "Rp. ".$dashboard['target_rr'].",-" : '' : '' ?></td>
                                 </tr>
                                 <tr>
                                     <td>Layer Personal-Pasar Keuangan</td>
-                                    <td>Rp. 7.538.646,-</td>
-                                    <td>Rp. 9.987.940,-</td>
-                                    <td>Rp. 14.086.834,-</td>
+                                    <td><?= $dashboard ? $dashboard['target_rr'] !== null ? "Rp. ".$dashboard['target_rr'].",-" : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['target_rr'] !== null ? "Rp. ".$dashboard['target_rr'].",-" : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['target_rr'] !== null ? "Rp. ".$dashboard['target_rr'].",-" : '' : '' ?></td>
                                 </tr>
                                 <tr>
                                     <td>Layer Personal-Properti</td>
-                                    <td>Rp. 4.362.037,-</td>
+                                    <td><?= $dashboard ? $dashboard['target_rr'] !== null ? "Rp. ".$dashboard['target_rr'].",-" : '' : '' ?></td>
                                     <td></td>
                                     <td></td>
                                 </tr>
                                 <tr>
                                     <td>Total Penghasilan</td>
-                                    <td>Rp. 41.851.544,-</td>
-                                    <td>Rp. 49.320.078,-</td>
-                                    <td>Rp. 60.058.430,-</td>
+                                    <td><?= $dashboard ? $dashboard['target_rr'] !== null ? "Rp. ".$dashboard['target_rr'].",-" : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['target_rr'] !== null ? "Rp. ".$dashboard['target_rr'].",-" : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['target_rr'] !== null ? "Rp. ".$dashboard['target_rr'].",-" : '' : '' ?></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -160,33 +160,33 @@
                             <tbody>
                                 <tr>
                                     <td>Layer PPMP</td>
-                                    <td>Rp. 3.780.308,-</td>
+                                    <td><?= $dashboard ? $dashboard['target_rr'] !== null ? "Rp. ".$dashboard['target_rr'].",-" : '' : '' ?></td>
                                     <td></td>
                                     <td></td>
                                 </tr>
                                 <tr>
                                     <td>Layer PPIP</td>
-                                    <td>Rp. 7.272.653,-</td>
-                                    <td>Rp. 9.124.935,-</td>
-                                    <td>Rp. 11.575.137,-</td>
+                                    <td><?= $dashboard ? $dashboard['target_rr'] !== null ? "Rp. ".$dashboard['target_rr'].",-" : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['target_rr'] !== null ? "Rp. ".$dashboard['target_rr'].",-" : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['target_rr'] !== null ? "Rp. ".$dashboard['target_rr'].",-" : '' : '' ?></td>
                                 </tr>
                                 <tr>
                                     <td>Layer Personal-Pasar Keuangan</td>
-                                    <td>Rp. 2.782.035,-</td>
-                                    <td>Rp. 3.685.914,-</td>
-                                    <td>Rp. 5.198.555,-</td>
+                                    <td><?= $dashboard ? $dashboard['target_rr'] !== null ? "Rp. ".$dashboard['target_rr'].",-" : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['target_rr'] !== null ? "Rp. ".$dashboard['target_rr'].",-" : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['target_rr'] !== null ? "Rp. ".$dashboard['target_rr'].",-" : '' : '' ?></td>
                                 </tr>
                                 <tr>
                                     <td>Layer Personal-Properti</td>
-                                    <td>Rp. 1.609.751,-</td>
+                                    <td><?= $dashboard ? $dashboard['target_rr'] !== null ? "Rp. ".$dashboard['target_rr'].",-" : '' : '' ?></td>
                                     <td></td>
                                     <td></td>
                                 </tr>
                                 <tr>
                                     <td>Total Penghasilan</td>
-                                    <td>Rp. 15.444.746,-</td>
-                                    <td>Rp. 18.200.908,-</td>
-                                    <td>Rp. 22.163.751,-</td>
+                                    <td><?= $dashboard ? $dashboard['target_rr'] !== null ? "Rp. ".$dashboard['target_rr'].",-" : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['target_rr'] !== null ? "Rp. ".$dashboard['target_rr'].",-" : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['target_rr'] !== null ? "Rp. ".$dashboard['target_rr'].",-" : '' : '' ?></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -220,21 +220,21 @@
                                 </tr>
                                 <tr>
                                     <td>Layer PPIP</td>
-                                    <td>Rp. 2.669.136.629,-</td>
-                                    <td>Rp. 3.337.211.758,-</td>
-                                    <td>Rp. 4.333.132.557,-</td>
+                                    <td><?= $dashboard ? $dashboard['target_rr'] !== null ? "Rp. ".$dashboard['target_rr'].",-" : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['target_rr'] !== null ? "Rp. ".$dashboard['target_rr'].",-" : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['target_rr'] !== null ? "Rp. ".$dashboard['target_rr'].",-" : '' : '' ?></td>
                                 </tr>
                                 <tr>
                                     <td>Layer Personal-Pasar Keuangan</td>
-                                    <td>Rp. 1.024.720.505,-</td>
-                                    <td>Rp. 1.367.211.758,-</td>
-                                    <td>Rp. 1.882.579.800,-</td>
+                                    <td><?= $dashboard ? $dashboard['target_rr'] !== null ? "Rp. ".$dashboard['target_rr'].",-" : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['target_rr'] !== null ? "Rp. ".$dashboard['target_rr'].",-" : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['target_rr'] !== null ? "Rp. ".$dashboard['target_rr'].",-" : '' : '' ?></td>
                                 </tr>
                                 <tr>
                                     <td>Layer Personal-Properti</td>
-                                    <td>Rp. 2.093.777.930,-</td>
-                                    <td>Rp. 2.093.777.930,-</td>
-                                    <td>Rp. 2.093.777.930,-</td>
+                                    <td><?= $dashboard ? $dashboard['target_rr'] !== null ? "Rp. ".$dashboard['target_rr'].",-" : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['target_rr'] !== null ? "Rp. ".$dashboard['target_rr'].",-" : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['target_rr'] !== null ? "Rp. ".$dashboard['target_rr'].",-" : '' : '' ?></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -268,21 +268,21 @@
                                 </tr>
                                 <tr>
                                     <td>Layer PPIP</td>
-                                    <td>Rp. 985.008.772,-</td>
-                                    <td>Rp. 1.231.549.907,-</td>
-                                    <td>Rp. 1.559.082.963,-</td>
+                                    <td><?= $dashboard ? $dashboard['target_rr'] !== null ? "Rp. ".$dashboard['target_rr'].",-" : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['target_rr'] !== null ? "Rp. ".$dashboard['target_rr'].",-" : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['target_rr'] !== null ? "Rp. ".$dashboard['target_rr'].",-" : '' : '' ?></td>
                                 </tr>
                                 <tr>
                                     <td>Layer Personal-Pasar Keuangan</td>
-                                    <td>Rp. 378.159.243,-</td>
-                                    <td>Rp. 504.551.007,-</td>
-                                    <td>Rp. 694.740.612,-</td>
+                                    <td><?= $dashboard ? $dashboard['target_rr'] !== null ? "Rp. ".$dashboard['target_rr'].",-" : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['target_rr'] !== null ? "Rp. ".$dashboard['target_rr'].",-" : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['target_rr'] !== null ? "Rp. ".$dashboard['target_rr'].",-" : '' : '' ?></td>
                                 </tr>
                                 <tr>
                                     <td>Layer Personal-Properti</td>
-                                    <td>Rp. 772.680.426,-</td>
-                                    <td>Rp. 772.680.426,-</td>
-                                    <td>Rp. 772.680.426,-</td>
+                                    <td><?= $dashboard ? $dashboard['target_rr'] !== null ? "Rp. ".$dashboard['target_rr'].",-" : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['target_rr'] !== null ? "Rp. ".$dashboard['target_rr'].",-" : '' : '' ?></td>
+                                    <td><?= $dashboard ? $dashboard['target_rr'] !== null ? "Rp. ".$dashboard['target_rr'].",-" : '' : '' ?></td>
                                 </tr>
                             </tbody>
                         </table>

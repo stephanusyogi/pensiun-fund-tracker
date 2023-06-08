@@ -44,8 +44,11 @@ class Dashboard extends MY_controller {
 			redirect(base_url()."email-verification");
 		}
 
+		$dashboard = $this->send_request('generate-data-dashboard?id_user='.$this->id_user, $this->token, 'GET');
+
 		$data['title'] = "Dashboard";
     $data['menuLink'] = "dashboard";
+		$data['dashboard'] = $dashboard["data"] ? $dashboard["data"][0] : $dashboard["data"];
 
 		$this->load->view('includes/header', $data);
 		$this->load->view('v_dashboard', $data);
