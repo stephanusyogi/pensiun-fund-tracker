@@ -61,7 +61,9 @@ class Profil extends MY_controller {
 		$this->session->set_userdata('pension_fund_tracker_data_temp', $data_temp);
 
 		// Hitung Usia Diangkat Tahun & Bulan
-		$diff = date_diff($postData['tgl_lahir'],$postData['tgl_diangkat_pegawai']);
+		$tgl_lahir = date_create($postData['tgl_lahir']); //Read tanggal lahir
+		$tgl_diangkat_pegawai = date_create($postData['tgl_diangkat_pegawai']); //Read tanggal diangkat
+		$diff = date_diff($tgl_lahir,$tgl_diangkat_pegawai);
 		$usia_diangkat_tahun = $diff->format('%y');
 		$usia_diangkat_bulan = $diff->format('%m');
 
