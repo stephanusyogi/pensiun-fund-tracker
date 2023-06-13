@@ -72,6 +72,9 @@ class Dashboard extends MY_controller {
 			'sistem_operasi' => $this->agent->platform(),
 			'ip_address' => $this->input->ip_address(),
 		);
+		
+		echo json_encode($data, true);
+		die();
 
 		$response = $this->send_request_with_data('generate-data-dashboard?id_user='.$this->id_user, $this->token, 'POST', $data);
 
