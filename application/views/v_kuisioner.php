@@ -15,16 +15,19 @@
                 <table class="table table-bordered">
                     <thead>
                         <tr>
-                            <th class="whitespace-nowrap">Alokasi Pengeluaran</th>
-                            <th class="whitespace-nowrap">Saat Bekerja</th>
-                            <th class="whitespace-nowrap">Rencana Saat Pensiun</th>
+                            <th class="whitespace-nowrap">Alokasi Pengeluaran (%)</th>
+                            <th class="whitespace-nowrap">Saat Bekerja (%)</th>
+                            <th class="whitespace-nowrap">Rencana Saat Pensiun (%)</th>
                         </tr>
                     </thead>
                     <tbody>
                       <tr>
                         <td>Konsumsi habis pakai (Makanan, minuman, perlengkapan mandi dan cuci)</td>
                         <td>
-                          <input id="bekerja_konsumsi" type="number" step="any" name="bekerja_konsumsi" class="form-control" value="<?= $answer["KONSUMSI"]["BEKERJA_KONSUMSI"] ? round($answer["KONSUMSI"]["BEKERJA_KONSUMSI"],2) : 0 ?>" required onchange="totalPengeluaranBekerja()">
+                            <div class="input-group">
+                              <input id="bekerja_konsumsi" type="number" step="any" name="bekerja_konsumsi" class="form-control" value="<?= $answer["KONSUMSI"]["BEKERJA_KONSUMSI"] ? round($answer["KONSUMSI"]["BEKERJA_KONSUMSI"],2) : 0 ?>" required onchange="totalPengeluaranBekerja()">
+                              <div class="input-group-text">%</div>
+                            </div>
                         </td>
                         <td>
                           <input id="pensiun_konsumsi" type="number" step="any" name="pensiun_konsumsi" class="form-control" value="<?= $answer["KONSUMSI"]["PENSIUN_KONSUMSI"] ? round($answer["KONSUMSI"]["PENSIUN_KONSUMSI"],2) : 0 ?>" required onchange="totalPengeluaranPensiun()">
@@ -134,7 +137,7 @@
                     <thead>
                         <tr>
                             <th class="whitespace-nowrap">#</th>
-                            <th class="whitespace-nowrap">Nilai</th>
+                            <th class="whitespace-nowrap">Nilai  (%)</th>
                         </tr>
                     </thead>
                     <tbody>
