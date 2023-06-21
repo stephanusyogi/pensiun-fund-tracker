@@ -30,103 +30,169 @@
                             </div>
                         </td>
                         <td>
-                          <input id="pensiun_konsumsi" type="number" step="any" name="pensiun_konsumsi" class="form-control" value="<?= $answer["KONSUMSI"]["PENSIUN_KONSUMSI"] ? round($answer["KONSUMSI"]["PENSIUN_KONSUMSI"],2) : 0 ?>" required onchange="totalPengeluaranPensiun()">
+                          <div class="input-group">
+                            <input id="pensiun_konsumsi" type="number" step="any" name="pensiun_konsumsi" class="form-control" value="<?= $answer["KONSUMSI"]["PENSIUN_KONSUMSI"] ? round($answer["KONSUMSI"]["PENSIUN_KONSUMSI"],2) : 0 ?>" required onchange="totalPengeluaranPensiun()">  
+                            <div class="input-group-text">%</div>
+                          </div>
                         </td>
                       </tr>
                       <tr>
                         <td>Utilities (Listrik, Air PAM, Gas, Iuran Lingkungan, Iuran Keamanan, Iuran Kebersihan, Internet, Pulsa)</td>
                         <td>
-                          <input id="bekerja_utilities" type="number" step="any" name="bekerja_utilities" class="form-control" value="<?= $answer["UTILITIES"]["BEKERJA_UTILITIES"] ? round($answer["UTILITIES"]["BEKERJA_UTILITIES"],2) : 0 ?>" required onchange="totalPengeluaranBekerja()">
+                          <div class="input-group">
+                            <input id="bekerja_utilities" type="number" step="any" name="bekerja_utilities" class="form-control" value="<?= $answer["UTILITIES"]["BEKERJA_UTILITIES"] ? round($answer["UTILITIES"]["BEKERJA_UTILITIES"],2) : 0 ?>" required onchange="totalPengeluaranBekerja()">
+                            <div class="input-group-text">%</div>
+                          </div>
                         </td>
                         <td>
-                          <input id="pensiun_utilities" type="number" step="any" name="pensiun_utilities" class="form-control" value="<?= $answer["UTILITIES"]["PENSIUN_UTILITIES"] ? round($answer["UTILITIES"]["PENSIUN_UTILITIES"],2) : 0 ?>" required onchange="totalPengeluaranPensiun()">
+                          <div class="input-group">
+                            <input id="pensiun_utilities" type="number" step="any" name="pensiun_utilities" class="form-control" value="<?= $answer["UTILITIES"]["PENSIUN_UTILITIES"] ? round($answer["UTILITIES"]["PENSIUN_UTILITIES"],2) : 0 ?>" required onchange="totalPengeluaranPensiun()">
+                            <div class="input-group-text">%</div>
+                          </div>
                         </td>
                       </tr>
                       <tr>
                         <td>Transportasi (Bahan Bakar, Pajak Kendaraan, Servis, Transport online)</td>
                         <td>
-                          <input id="bekerja_transportasi" type="number" step="any" name="bekerja_transportasi" class="form-control" value="<?= $answer["TRANSPORTASI"]["BEKERJA_TRANSPORTASI"] ? round($answer["TRANSPORTASI"]["BEKERJA_TRANSPORTASI"],2) : 0 ?>" required onchange="totalPengeluaranBekerja()">
+                          <div class="input-group">
+                            <input id="bekerja_transportasi" type="number" step="any" name="bekerja_transportasi" class="form-control" value="<?= $answer["TRANSPORTASI"]["BEKERJA_TRANSPORTASI"] ? round($answer["TRANSPORTASI"]["BEKERJA_TRANSPORTASI"],2) : 0 ?>" required onchange="totalPengeluaranBekerja()">
+                            <div class="input-group-text">%</div>
+                          </div>
                         </td>
                         <td>
-                          <input id="pensiun_transportasi" type="number" step="any" name="pensiun_transportasi" class="form-control" value="<?= $answer["TRANSPORTASI"]["PENSIUN_TRANSPORTASI"] ? round($answer["TRANSPORTASI"]["PENSIUN_TRANSPORTASI"],2) : 0 ?>" required onchange="totalPengeluaranPensiun()">
+                          <div class="input-group">
+                            <input id="pensiun_transportasi" type="number" step="any" name="pensiun_transportasi" class="form-control" value="<?= $answer["TRANSPORTASI"]["PENSIUN_TRANSPORTASI"] ? round($answer["TRANSPORTASI"]["PENSIUN_TRANSPORTASI"],2) : 0 ?>" required onchange="totalPengeluaranPensiun()">
+                            <div class="input-group-text">%</div>
+                          </div>
                         </td>
                       </tr>
                       <tr>
                         <td>Cicilan Pinjaman (Pinjaman kantor, pinjaman kartu kredit)</td>
                         <td>
-                          <input id="bekerja_cicilan" type="number" step="any" name="bekerja_cicilan" class="form-control" value="<?= $answer["CICILAN"]["BEKERJA_CICILAN"] ? round($answer["CICILAN"]["BEKERJA_CICILAN"],2) : 0 ?>" required onchange="totalPengeluaranBekerja()">
+                          <div class="input-group">
+                            <input id="bekerja_cicilan" type="number" step="any" name="bekerja_cicilan" class="form-control" value="<?= $answer["CICILAN"]["BEKERJA_CICILAN"] ? round($answer["CICILAN"]["BEKERJA_CICILAN"],2) : 0 ?>" required onchange="totalPengeluaranBekerja()">
+                            <div class="input-group-text">%</div>
+                          </div>
                         </td>
                         <td>
-                          <input id="pensiun_cicilan" type="number" step="any" name="pensiun_cicilan" class="form-control" value="<?= $answer["CICILAN"]["PENSIUN_CICILAN"] ? round($answer["CICILAN"]["PENSIUN_CICILAN"],2) : 0 ?>" required onchange="totalPengeluaranPensiun()">
+                          <div class="input-group">
+                            <input id="pensiun_cicilan" type="number" step="any" name="pensiun_cicilan" class="form-control" value="<?= $answer["CICILAN"]["PENSIUN_CICILAN"] ? round($answer["CICILAN"]["PENSIUN_CICILAN"],2) : 0 ?>" required onchange="totalPengeluaranPensiun()">
+                            <div class="input-group-text">%</div>
+                          </div>
                         </td>
                       </tr>
                       <tr>
                         <td>Ibadah (zakat, sedekah, perpuluhan)</td>
                         <td>
-                          <input id="bekerja_ibadah" type="number" step="any" name="bekerja_ibadah" class="form-control" value="<?= $answer["IBADAH"]["BEKERJA_IBADAH"] ? round($answer["IBADAH"]["BEKERJA_IBADAH"],2) : 0 ?>" required onchange="totalPengeluaranBekerja()">
+                          <div class="input-group">
+                            <input id="bekerja_ibadah" type="number" step="any" name="bekerja_ibadah" class="form-control" value="<?= $answer["IBADAH"]["BEKERJA_IBADAH"] ? round($answer["IBADAH"]["BEKERJA_IBADAH"],2) : 0 ?>" required onchange="totalPengeluaranBekerja()">
+                            <div class="input-group-text">%</div>
+                          </div>
                         </td>
                         <td>
-                          <input id="pensiun_ibadah" type="number" step="any" name="pensiun_ibadah" class="form-control" value="<?= $answer["IBADAH"]["PENSIUN_IBADAH"] ? round($answer["IBADAH"]["PENSIUN_IBADAH"],2) : 0 ?>" required onchange="totalPengeluaranPensiun()">
+                          <div class="input-group">
+                            <input id="pensiun_ibadah" type="number" step="any" name="pensiun_ibadah" class="form-control" value="<?= $answer["IBADAH"]["PENSIUN_IBADAH"] ? round($answer["IBADAH"]["PENSIUN_IBADAH"],2) : 0 ?>" required onchange="totalPengeluaranPensiun()">
+                            <div class="input-group-text">%</div>
+                          </div>
                         </td>
                       </tr>
                       <tr>
                         <td>Pendidikan</td>
                         <td>
-                          <input id="bekerja_pendidikan" type="number" step="any" name="bekerja_pendidikan" class="form-control" value="<?= $answer["PENDIDIKAN"]["BEKERJA_PENDIDIKAN"] ? round($answer["PENDIDIKAN"]["BEKERJA_PENDIDIKAN"],2) : 0 ?>" required onchange="totalPengeluaranBekerja()">
+                          <div class="input-group">
+                            <input id="bekerja_pendidikan" type="number" step="any" name="bekerja_pendidikan" class="form-control" value="<?= $answer["PENDIDIKAN"]["BEKERJA_PENDIDIKAN"] ? round($answer["PENDIDIKAN"]["BEKERJA_PENDIDIKAN"],2) : 0 ?>" required onchange="totalPengeluaranBekerja()">
+                            <div class="input-group-text">%</div>
+                          </div>
                         </td>
                         <td>
-                          <input id="pensiun_pendidikan" type="number" step="any" name="pensiun_pendidikan" class="form-control" value="<?= $answer["PENDIDIKAN"]["PENSIUN_PENDIDIKAN"] ? round($answer["PENDIDIKAN"]["PENSIUN_PENDIDIKAN"],2) : 0 ?>" required onchange="totalPengeluaranPensiun()">
+                          <div class="input-group">
+                            <input id="pensiun_pendidikan" type="number" step="any" name="pensiun_pendidikan" class="form-control" value="<?= $answer["PENDIDIKAN"]["PENSIUN_PENDIDIKAN"] ? round($answer["PENDIDIKAN"]["PENSIUN_PENDIDIKAN"],2) : 0 ?>" required onchange="totalPengeluaranPensiun()">
+                            <div class="input-group-text">%</div>
+                          </div>
                         </td>
                       </tr>
                       <tr>
                         <td>Kesehatan</td>
                         <td>
-                          <input id="bekerja_kesehatan" type="number" step="any" name="bekerja_kesehatan" class="form-control" value="<?= $answer["KESEHATAN"]["BEKERJA_KESEHATAN"] ? round($answer["KESEHATAN"]["BEKERJA_KESEHATAN"],2) : 0 ?>" required onchange="totalPengeluaranBekerja()">
+                          <div class="input-group">
+                            <input id="bekerja_kesehatan" type="number" step="any" name="bekerja_kesehatan" class="form-control" value="<?= $answer["KESEHATAN"]["BEKERJA_KESEHATAN"] ? round($answer["KESEHATAN"]["BEKERJA_KESEHATAN"],2) : 0 ?>" required onchange="totalPengeluaranBekerja()">
+                            <div class="input-group-text">%</div>
+                          </div>
                         </td>
                         <td>
-                          <input id="pensiun_kesehatan" type="number" step="any" name="pensiun_kesehatan" class="form-control" value="<?= $answer["KESEHATAN"]["PENSIUN_KESEHATAN"] ? round($answer["KESEHATAN"]["PENSIUN_KESEHATAN"],2) : 0 ?>" required onchange="totalPengeluaranPensiun()">
+                          <div class="input-group">
+                            <input id="pensiun_kesehatan" type="number" step="any" name="pensiun_kesehatan" class="form-control" value="<?= $answer["KESEHATAN"]["PENSIUN_KESEHATAN"] ? round($answer["KESEHATAN"]["PENSIUN_KESEHATAN"],2) : 0 ?>" required onchange="totalPengeluaranPensiun()">
+                            <div class="input-group-text">%</div>
+                          </div>
                         </td>
                       </tr>
                       <tr>
                         <td>Hiburan (Traveling, Netflix)</td>
                         <td>
-                          <input id="bekerja_hiburan" type="number" step="any" name="bekerja_hiburan" class="form-control" value="<?= $answer["HIBURAN"]["BEKERJA_HIBURAN"] ? round($answer["HIBURAN"]["BEKERJA_HIBURAN"],2) : 0 ?>" required onchange="totalPengeluaranBekerja()">
+                          <div class="input-group">
+                            <input id="bekerja_hiburan" type="number" step="any" name="bekerja_hiburan" class="form-control" value="<?= $answer["HIBURAN"]["BEKERJA_HIBURAN"] ? round($answer["HIBURAN"]["BEKERJA_HIBURAN"],2) : 0 ?>" required onchange="totalPengeluaranBekerja()">
+                            <div class="input-group-text">%</div>
+                          </div>
                         </td>
                         <td>
-                          <input id="pensiun_hiburan" type="number" step="any" name="pensiun_hiburan" class="form-control" value="<?= $answer["HIBURAN"]["PENSIUN_HIBURAN"] ? round($answer["HIBURAN"]["PENSIUN_HIBURAN"],2) : 0 ?>" required onchange="totalPengeluaranPensiun()">
+                          <div class="input-group">
+                            <input id="pensiun_hiburan" type="number" step="any" name="pensiun_hiburan" class="form-control" value="<?= $answer["HIBURAN"]["PENSIUN_HIBURAN"] ? round($answer["HIBURAN"]["PENSIUN_HIBURAN"],2) : 0 ?>" required onchange="totalPengeluaranPensiun()">
+                            <div class="input-group-text">%</div>
+                          </div>
                         </td>
                       </tr>
                       <tr>
                         <td>Investasi</td>
                         <td>
-                          <input id="bekerja_investasi" type="number" step="any" name="bekerja_investasi" class="form-control" value="<?= $answer["INVESTASI"]["BEKERJA_INVESTASI"] ? round($answer["INVESTASI"]["BEKERJA_INVESTASI"],2) : 0 ?>" required onchange="totalPengeluaranBekerja()">
+                          <div class="input-group">
+                            <input id="bekerja_investasi" type="number" step="any" name="bekerja_investasi" class="form-control" value="<?= $answer["INVESTASI"]["BEKERJA_INVESTASI"] ? round($answer["INVESTASI"]["BEKERJA_INVESTASI"],2) : 0 ?>" required onchange="totalPengeluaranBekerja()">
+                            <div class="input-group-text">%</div>
+                          </div>
                         </td>
                         <td>
-                          <input id="pensiun_investasi" type="number" step="any" name="pensiun_investasi" class="form-control" value="<?= $answer["INVESTASI"]["PENSIUN_INVESTASI"] ? round($answer["INVESTASI"]["PENSIUN_INVESTASI"],2) : 0 ?>" required onchange="totalPengeluaranPensiun()">
+                          <div class="input-group">
+                            <input id="pensiun_investasi" type="number" step="any" name="pensiun_investasi" class="form-control" value="<?= $answer["INVESTASI"]["PENSIUN_INVESTASI"] ? round($answer["INVESTASI"]["PENSIUN_INVESTASI"],2) : 0 ?>" required onchange="totalPengeluaranPensiun()">
+                            <div class="input-group-text">%</div>
+                          </div>
                         </td>
                       </tr>
                       <tr>
                         <td>Lain-lain (Pajak Kendaraan, perlengkapan rumah)</td>
                         <td>
-                          <input id="bekerja_lain" type="number" step="any" name="bekerja_lain" class="form-control" value="<?= $answer["LAIN"]["BEKERJA_LAIN"] ? round($answer["LAIN"]["BEKERJA_LAIN"],2) : 0 ?>" required onchange="totalPengeluaranBekerja()">
+                          <div class="input-group">
+                            <input id="bekerja_lain" type="number" step="any" name="bekerja_lain" class="form-control" value="<?= $answer["LAIN"]["BEKERJA_LAIN"] ? round($answer["LAIN"]["BEKERJA_LAIN"],2) : 0 ?>" required onchange="totalPengeluaranBekerja()">
+                            <div class="input-group-text">%</div>
+                          </div>
                         </td>
                         <td>
-                          <input id="pensiun_lain" type="number" step="any" name="pensiun_lain" class="form-control" value="<?= $answer["LAIN"]["PENSIUN_LAIN"] ? round($answer["LAIN"]["PENSIUN_LAIN"],2) : 0 ?>" required onchange="totalPengeluaranPensiun()">
+                          <div class="input-group">
+                            <input id="pensiun_lain" type="number" step="any" name="pensiun_lain" class="form-control" value="<?= $answer["LAIN"]["PENSIUN_LAIN"] ? round($answer["LAIN"]["PENSIUN_LAIN"],2) : 0 ?>" required onchange="totalPengeluaranPensiun()">
+                            <div class="input-group-text">%</div>
+                          </div>
                         </td>
                       </tr>
                       <tr>
                         <td>Total Pengeluaran</td>
                         <td>
-                          <input id="bekerja_total_pengeluaran" name="bekerja_total_pengeluaran" type="number" step="any" class="form-control" value="<?= $answer["BEKERJA_TOTAL_PENGELUARAN"] ? round($answer["BEKERJA_TOTAL_PENGELUARAN"],2) : 0 ?>" readonly>
+                          <div class="input-group">
+                            <input id="bekerja_total_pengeluaran" name="bekerja_total_pengeluaran" type="number" step="any" class="form-control" value="<?= $answer["BEKERJA_TOTAL_PENGELUARAN"] ? round($answer["BEKERJA_TOTAL_PENGELUARAN"],2) : 0 ?>" readonly>
+                            <div class="input-group-text">%</div>
+                          </div>
                         </td>
                         <td>
-                          <input id="pensiun_total_pengeluaran" name="pensiun_total_pengeluaran" type="number" step="any" class="form-control" value="<?= $answer["PENSIUN_TOTAL_PENGELUARAN"] ? round($answer["PENSIUN_TOTAL_PENGELUARAN"],2) : 0 ?>" readonly>
+                          <div class="input-group">
+                            <input id="pensiun_total_pengeluaran" name="pensiun_total_pengeluaran" type="number" step="any" class="form-control" value="<?= $answer["PENSIUN_TOTAL_PENGELUARAN"] ? round($answer["PENSIUN_TOTAL_PENGELUARAN"],2) : 0 ?>" readonly>
+                            <div class="input-group-text">%</div>
+                          </div>
                         </td>
                       </tr>
                       <tr>
                         <td>Free Cashflow</td>
                         <td>
-                          <input id="free_cashflow" name="free_cashflow" type="number" step="any" class="form-control" value="<?= $answer["FREE_CASHFLOW"] ? round($answer["FREE_CASHFLOW"],2) : 0 ?>" readonly>
+                          <div class="input-group">
+                            <input id="free_cashflow" name="free_cashflow" type="number" step="any" class="form-control" value="<?= $answer["FREE_CASHFLOW"] ? round($answer["FREE_CASHFLOW"],2) : 0 ?>" readonly>
+                            <div class="input-group-text">%</div>
+                          </div>
                         </td>
                       </tr>
                     </tbody>
@@ -148,19 +214,28 @@
                       <tr>
                         <td>Penghasilan Setelah Pensiun</td>
                         <td>
-                          <input id="penghasilan_setelah_pensiun" type="number" step="any" name="penghasilan_setelah_pensiun" class="form-control" value="<?= $answer["PENSIUN_TOTAL_PENGELUARAN"] ? round($answer["PENSIUN_TOTAL_PENGELUARAN"],2) : 0 ?>" readonly>
+                          <div class="input-group">
+                            <input id="penghasilan_setelah_pensiun" type="number" step="any" name="penghasilan_setelah_pensiun" class="form-control" value="<?= $answer["PENSIUN_TOTAL_PENGELUARAN"] ? round($answer["PENSIUN_TOTAL_PENGELUARAN"],2) : 0 ?>" readonly>
+                            <div class="input-group-text">%</div>
+                          </div>
                         </td>
                       </tr>
                       <tr>
                         <td>Total Pengeluaran</td>
                         <td>
-                          <input id="total_pengeluaran" type="number" step="any" name="total_pengeluaran" class="form-control" value="<?= $answer["BEKERJA_TOTAL_PENGELUARAN"] ? round($answer["BEKERJA_TOTAL_PENGELUARAN"],2) : 0 ?>" readonly>
+                          <div class="input-group">
+                            <input id="total_pengeluaran" type="number" step="any" name="total_pengeluaran" class="form-control" value="<?= $answer["BEKERJA_TOTAL_PENGELUARAN"] ? round($answer["BEKERJA_TOTAL_PENGELUARAN"],2) : 0 ?>" readonly>
+                            <div class="input-group-text">%</div>
+                          </div>
                         </td>
                       </tr>
                       <tr>
                         <td>Gaji</td>
                         <td>
-                          <input id="gaji" type="number" step="any" name="gaji" class="form-control" value="<?= $answer["GAJI"] ? round($answer["GAJI"],2) : 0 ?>" required onchange="totalFreeCashflow()">
+                          <div class="input-group">
+                            <input id="gaji" type="number" step="any" name="gaji" class="form-control" value="<?= $answer["GAJI"] ? round($answer["GAJI"],2) : 0 ?>" required onchange="totalFreeCashflow()">
+                            <div class="input-group-text">%</div>
+                          </div>
                         </td>
                       </tr>
                       <tr>
@@ -168,7 +243,7 @@
                           <p>Keterangan:</p>
                           <p><strong>Gaji</strong> bukan merupakan Take Home Pay. Jumlah sebagaimana pada slip gaji.</p>
                           <p><strong>Total Pengeluaran</strong> dapat melebihi dari gaji dengan mempertimbangkan Take Home Pay ≥ Gaji.</p>
-                          <p><strong>Penghasilan Setelah Pensiun</strong> yang akan diterima secara bulanan.</p>
+                          <p><strong>Perkiraan pengeluaran</strong> setelah pensiun akan diterima secara bulanan.</p>
                           <p><strong>Target Replacement Ratio</strong> adjusted terhadap gaji.</p>
                         </td>
                       </tr>
