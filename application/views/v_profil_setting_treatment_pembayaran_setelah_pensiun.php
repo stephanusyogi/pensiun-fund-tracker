@@ -102,13 +102,9 @@
                         <div class="col-span-12 lg:col-span-6 border p-5">
                             <label for="" class="form-label">Personal - Pasar Keuangan</label>
                             <select id="personal" name="personal_pasar_keuangan" class="form-select  mb-2" aria-label=".form-select-lg example" onchange="inputChangePersonal()" required>
-                                    <?php if($data_setting_treatment){ ?>
-                                        <option value="<?= $data_setting_treatment[0]['personal_pasar_keuangan'] ?>"><?= $data_setting_treatment[0]['personal_pasar_keuangan'] ?></option>
-                                    <?php }else{ ?>
-                                        <option value="">Pilih</option>
-                                    <?php } ?>
-                                    <option value="Beli Anuitas">Beli Anuitas</option>
-                                    <option value="Kupon SBN/SBSN">Kupon SBN/SBSN</option>
+                                <option disabled selected>Pilih</option>
+                                <option value="Beli Anuitas" <?= $data_setting_treatment ? ($data_setting_treatment[0]['personal_pasar_keuangan'] === 'Beli Anuitas') ? 'selected' : ''  : '' ?>>Beli Anuitas</option>
+                                <option value="Kupon SBN/SBSN" <?= $data_setting_treatment ? ($data_setting_treatment[0]['personal_pasar_keuangan'] === 'Kupon SBN/SBSN') ? 'selected' : ''  : '' ?>>Kupon SBN/SBSN</option>
                             </select>
                             <br>
                             <label for="harga-anuitas-personal" class="form-label">Harga Anuitas Personal Pasar Keuangan</label>
