@@ -60,13 +60,9 @@
                         <div class="col-span-12 lg:col-span-6 border p-5">
                             <label for="ppip" class="form-label">PPIP</label>
                             <select id="ppip" name="ppip" class="form-select mb-2" aria-label=".form-select-lg example" onchange="inputChangePPIP()" required>
-                                <?php if($data_setting_treatment){ ?>
-                                    <option value="<?= $data_setting_treatment[0]['ppip'] ?>"><?= $data_setting_treatment[0]['ppip'] ?></option>
-                                <?php }else{ ?>
-                                    <option value="">Pilih</option>
-                                <?php } ?>
-                                    <option value="Beli Anuitas">Beli Anuitas</option>
-                                    <option value="Kupon SBN/SBSN">Kupon SBN/SBSN</option>
+                                <option disabled selected>Pilih</option>
+                                <option value="Beli Anuitas" <?= $data_setting_treatment ? ($data_setting_treatment[0]['ppip'] === 'Beli Anuitas') ? 'selected' : ''  : '' ?>>Beli Anuitas</option>
+                                <option value="Kupon SBN/SBSN" <?= $data_setting_treatment ? ($data_setting_treatment[0]['ppip'] === 'Kupon SBN/SBSN') ? 'selected' : ''  : '' ?>>Kupon SBN/SBSN</option>
                             </select>
                             <br>
                             <label for="harga-anuitas-ppip" class="form-label">Harga Anuitas PPIP</label>
