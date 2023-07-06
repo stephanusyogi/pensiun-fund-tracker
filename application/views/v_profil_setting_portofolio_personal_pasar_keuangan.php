@@ -298,7 +298,7 @@
                                         <td colspan="4">Asumsi Return Investasi  - Personal pada Pasar Keuangan</td>
                                     </tr>
                                     <tr>
-                                        <td>Saham</td>
+                                        <td>Saham (Growth)</td>
                                         <td id="return_s_tranche1"></td>
                                         <td id="return_s_tranche2"></td>
                                         <td id="return_s_tranche3"></td>
