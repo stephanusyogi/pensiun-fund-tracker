@@ -94,7 +94,7 @@
                                         <td colspan="4">Komposisi Investasi</td>
                                     </tr>
                                     <tr>
-                                        <td>Saham growth</td>
+                                        <td>Saham Growth</td>
                                         <td><?= $data_setting_komposisi ? $data_setting_komposisi[0]['saham_t1']."%" : '' ?></td>
                                         <td><?= $data_setting_komposisi ? $data_setting_komposisi[0]['saham_t2']."%" : '' ?></td>
                                         <td><?= $data_setting_komposisi ? $data_setting_komposisi[0]['saham_t3']."%" : '' ?></td>
@@ -112,7 +112,7 @@
                                         <td><?= $data_setting_komposisi ? $data_setting_komposisi[0]['deposito_t3']."%" : '' ?></td>
                                     </tr>
                                     <tr>
-                                        <td>Rekda Dana Saham</td>
+                                        <td>Saham Value</td>
                                         <td><?= $data_setting_komposisi ? $data_setting_komposisi[0]['reksadana_saham_t1']."%" : '' ?></td>
                                         <td><?= $data_setting_komposisi ? $data_setting_komposisi[0]['reksadana_saham_t2']."%" : '' ?></td>
                                         <td><?= $data_setting_komposisi ? $data_setting_komposisi[0]['reksadana_saham_t3']."%" : '' ?></td>
@@ -133,7 +133,7 @@
                                         <td colspan="4">Asumsi Return Investasi  - Personal pada Pasar Keuangan</td>
                                     </tr>
                                     <tr>
-                                        <td>Saham growth</td>
+                                        <td>Saham Growth</td>
                                         <td><?= $data_setting_personal ? $data_setting_personal[0]['return_s_tranche1']."%" : '' ?></td>
                                         <td><?= $data_setting_personal ? $data_setting_personal[0]['return_s_tranche2']."%" : '' ?></td>
                                         <td><?= $data_setting_personal ? $data_setting_personal[0]['return_s_tranche3']."%" : '' ?></td>
@@ -151,7 +151,7 @@
                                         <td><?= $data_setting_personal ? $data_setting_personal[0]['return_d_tranche3']."%" : '' ?></td>
                                     </tr>
                                     <tr>
-                                        <td>Reksa Dana Saham</td>
+                                        <td>Saham Value</td>
                                         <td><?= $data_setting_personal ? $data_setting_personal[0]['return_r_s_tranche1']."%" : '' ?></td>
                                         <td><?= $data_setting_personal ? $data_setting_personal[0]['return_r_s_tranche2']."%" : '' ?></td>
                                         <td><?= $data_setting_personal ? $data_setting_personal[0]['return_r_s_tranche3']."%" : '' ?></td>
@@ -178,7 +178,7 @@
                                         <td colspan="4">Asumsi Risiko Pasar Investasi  - Personal pada Pasar Keuangan</td>
                                     </tr>
                                     <tr>
-                                        <td>Saham</td>
+                                        <td>Saham Growth</td>
                                         <td><?= $data_setting_personal ? $data_setting_personal[0]['resiko_s_tranche1']."%" : '' ?></td>
                                         <td><?= $data_setting_personal ? $data_setting_personal[0]['resiko_s_tranche2']."%" : '' ?></td>
                                         <td><?= $data_setting_personal ? $data_setting_personal[0]['resiko_s_tranche3']."%" : '' ?></td>
@@ -196,7 +196,7 @@
                                         <td><?= $data_setting_personal ? $data_setting_personal[0]['resiko_d_tranche1']."%" : '' ?></td>
                                     </tr>
                                     <tr>
-                                        <td>Reksa Dana Saham</td>
+                                        <td>Saham Value</td>
                                         <td><?= $data_setting_personal ? $data_setting_personal[0]['resiko_r_s_tranche1']."%" : '' ?></td>
                                         <td><?= $data_setting_personal ? $data_setting_personal[0]['resiko_r_s_tranche2']."%" : '' ?></td>
                                         <td><?= $data_setting_personal ? $data_setting_personal[0]['resiko_r_s_tranche3']."%" : '' ?></td>
@@ -298,7 +298,7 @@
                                         <td colspan="4">Asumsi Return Investasi  - Personal pada Pasar Keuangan</td>
                                     </tr>
                                     <tr>
-                                        <td>Saham (Growth)</td>
+                                        <td>Saham</td>
                                         <td id="return_s_tranche1"></td>
                                         <td id="return_s_tranche2"></td>
                                         <td id="return_s_tranche3"></td>
