@@ -94,7 +94,7 @@
                                         <td colspan="4">Komposisi Investasi</td>
                                     </tr>
                                     <tr>
-                                        <td>Saham</td>
+                                        <td>Saham growth</td>
                                         <td><?= $data_setting_komposisi ? $data_setting_komposisi[0]['saham_t1']."%" : '' ?></td>
                                         <td><?= $data_setting_komposisi ? $data_setting_komposisi[0]['saham_t2']."%" : '' ?></td>
                                         <td><?= $data_setting_komposisi ? $data_setting_komposisi[0]['saham_t3']."%" : '' ?></td>
@@ -133,7 +133,7 @@
                                         <td colspan="4">Asumsi Return Investasi  - Personal pada Pasar Keuangan</td>
                                     </tr>
                                     <tr>
-                                        <td>Saham</td>
+                                        <td>Saham growth</td>
                                         <td><?= $data_setting_personal ? $data_setting_personal[0]['return_s_tranche1']."%" : '' ?></td>
                                         <td><?= $data_setting_personal ? $data_setting_personal[0]['return_s_tranche2']."%" : '' ?></td>
                                         <td><?= $data_setting_personal ? $data_setting_personal[0]['return_s_tranche3']."%" : '' ?></td>
