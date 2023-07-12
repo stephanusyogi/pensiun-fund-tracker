@@ -93,7 +93,7 @@
                           <a href="<?= base_url() ?>logout" class="btn btn-danger py-3 px-4 align-top">Log Out</a>
                         </div>
                         <div class="intro-x mt-2 text-slate-400 xl:hidden text-center">Pension Fund Tracker</div>
-                          <p class="-intro-x text-md font-base">Kami telah mengirim pesan verifikasi melalui email anda. Silahkan periksa kotak masuk/spam.</p>
+                          <p class="-intro-x text-md font-base">Kami telah mengirim pesan verifikasi melalui email anda. Silahkan periksa kotak masuk/spam atau hubungi Sdr. Arzizal melalui Ms. Teams untuk info kebih lanjut.</p>
                           <div class="-intro-x mt-4 flex items-center justify-between">
                             <div>
                               <a href="<?= base_url() ?>send-email-verification" id="btn-email" class="disabled btn btn-primary py-3 px-4 align-top">Send Email Verification Link</a>
@@ -143,7 +143,7 @@
 
             Swal.fire({
               title: "Kirim Ulang Pesan Verifikasi",
-              text: "Setelah menekan tombol kirim, periksa pada kotak masuk atau/spam anda.",
+              text: "Setelah menekan tombol kirim, periksa pada kotak masuk atau/spam anda atau hubungi Sdr. Arzizal melalui Ms. Teams untuk info kebih lanjut.",
               icon: "warning",
               showCancelButton: true,
               confirmButtonColor: "#3085d6",
