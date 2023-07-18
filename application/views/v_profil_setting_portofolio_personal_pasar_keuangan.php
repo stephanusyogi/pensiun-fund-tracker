@@ -253,7 +253,7 @@
                                         <td colspan="4">Komposisi Investasi</td>
                                     </tr>
                                     <tr>
-                                        <td>Saham</td>
+                                        <td>Saham Growth</td>
                                         <td id="saham_t1"></td>
                                         <td id="saham_t2"></td>
                                         <td id="saham_t3"></td>
@@ -271,7 +271,7 @@
                                         <td id="deposito_t3"></td>
                                     </tr>
                                     <tr>
-                                        <td>Rekda Dana Saham</td>
+                                        <td>Saham Value</td>
                                         <td id="reksadana_saham_t1"></td>
                                         <td id="reksadana_saham_t2"></td>
                                         <td id="reksadana_saham_t3"></td>
@@ -298,7 +298,7 @@
                                         <td colspan="4">Asumsi Return Investasi  - Personal pada Pasar Keuangan</td>
                                     </tr>
                                     <tr>
-                                        <td>Saham</td>
+                                        <td>Saham Growth</td>
                                         <td id="return_s_tranche1"></td>
                                         <td id="return_s_tranche2"></td>
                                         <td id="return_s_tranche3"></td>
@@ -316,7 +316,7 @@
                                         <td id="return_d_tranche3"></td>
                                     </tr>
                                     <tr>
-                                        <td>Reksa Dana Saham</td>
+                                        <td>Saham Value</td>
                                         <td id="return_r_s_tranche1"></td>
                                         <td id="return_r_s_tranche2"></td>
                                         <td id="return_r_s_tranche3"></td>
@@ -343,7 +343,7 @@
                                         <td colspan="4">Asumsi Risiko Pasar Investasi  - Personal pada Pasar Keuangan</td>
                                     </tr>
                                     <tr>
-                                        <td>Saham</td>
+                                        <td>Saham Growth</td>
                                         <td id="resiko_s_tranche1"></td>
                                         <td id="resiko_s_tranche2"></td>
                                         <td id="resiko_s_tranche3"></td>
@@ -361,7 +361,7 @@
                                         <td id="resiko_d_tranche3"></td>
                                     </tr>
                                     <tr>
-                                        <td>Reksa Dana Saham</td>
+                                        <td>Saham Value</td>
                                         <td id="resiko_r_s_tranche1"></td>
                                         <td id="resiko_r_s_tranche2"></td>
                                         <td id="resiko_r_s_tranche3"></td>
