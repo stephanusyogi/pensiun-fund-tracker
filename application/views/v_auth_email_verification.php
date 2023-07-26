@@ -93,7 +93,7 @@
                           <a href="<?= base_url() ?>logout" class="btn btn-danger py-3 px-4 align-top">Log Out</a>
                         </div>
                         <div class="intro-x mt-2 text-slate-400 xl:hidden text-center">Pension Fund Tracker</div>
-                          <p class="-intro-x text-md font-base">Terima kasih telah registrasi akun Pension Fund Tracker. Kami akan melakukan verifikasi akun setiap pukul 11.00 dan 16.00 WIB pada hari kerja. Silahkan logout dan Anda dapat mulai login 15 menit setelah cutoff time verifikasi. Informasi dan pertanyaan lebih lanjut dapat menghubungi Sdr. Arzizal melalui chat Ms. Teams.</p>
+                          <p class="-intro-x text-md font-base">Terima kasih telah registrasi akun Pension Fund Tracker. <br> Kami akan melakukan verifikasi akun setiap pukul 11.00 dan 16.00 WIB pada hari kerja. <br> Silahkan logout dan Anda dapat mulai login 15 menit setelah cutoff time verifikasi. <br> Informasi dan pertanyaan lebih lanjut dapat menghubungi Sdr. Arzizal melalui chat Ms. Teams.</p>
                           <div class="-intro-x mt-4 flex items-center justify-between">
                             <!-- tanda -->
                           </div>
