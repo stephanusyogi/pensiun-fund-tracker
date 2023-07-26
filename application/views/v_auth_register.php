@@ -66,7 +66,7 @@
                                 </div>
                                 <input type="password" id="password2" class="intro-x login__input form-control py-3 px-4 block mt-4" placeholder="Password Confirmation" required>
                                 <div class="text-danger mt-2" id="password-mismatch-msg" style="display:none;">Password tidak cocok!</div>
-                                <input type="text" name="no_hp" class="intro-x login__input form-control py-3 px-4 block mt-4" placeholder="Nomor Handphone Aktif (WhatsApp Available)"  required>
+                                <input type="text" name="no_hp" class="intro-x login__input form-control py-3 px-4 block mt-4" placeholder="Kode Referensi"  required>
                             </div>
                             <div class="intro-x flex items-center text-slate-600 dark:text-slate-500 mt-4 text-xs sm:text-sm">
                                 <input id="agree-policy" type="checkbox" class="form-check-input border mr-2" required>
