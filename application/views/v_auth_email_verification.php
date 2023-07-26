@@ -93,12 +93,9 @@
                           <a href="<?= base_url() ?>logout" class="btn btn-danger py-3 px-4 align-top">Log Out</a>
                         </div>
                         <div class="intro-x mt-2 text-slate-400 xl:hidden text-center">Pension Fund Tracker</div>
-                          <p class="-intro-x text-md font-base">Kami telah mengirim pesan verifikasi melalui email anda. Silahkan periksa kotak masuk/spam atau hubungi Sdr. Arzizal melalui Ms. Teams untuk info kebih lanjut.</p>
+                          <p class="-intro-x text-md font-base">Terima kasih telah registrasi akun Pension Fund Tracker. Kami akan melakukan verifikasi akun setiap pukul 11.00 dan 16.00 WIB pada hari kerja. Anda dapat mulai login 15 menit setelah cutoff time verifikasi. Informasi dan pertanyaan lebih lanjut dapat menghubungi Sdr. Arzizal melalui chat Ms. Teams.</p>
                           <div class="-intro-x mt-4 flex items-center justify-between">
-                            <div>
-                              <a href="<?= base_url() ?>send-email-verification" id="btn-email" class="disabled btn btn-primary py-3 px-4 align-top">Send Email Verification Link</a>
-                              <p class="mt-2 text-md font-base">Kirim kembali pesan verifikasi dalam <span id="countdown"></span></p>
-                            </div>
+                            <!-- tanda -->
                           </div>
                           <script>
                             let countDownTime = 600;
